@@ -1,64 +1,108 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Header, Hero } from "@/components/Header";
-import { InstagramFeed } from "@/components/InstagramFeed";
 import { AnimatedSection, AnimatedStagger, AnimatedItem } from "@/components/AnimatedSection";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const [bioModalOpen, setBioModalOpen] = useState(false);
+  const [sobreMiExpanded, setSobreMiExpanded] = useState(false);
   const [expandedTrabajando, setExpandedTrabajando] = useState<Record<number, boolean>>({ 0: false, 1: false, 2: false });
   const [aseExpanded, setAseExpanded] = useState(false);
   const [lideresExpanded, setLideresExpanded] = useState(false);
   const [weHumanLabExpanded, setWeHumanLabExpanded] = useState(false);
-  useEffect(() => {
-    if (bioModalOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
-    return () => { document.body.style.overflow = ""; };
-  }, [bioModalOpen]);
   return (
     <div className="w-full min-h-screen relative bg-white overflow-hidden">
       <Header />
       <Hero />
 
-      {/* Sobre mí - full responsive, columna izquierda = altura de la imagen */}
+      {/* Sobre mí - colapsado: texto + imagen en 2 columnas; expandido: título + 2 columnas de texto + Leer menos + imagen abajo */}
       <section id="sobre-mi" className="relative w-full bg-white overflow-hidden">
         <div className="relative max-w-[1474px] mx-auto">
-          {/* Overlays: cubren la sección sin altura fija */}
           <div className="absolute inset-0 opacity-30 bg-white -z-10 pointer-events-none" />
           <div className="absolute inset-0 opacity-30 bg-orange-300/25 -z-10 pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[181px] md:py-16">
-            {/* Columna izquierda: misma altura que la imagen (grid la iguala) */}
-            <AnimatedSection className="flex flex-col min-h-0" direction="right" delay={0.1}>
+          {!sobreMiExpanded ? (
+            /* Vista colapsada: texto izquierda, imagen derecha */
+            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[181px] md:py-16">
+              <AnimatedSection className="flex flex-col min-h-0" direction="right" delay={0.1}>
+                <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
+                  Sobre mí
+                </h2>
+                <p className="text-black text-sm font-light font-poppins leading-7 max-w-[475px] flex-1">
+                  Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSobreMiExpanded(true)}
+                  className="inline-flex items-center justify-center w-28 h-8 mt-6 md:mt-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition flex-shrink-0"
+                >
+                  Leer más
+                </button>
+              </AnimatedSection>
+              <AnimatedSection className="relative w-full min-h-0 aspect-[631/423]" direction="left" delay={0.15}>
+                <Image
+                  src="/images/sobre-mi/Adela Saenz Cavia62Gaudi 1.png"
+                  alt="Adela - Sobre mí"
+                  fill
+                  className="object-cover"
+                />
+              </AnimatedSection>
+            </div>
+          ) : (
+            /* Vista expandida: título, 2 columnas de texto, Leer menos, imagen abajo */
+            <div className="px-6 py-12 md:px-[181px] md:py-16 flex flex-col">
               <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
                 Sobre mí
               </h2>
-              <p className="text-black text-sm font-light font-poppins leading-7 max-w-[475px] flex-1">
-                Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-8 md:mb-10">
+                <div className="text-black text-sm font-light font-poppins leading-7 max-w-[520px]">
+                  <p className="mb-4">
+                    Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
+                  </p>
+                  <p className="mb-4">
+                    Me encanta aprender cosas nuevas. Mi carrera de grado es la Ciencia Política, pero desde entonces he hecho 2 maestrías (una en Comunicación y la otra en Inteligencia emocional y psicología positiva), muchos postgrados (los últimos en Educación emocional, Neuroeducación y Psicología organizacional). También soy Coach certificada y Counselor Laboral. Y estoy a punto de defender mi tesis para acceder al grado de Doctora en Psicología, con foco en psicología social.
+                  </p>
+                  <p>
+                    Creo que, en un mundo en cambio constante (ya lo dijo el filósofo), la flexibilidad cognitiva y emocional es clave y que todos debemos entrenar al máximo aquello que nos hace humanos (algo que estudio y desarrollo en el proyecto: We human) y que defino como &quot;human skills&quot; y que te cuento más abajo en detalle.
+                  </p>
+                </div>
+                <div className="text-black text-sm font-light font-poppins leading-7 max-w-[520px]">
+                  <p className="mb-4">
+                    Me moviliza mucho la desigualdad social, por lo que mi propósito personal es generar puentes entre personas diversas con el objetivo de compartir y multiplicar aprendizajes con impacto social. Para responder a esta inquietud tan grande, diseño y desarrollo programas de entrenamiento para líderes sociales de barrios populares, cuyo impacto es multiplicador y me asombra muchísimo.
+                  </p>
+                  <p className="mb-4">
+                    Además, y con la idea de socializar estos aprendizajes y conocimientos, soy divulgadora en diferentes medios de comunicación y en redes sociales y he producido trabajos académicos vinculados al impacto positivo que tiene el entrenamiento emocional y para la resiliencia en diferentes ámbitos.
+                  </p>
+                  <p>
+                    Represento en Buenos Aires a la{" "}
+                    <a href="https://rieeb.com" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIEEB – Red Internacional de Educación emocional y bienestar</a> (rieeb.com) de la que también soy formadora y colaboro con organizaciones sociales cuyas causas comparto: soy mentora de{" "}
+                    <a href="https://vocesvitales.org.ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Voces Vitales</a> (https://vocesvitales.org.ar/), la ONG global dedicada al empoderamiento de las mujeres, y colaboro activamente con{" "}
+                    <a href="https://portalril.org/ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIL – Red de Innovación Local</a> (https://portalril.org/ar/), con{" "}
+                    <a href="https://potenciaargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Potencia+</a> (https://potenciaargentina.org/) y con la fundación{" "}
+                    <a href="https://www.ensenaporargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Enseña por Argentina</a> (https://www.ensenaporargentina.org/).
+                  </p>
+                </div>
+              </div>
               <button
                 type="button"
-                onClick={() => setBioModalOpen(true)}
-                className="inline-flex items-center justify-center w-28 h-8 mt-6 md:mt-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition flex-shrink-0"
+                onClick={() => setSobreMiExpanded(false)}
+                className="inline-flex items-center justify-center w-28 h-8 mb-8 md:mb-10 bg-orange-300 text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-orange-400 transition flex-shrink-0"
               >
-                Leer más
+                Leer menos
               </button>
-            </AnimatedSection>
-
-            {/* Columna derecha: imagen define la altura de la fila */}
-            <AnimatedSection className="relative w-full min-h-0 aspect-[631/423]" direction="left" delay={0.15}>
-              <Image
-                src="/images/sobre-mi/Adela Saenz Cavia62Gaudi 1.png"
-                alt="Adela - Sobre mí"
-                fill
-                className="object-cover"
-              />
-            </AnimatedSection>
-          </div>
+              <div className="relative w-full aspect-[1474/586] max-w-full">
+                <Image
+                  src="/images/sobre-mi/Adela Saenz Cavia62Gaudi 1.png"
+                  alt="Adela - Sobre mí"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -368,13 +412,13 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="flex flex-col items-center flex-shrink-0"
               >
-                <div className={`relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border border-stone-400 overflow-hidden ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
+                <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
                   <Image
                     src={person.image}
                     alt={person.name}
                     width={128}
                     height={128}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full min-w-full min-h-full object-cover object-center"
                   />
                 </div>
                 <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black hover:text-yellow-600 transition-colors cursor-default">
@@ -389,7 +433,7 @@ export default function Home() {
 
       {/* ¿Qué te apasiona? / Mi libro */}
       <section id="libro" className="relative overflow-hidden bg-[#FFF9FA] py-8 sm:py-12 lg:py-0">
-        <div className="mx-auto flex flex-col lg:flex-row pl-4 sm:pl-6 lg:pl-8 xl:pl-12 bg-[#FFF9FA]">
+        <div className="mx-auto max-w-6xl flex flex-col lg:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#FFF9FA]">
           {/* Imagen del libro */}
           <AnimatedSection className="w-full aspect-[490/583] lg:w-[380px] xl:w-[490px] lg:flex-shrink-0 lg:aspect-[490/583] relative bg-[#FFF9FA]" direction="right" delay={0.1}>
             <Image
@@ -402,9 +446,9 @@ export default function Home() {
             />
           </AnimatedSection>
           {/* Zona de contenido con fondo rosa - texto centrado verticalmente */}
-          <AnimatedSection className="relative flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center min-h-0 px-4 sm:px-6 lg:px-6 xl:px-8 lg:pl-8 xl:pl-10 py-8 sm:py-10 lg:py-12 bg-[#FFF9FA]" direction="left" delay={0.15}>
+          <AnimatedSection className="relative flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center min-h-0 px-4 sm:px-6 lg:px-8 xl:px-10 py-8 sm:py-10 lg:py-12 bg-[#FFF9FA]" direction="left" delay={0.15}>
             <div className="absolute inset-0 bg-[#FFF9FA] pointer-events-none" aria-hidden />
-            <div className="relative z-10 flex flex-wrap items-center justify-center lg:justify-center gap-6 lg:gap-8 w-full">
+            <div className="relative z-10 flex flex-nowrap items-center justify-center lg:justify-center gap-6 lg:gap-8 w-full">
               <div className="flex flex-col justify-center w-full min-w-0 max-w-[480px]">
                 <h2 className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
                   ¿Qué te apasiona?
@@ -434,7 +478,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              {/* Imagen decorativa - al lado del texto, hace wrap si hace falta */}
+              {/* Imagen decorativa - siempre en fila junto al texto del libro */}
               <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-44 lg:h-44">
                 <Image
                   src="/images/07 2 (2).png"
@@ -658,15 +702,14 @@ export default function Home() {
       </section>
 
       {/* Instagram - últimas 3 publicaciones */}
-      <section className="relative w-full min-h-[496px] bg-white overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-red-400 pointer-events-none -z-10" aria-hidden />
+      <section className="relative w-full bg-[#EBD5CD] overflow-hidden">
         <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16">
           <AnimatedSection className="flex flex-col items-center" delay={0.1}>
             <a
               href="https://instagram.com/Adela.Cavia"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-red-400 text-xs font-medium font-poppins leading-9 tracking-wide hover:opacity-80 transition"
+              className="flex items-center gap-2 text-[#C58770] text-[16px] font-medium font-poppins leading-9 tracking-wide hover:opacity-80 transition"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                 <path d="M7.63443 1.37603C9.673 1.37603 9.91355 1.38419 10.7188 1.42088C11.4629 1.45554 11.8665 1.57989 12.1356 1.68386C12.4923 1.82248 12.7472 1.9876 13.0142 2.25465C13.2813 2.52171 13.4464 2.77653 13.585 3.13328C13.689 3.40237 13.8133 3.806 13.848 4.55008C13.8847 5.35531 13.8928 5.59586 13.8928 7.63443C13.8928 9.673 13.8847 9.91355 13.848 10.7188C13.8133 11.4629 13.689 11.8665 13.585 12.1356C13.4464 12.4923 13.2813 12.7472 13.0142 13.0142C12.7472 13.2813 12.4923 13.4464 12.1356 13.585C11.8665 13.689 11.4629 13.8133 10.7188 13.848C9.91355 13.8847 9.673 13.8928 7.63443 13.8928C5.59586 13.8928 5.35531 13.8847 4.55008 13.848C3.806 13.8133 3.40237 13.689 3.13328 13.585C2.77653 13.4464 2.52171 13.2813 2.25465 13.0142C1.9876 12.7472 1.82248 12.4923 1.68386 12.1356C1.57989 11.8665 1.45554 11.4629 1.42088 10.7188C1.38419 9.91355 1.37603 9.673 1.37603 7.63443C1.37603 5.59586 1.38419 5.35531 1.42088 4.55008C1.45554 3.806 1.57989 3.40237 1.68386 3.13328C1.82248 2.77653 1.9876 2.52171 2.25465 2.25465C2.52171 1.9876 2.77653 1.82248 3.13328 1.68386C3.40237 1.57989 3.806 1.45554 4.55008 1.42088C5.35531 1.38419 5.59586 1.37603 7.63443 1.37603ZM7.63443 0C5.56121 0 5.30027 0.00815437 4.48688 0.0468871C3.6735 0.0835813 3.11901 0.21405 2.63383 0.401598C2.13234 0.5973 1.70628 0.858236 1.28226 1.28226C0.858236 1.70628 0.5973 2.13234 0.401598 2.63383C0.212011 3.11901 0.0835812 3.6735 0.046887 4.48688C0.0101928 5.30027 0 5.56121 0 7.63443C0 9.70765 0.00815427 9.96859 0.046887 10.782C0.0835812 11.5954 0.214049 12.1499 0.401598 12.635C0.5973 13.1365 0.858236 13.5626 1.28226 13.9866C1.70628 14.4106 2.13234 14.6716 2.63383 14.8673C3.11901 15.0568 3.6735 15.1853 4.48688 15.222C5.30027 15.2587 5.56121 15.2689 7.63443 15.2689C9.70765 15.2689 9.96859 15.2607 10.782 15.222C11.5954 15.1853 12.1499 15.0548 12.635 14.8673C13.1365 14.6716 13.5626 14.4106 13.9866 13.9866C14.4106 13.5626 14.6716 13.1365 14.8673 12.635C15.0569 12.1499 15.1853 11.5954 15.222 10.782C15.2587 9.96859 15.2689 9.70765 15.2689 7.63443C15.2689 5.56121 15.2607 5.30027 15.222 4.48688C15.1853 3.6735 15.0548 3.11901 14.8673 2.63383C14.6716 2.13234 14.4106 1.70628 13.9866 1.28226C13.5626 0.858236 13.1365 0.5973 12.635 0.401598C12.1499 0.212011 11.5954 0.0835813 10.782 0.0468871C9.96859 0.0101929 9.70765 0 7.63443 0Z" fill="#C58770"/>
@@ -676,13 +719,39 @@ export default function Home() {
               @Adela.Cavia
             </a>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 mb-6">
-              <InstagramFeed />
+              <div className="relative w-[260px] h-[320px] md:w-[340px] md:h-[420px] flex-shrink-0">
+                <Image
+                  src="/images/instagram/image%201.png"
+                  alt="Instagram Adela Cavia 1"
+                  fill
+                  className="object-cover"
+                  sizes="340px"
+                />
+              </div>
+              <div className="relative w-[260px] h-[320px] md:w-[340px] md:h-[420px] flex-shrink-0">
+                <Image
+                  src="/images/instagram/image%204.png"
+                  alt="Instagram Adela Cavia 2"
+                  fill
+                  className="object-cover"
+                  sizes="340px"
+                />
+              </div>
+              <div className="relative w-[260px] h-[320px] md:w-[340px] md:h-[420px] flex-shrink-0">
+                <Image
+                  src="/images/instagram/image%205.png"
+                  alt="Instagram Adela Cavia 3"
+                  fill
+                  className="object-cover"
+                  sizes="340px"
+                />
+              </div>
             </div>
             <a
               href="https://instagram.com/Adela.Cavia"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-36 h-6 bg-[#C58770] text-white text-xs font-normal font-poppins leading-5 hover:bg-[#b07860] transition"
+              className="inline-flex items-center justify-center min-w-0 px-5 h-9 bg-[#C58770] text-white text-lg font-normal font-poppins leading-5 whitespace-nowrap hover:bg-[#b07860] transition"
             >
               VER EN MI INSTAGRAM
             </a>
@@ -761,70 +830,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Modal Sobre mí – Bio */}
-      <AnimatePresence>
-        {bioModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
-            onClick={() => setBioModalOpen(false)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-full max-w-2xl max-h-[85vh] overflow-hidden rounded-lg bg-white shadow-xl flex flex-col"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 border-b border-stone-200">
-                <h3 className="text-red-400 text-xl md:text-2xl font-light font-poppins uppercase tracking-wide">
-                  Sobre mí – Bio
-                </h3>
-                <button
-                  type="button"
-                  onClick={() => setBioModalOpen(false)}
-                  className="p-2 text-stone-500 hover:text-stone-800 hover:bg-stone-100 rounded-full transition"
-                  aria-label="Cerrar"
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 6L6 18M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4 text-black text-sm font-light font-poppins leading-7">
-                <p>
-                  Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
-                </p>
-                <p>
-                  Me encanta aprender cosas nuevas. Mi carrera de grado es la Ciencia Política, pero desde entonces he hecho 2 maestrías (una en Comunicación y la otra en Inteligencia emocional y psicología positiva), muchos postgrados (los últimos en Educación emocional, Neuroeducación y Psicología organizacional). También soy Coach certificada y Counselor Laboral. Y estoy a punto de defender mi tesis para acceder al grado de Doctora en Psicología, con foco en psicología social.
-                </p>
-                <p>
-                  Creo que, en un mundo en cambio constante (ya lo dijo el filósofo), la flexibilidad cognitiva y emocional es clave y que todos debemos entrenar al máximo aquello que nos hace humanos (algo que estudio y desarrollo en el proyecto: We human) y que defino como &quot;human skills&quot; y que te cuento más abajo en detalle.
-                </p>
-                <p>
-                  Me moviliza mucho la desigualdad social, por lo que mi propósito personal es generar puentes entre personas diversas con el objetivo de compartir y multiplicar aprendizajes con impacto social. Para responder a esta inquietud tan grande, diseño y desarrollo programas de entrenamiento para líderes sociales de barrios populares, cuyo impacto es multiplicador y me asombra muchísimo.
-                </p>
-                <p>
-                  Además, y con la idea de socializar estos aprendizajes y conocimientos, soy divulgadora en diferentes medios de comunicación y en redes sociales y he producido trabajos académicos vinculados al impacto positivo que tiene el entrenamiento emocional y para la resiliencia en diferentes ámbitos.
-                </p>
-                <p>
-                  Represento en Buenos Aires a la{" "}
-                  <a href="https://rieeb.com" target="_blank" rel="noopener noreferrer" className="text-[#C58770] underline hover:opacity-90">RIEEB – Red Internacional de Educación emocional y bienestar</a> (rieeb.com) de la que también soy formadora y colaboro con organizaciones sociales cuyas causas comparto: soy mentora de{" "}
-                  <a href="https://vocesvitales.org.ar/" target="_blank" rel="noopener noreferrer" className="text-[#C58770] underline hover:opacity-90">Voces Vitales</a> (https://vocesvitales.org.ar/), la ONG global dedicada al empoderamiento de las mujeres, y colaboro activamente con{" "}
-                  <a href="https://portalril.org/ar/" target="_blank" rel="noopener noreferrer" className="text-[#C58770] underline hover:opacity-90">RIL – Red de Innovación Local</a> (https://portalril.org/ar/), con{" "}
-                  <a href="https://potenciaargentina.org/" target="_blank" rel="noopener noreferrer" className="text-[#C58770] underline hover:opacity-90">Potencia+</a> (https://potenciaargentina.org/) y con la fundación{" "}
-                  <a href="https://www.ensenaporargentina.org/" target="_blank" rel="noopener noreferrer" className="text-[#C58770] underline hover:opacity-90">Enseña por Argentina</a> (https://www.ensenaporargentina.org/).
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Footer */}
       <motion.footer
