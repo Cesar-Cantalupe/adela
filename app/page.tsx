@@ -78,11 +78,11 @@ export default function Home() {
                   </p>
                   <p>
                     Represento en Buenos Aires a la{" "}
-                    <a href="https://rieeb.com" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIEEB – Red Internacional de Educación emocional y bienestar</a> (rieeb.com) de la que también soy formadora y colaboro con organizaciones sociales cuyas causas comparto: soy mentora de{" "}
-                    <a href="https://vocesvitales.org.ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Voces Vitales</a> (https://vocesvitales.org.ar/), la ONG global dedicada al empoderamiento de las mujeres, y colaboro activamente con{" "}
-                    <a href="https://portalril.org/ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIL – Red de Innovación Local</a> (https://portalril.org/ar/), con{" "}
-                    <a href="https://potenciaargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Potencia+</a> (https://potenciaargentina.org/) y con la fundación{" "}
-                    <a href="https://www.ensenaporargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Enseña por Argentina</a> (https://www.ensenaporargentina.org/).
+                    <a href="https://rieeb.com" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIEEB – Red Internacional de Educación emocional y bienestar</a> de la que también soy formadora y colaboro con organizaciones sociales cuyas causas comparto: soy mentora de{" "}
+                    <a href="https://vocesvitales.org.ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Voces Vitales</a>, la ONG global dedicada al empoderamiento de las mujeres, y colaboro activamente con{" "}
+                    <a href="https://portalril.org/ar/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">RIL – Red de Innovación Local</a>, con{" "}
+                    <a href="https://potenciaargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Potencia+</a> y con la fundación{" "}
+                    <a href="https://www.ensenaporargentina.org/" target="_blank" rel="noopener noreferrer" className="text-black underline hover:opacity-80">Enseña por Argentina</a>.
                   </p>
                 </div>
               </div>
@@ -176,15 +176,13 @@ export default function Home() {
                     aria-expanded={expandedTrabajando[0]}
                     aria-label={expandedTrabajando[0] ? "Cerrar sección" : "Desplegar más contenido"}
                   >
-                    {expandedTrabajando[0] ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m18 15l-6-6l-6 6" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m6 9l6 6l6-6" />
-                      </svg>
-                    )}
+                    <Image
+                      src={expandedTrabajando[0] ? "/images/chevron/experiencias-abierto.svg" : "/images/chevron/experiencias-cerrado.svg"}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
                   </button>
                 </div>
               </AnimatedItem>
@@ -227,15 +225,13 @@ export default function Home() {
                     aria-expanded={expandedTrabajando[1]}
                     aria-label={expandedTrabajando[1] ? "Cerrar sección" : "Desplegar más contenido"}
                   >
-                    {expandedTrabajando[1] ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m18 15l-6-6l-6 6" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m6 9l6 6l6-6" />
-                      </svg>
-                    )}
+                    <Image
+                      src={expandedTrabajando[1] ? "/images/chevron/proceso-abierto.svg" : "/images/chevron/proceso-cerrado.svg"}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
                   </button>
                 </div>
               </AnimatedItem>
@@ -283,15 +279,13 @@ export default function Home() {
                     aria-expanded={expandedTrabajando[2]}
                     aria-label={expandedTrabajando[2] ? "Cerrar sección" : "Desplegar más contenido"}
                   >
-                    {expandedTrabajando[2] ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m18 15l-6-6l-6 6" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                        <path fill="none" d="m6 9l6 6l6-6" />
-                      </svg>
-                    )}
+                    <Image
+                      src={expandedTrabajando[2] ? "/images/chevron/coaching-abierto.svg" : "/images/chevron/coaching-cerrado.svg"}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
                   </button>
                 </div>
               </AnimatedItem>
@@ -318,39 +312,60 @@ export default function Home() {
           <h2 className="text-yellow-600 text-3xl sm:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-8 md:mb-12">
             WE HUMAN LAB
           </h2>
-          <p className="text-black text-sm font-light font-poppins leading-7 max-w-[504px] mx-auto text-center mb-8 md:mb-10">
-            La IA puede hacer arte, puede escribir &quot;al estilo&quot; de Borges y generar canciones, pero nunca será Van Gogh o Frida, nunca escribirá &quot;Las ruinas circulares&quot; o &quot;Funes el memorioso&quot;, y no podrá crear una ópera como Aida o &quot;My Universe&quot; como BTS y Coldplay pudieron hacerlo.
-            <br /><br />
-            A medida que la IA generativa asume muchas tareas cotidianas y entendemos que el mundo del trabajo está cambiando por completo debido a los avances de la tecnología, potenciar, cultivar y entrenar las competencias que nos hacen humanos será nuestro verdadero diferencial.
-          </p>
-          <AnimatePresence>
-            {weHumanLabExpanded && (
+          <AnimatePresence mode="wait">
+            {!weHumanLabExpanded ? (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
+                key="collapsed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="overflow-hidden mb-8 md:mb-10"
+                className="mb-8 md:mb-10"
               >
-                <div className="text-black text-sm font-light font-poppins leading-7 max-w-[504px] mx-auto text-center space-y-4">
-                  <p>
-                    Al menos por el momento, hay cosas que la IA no puede hacer: no puede sentir, crear de la nada ni tener pensamiento crítico y ético. No puede liderar equipos diversos, no puede diagnosticar problemas de la nada, no puede empatizar (realmente empatizar) ni tener compasión. No siente curiosidad, ni tampoco miedo (y sabemos que el miedo es un gran motor del desarrollo). Y claro, tampoco puede experimentar el amor.
-                  </p>
-                  <p>
-                    Estas son cosas puramente humanas.
-                  </p>
-                  <p>
-                    Y las tenemos que llevar a nuestra máxima expresión.
-                  </p>
-                  <p>
-                    La IA asume de manera genial tareas, analiza datos masivos y encuentra patrones de una manera que los humanos no podemos lograr. Pero cuando los problemas son complejos (y espinosos), demandan pensamiento crítico, creatividad genuina y trabajo colaborativo. Vivimos en un mundo demasiado complejo como para que pocas personas tengan las respuestas y por eso la colaboración seguirá siendo (lo fue desde el inicio de la humanidad, como detectó Darwin) la herramienta más valiosa de supervivencia.
-                  </p>
-                  <p>
-                    La transformación que estamos atravesando es de la economía del conocimiento a la economía relacional. Y requerirá que todos podamos desarrollar esas capacidades de vincularnos en la diversidad y en entornos complejos y cambiantes, en los que podamos expresar, debatir y cooperar sobre pensamientos divergentes con empatía y escucha genuina, con colaboración y agilidad emocional y social.
-                  </p>
-                  <p>
-                    En este proyecto personal me propongo estudiar, analizar, compartir, divulgar y contribuir a entrenar estas competencias.
-                  </p>
+                <p className="text-black text-sm font-light font-poppins leading-7 max-w-[504px] mx-auto text-center">
+                  La IA puede hacer arte, puede escribir &quot;al estilo&quot; de Borges y generar canciones, pero nunca será Van Gogh o Frida, nunca escribirá &quot;Las ruinas circulares&quot; o &quot;Funes el memorioso&quot;, y no podrá crear una ópera como Aida o &quot;My Universe&quot; como BTS y Coldplay pudieron hacerlo.
+                  <br /><br />
+                  A medida que la IA generativa asume muchas tareas cotidianas y entendemos que el mundo del trabajo está cambiando por completo debido a los avances de la tecnología, potenciar, cultivar y entrenar las competencias que nos hacen humanos será nuestro verdadero diferencial.
+                </p>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="expanded"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="mb-8 md:mb-10 max-w-[1000px] mx-auto"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+                  <div className="text-black text-sm font-light font-poppins leading-7 space-y-4 text-center md:text-left">
+                    <p>
+                      La IA puede hacer arte, puede escribir &quot;al estilo&quot; de Borges y generar canciones, pero nunca será Van Gogh o Frida, nunca escribirá &quot;Las ruinas circulares&quot; o &quot;Funes el memorioso&quot;, y no podrá crear una ópera como Aida o &quot;My Universe&quot; como BTS y Coldplay pudieron hacerlo.
+                    </p>
+                    <p>
+                      A medida que la IA generativa asume muchas tareas cotidianas y entendemos que el mundo del trabajo está cambiando por completo debido a los avances de la tecnología, potenciar, cultivar y entrenar las competencias que nos hacen humanos será nuestro verdadero diferencial.
+                    </p>
+                    <p>
+                      Al menos por el momento, hay cosas que la IA no puede hacer: no puede sentir, crear de la nada ni tener pensamiento crítico y ético. No puede liderar equipos diversos, no puede diagnosticar problemas de la nada, no puede empatizar (realmente empatizar) ni tener compasión. No siente curiosidad, ni tampoco miedo (y sabemos que el miedo es un gran motor del desarrollo). Y claro, tampoco puede experimentar el amor.
+                    </p>
+                    <p>
+                      Estas son cosas puramente humanas.
+                    </p>
+                  </div>
+                  <div className="text-black text-sm font-light font-poppins leading-7 space-y-4 text-center md:text-left">
+                    <p>
+                      Y las tenemos que llevar a nuestra máxima expresión.
+                    </p>
+                    <p>
+                      La IA asume de manera genial tareas, analiza datos masivos y encuentra patrones de una manera que los humanos no podemos lograr. Pero cuando los problemas son complejos (y espinosos), demandan pensamiento crítico, creatividad genuina y trabajo colaborativo. Vivimos en un mundo demasiado complejo como para que pocas personas tengan las respuestas y por eso la colaboración seguirá siendo (lo fue desde el inicio de la humanidad, como detectó Darwin) la herramienta más valiosa de supervivencia.
+                    </p>
+                    <p>
+                      La transformación que estamos atravesando es de la economía del conocimiento a la economía relacional. Y requerirá que todos podamos desarrollar esas capacidades de vincularnos en la diversidad y en entornos complejos y cambiantes, en los que podamos expresar, debatir y cooperar sobre pensamientos divergentes con empatía y escucha genuina, con colaboración y agilidad emocional y social.
+                    </p>
+                    <p>
+                      En este proyecto personal me propongo estudiar, analizar, compartir, divulgar y contribuir a entrenar estas competencias.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -433,7 +448,7 @@ export default function Home() {
 
       {/* ¿Qué te apasiona? / Mi libro */}
       <section id="libro" className="relative overflow-hidden bg-[#FFF9FA] py-8 sm:py-12 lg:py-0">
-        <div className="mx-auto max-w-6xl flex flex-col lg:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#FFF9FA]">
+        <div className="mx-auto max-w-7xl flex flex-col lg:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#FFF9FA]">
           {/* Imagen del libro */}
           <AnimatedSection className="w-full aspect-[490/583] lg:w-[380px] xl:w-[490px] lg:flex-shrink-0 lg:aspect-[490/583] relative bg-[#FFF9FA]" direction="right" delay={0.1}>
             <Image
@@ -449,7 +464,7 @@ export default function Home() {
           <AnimatedSection className="relative flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center min-h-0 px-4 sm:px-6 lg:px-8 xl:px-10 py-8 sm:py-10 lg:py-12 bg-[#FFF9FA]" direction="left" delay={0.15}>
             <div className="absolute inset-0 bg-[#FFF9FA] pointer-events-none" aria-hidden />
             <div className="relative z-10 flex flex-nowrap items-center justify-center lg:justify-center gap-6 lg:gap-8 w-full">
-              <div className="flex flex-col justify-center w-full min-w-0 max-w-[480px]">
+              <div className="flex flex-col justify-center w-full min-w-0 max-w-[580px]">
                 <h2 className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
                   ¿Qué te apasiona?
                 </h2>
@@ -764,7 +779,7 @@ export default function Home() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
             {/* Imagen izquierda */}
-            <AnimatedSection className="relative w-full h-full min-h-[750px]" direction="right" delay={0.05}>
+            <AnimatedSection className="relative w-full h-full min-h-[850px]" direction="right" delay={0.05}>
               <Image
                 src="/images/Gastro-Session-4-28 1.png"
                 alt="Contacto"
