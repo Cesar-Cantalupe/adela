@@ -290,14 +290,14 @@ export function Hero() {
         >
           Cavia
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease }}
-          className="absolute right-[180px] xl:right-[150px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
-        >
-          Sáenz
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.2, ease }}
+  className="absolute right-[180px] xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
+>
+  Sáenz
+</motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
