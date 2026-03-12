@@ -273,16 +273,15 @@ export function Hero() {
       </div>
 
       {/* Desktop: layout original con posiciones fijas */}
-      <div className="relative hidden lg:block w-full max-w-[1474px] min-h-[746px] h-[746px] mx-auto bg-[#F9F1EF]">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease }}
-          className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
-          style={{ width: "1265.96px" }}
-        >
-          Adela
-        </motion.div>
+     <div className="relative hidden lg:block w-full max-w-[1474px] min-h-[746px] h-[746px] mx-auto bg-[#F9F1EF] overflow-hidden">
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.2, ease }}
+  className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
+>
+  Adela
+</motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -291,14 +290,14 @@ export function Hero() {
         >
           Cavia
         </motion.div>
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.2, ease }}
-  className="absolute right-[120px] xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
->
-  Sáenz
-</motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease }}
+          className="absolute right-[180px] xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
+        >
+          Sáenz
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
