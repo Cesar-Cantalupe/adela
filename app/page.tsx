@@ -691,53 +691,52 @@ export default function Home() {
           >
             {/* Desktop expandido */}
             <div className="hidden md:block">
-              <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-14 xl:gap-x-16 items-start">
-                <div className="max-w-[470px]">
-                  <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-8">
+              <div className="grid md:grid-cols-[1fr_0.95fr] gap-x-14 xl:gap-x-20 items-start">
+                <div className="max-w-[560px]">
+                  <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-10">
                     <p>
                       Como me moviliza mucho la desigualdad, he diseñado,
-                      implementado y medido el impacto individual y comunitario de
-                      programas de entrenamiento socioemocional con referentes y
-                      líderes sociales de barrios populares, especialmente en la
-                      ciudad de Buenos Aires y el conurbano, pero también en
-                      Córdoba y Santiago del Estero. Los programas buscan acelerar
-                      la transformación social contribuyendo a la formación de
-                      liderazgos sociales.
-                    </p>
-
-                    <p>
+                      implementado y medido el impacto individual y comunitario
+                      de programas de entrenamiento socioemocional con
+                      referentes y líderes sociales de barrios populares,
+                      especialmente en la ciudad de Buenos Aires y el conurbano,
+                      pero también en Córdoba y Santiago del Estero. Los
+                      programas buscan acelerar la transformación social
+                      contribuyendo a la formación de liderazgos sociales.
+                      <br />
                       Sabemos que las competencias emocionales y sociales se
                       pueden entrenar y hacerlo con personas que tienen tanto
                       impacto social comunitario y que, además, muchas de ellas
                       han nacido y viven en entornos de vulneración de derechos,
-                      es no solo un desafío personal, sino también un proyecto que
-                      me llena de ilusión y de esperanza.
+                      es no solo un desafío personal, sino también un proyecto
+                      que me llena de ilusión y de esperanza.
                     </p>
 
                     <p>
                       Los resultados alcanzados en estos programas, por los que
-                      han pasado más de 400 referentes y líderes comunitarios, son
-                      alucinantes y muy positivos y así lo refieren ellos/as
-                      mismos/as ya que estos proyectos se miden y evalúan (y son
-                      parte de mi tesis de doctorado en Psicología social).
+                      han pasado más de 400 referentes y líderes comunitarios,
+                      son alucinantes y muy positivos y así lo refieren
+                      ellos/as mismos/as ya que estos proyectos se miden y
+                      evalúan (y son parte de mi tesis de doctorado en
+                      Psicología social).
                     </p>
 
                     <p>
                       Algunos de los programas que hemos implementado, como el
-                      programa &quot;Mujeres al frente&quot; realizado en Ciudad de
-                      Buenos Aires y que lleva ya 8 ediciones o el programa
+                      programa &quot;Mujeres al frente&quot; realizado en Ciudad
+                      de Buenos Aires y que lleva ya 8 ediciones o el programa
                       &quot;Con voz popular&quot; que cumplió su 5ta edición u
-                      otros programas como el realizado con espacios comunitarios
-                      del Conurbano (Quilmes, Florencio Varela, La Matanza, José C
-                      Paz, Polvorines, Alto San Isidro) han mostrado resultados
-                      preciosos que se condensan en algunas de las palabras que
-                      los mismos referentes nos dicen:
+                      otros programas como el realizado con espacios
+                      comunitarios del Conurbano (Quilmes, Florencio Varela, La
+                      Matanza, José C Paz, Polvorines, Alto San Isidro) han
+                      mostrado resultados preciosos que se condensan en algunas
+                      de las palabras que los mismos referentes nos dicen:
                     </p>
                   </div>
                 </div>
 
-                <div className="max-w-[470px]">
-                  <div className="w-32 h-32 relative mb-8 mx-auto">
+                <div className="max-w-[540px] md:-mt-[112px]">
+                  <div className="w-32 h-32 relative mb-10 mx-auto">
                     <Image
                       src="/images/19 1.png"
                       alt=""
@@ -755,44 +754,43 @@ export default function Home() {
                       reconocer mis fortalezas y desde allí abrirme al
                       aprendizaje...&quot; – referente Barrio Villa Itatí,
                       Quilmes.
-                    </p>
-
-                    <p className="italic">
+                      <br />
+                      <br />
                       &quot;En nuestros encuentros empecé a conocer mi
-                      interioridad, a conectarme con mi debilidad y a validarla, a
-                      hablar de lo que nos frustra y de qué podemos hacer para
-                      gestionar esa frustración. Y dejarme finalmente habitar por
-                      el amor y por esa sensación de sentirme parte de algo más
-                      grande&quot; – referenta social Barrio Almafuerte, La
+                      interioridad, a conectarme con mi debilidad y a validarla,
+                      a hablar de lo que nos frustra y de qué podemos hacer para
+                      gestionar esa frustración. Y dejarme finalmente habitar
+                      por el amor y por esa sensación de sentirme parte de algo
+                      más grande&quot; – referenta social Barrio Almafuerte, La
                       Matanza.
                     </p>
 
                     <p>
                       La idea es que, desde ese aprendizaje, generado
                       colaborativamente, los referentes y educadores sociales
-                      puedan hacerse cargo del poder que tienen y que, poniendo en
-                      valor su muy rico universo emocional, éste se convierta en
-                      su motor para la acción.
+                      puedan hacerse cargo del poder que tienen y que, poniendo
+                      en valor su muy rico universo emocional, éste se convierta
+                      en su motor para la acción.
                     </p>
                   </div>
 
                   <button
                     type="button"
                     onClick={() => setLideresExpanded(false)}
-                    className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-10"
+                    className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-8"
                   >
                     Leer menos
                   </button>
                 </div>
               </div>
 
-              <div className="mt-10 relative w-full max-w-[980px] mx-auto aspect-[980/420]">
+              <div className="mt-24 relative w-full max-w-[1080px] mx-auto aspect-[1080/520]">
                 <Image
                   src="/images/Adela Saenz Cavia9 1.png"
                   alt=""
                   fill
                   className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 980px"
+                  sizes="(max-width: 768px) 100vw, 1080px"
                   unoptimized
                 />
               </div>
@@ -831,16 +829,16 @@ export default function Home() {
                     liderazgos sociales.
                   </p>
                   <p>
-                    Sabemos que las competencias emocionales y sociales se pueden
-                    entrenar y hacerlo con personas que tienen tanto impacto
-                    social comunitario y que, además, muchas de ellas han nacido
-                    y viven en entornos de vulneración de derechos, es no solo un
-                    desafío personal, sino también un proyecto que me llena de
-                    ilusión y de esperanza.
+                    Sabemos que las competencias emocionales y sociales se
+                    pueden entrenar y hacerlo con personas que tienen tanto
+                    impacto social comunitario y que, además, muchas de ellas
+                    han nacido y viven en entornos de vulneración de derechos,
+                    es no solo un desafío personal, sino también un proyecto que
+                    me llena de ilusión y de esperanza.
                   </p>
                   <p>
-                    Los resultados alcanzados en estos programas, por los que han
-                    pasado más de 400 referentes y líderes comunitarios, son
+                    Los resultados alcanzados en estos programas, por los que
+                    han pasado más de 400 referentes y líderes comunitarios, son
                     alucinantes y muy positivos y así lo refieren ellos/as
                     mismos/as ya que estos proyectos se miden y evalúan (y son
                     parte de mi tesis de doctorado en Psicología social).
@@ -853,8 +851,8 @@ export default function Home() {
                     otros programas como el realizado con espacios comunitarios
                     del Conurbano (Quilmes, Florencio Varela, La Matanza, José C
                     Paz, Polvorines, Alto San Isidro) han mostrado resultados
-                    preciosos que se condensan en algunas de las palabras que los
-                    mismos referentes nos dicen:
+                    preciosos que se condensan en algunas de las palabras que
+                    los mismos referentes nos dicen:
                   </p>
                   <p className="italic">
                     &quot;En este programa aprendí a desnudar mi alma. Fue
@@ -877,8 +875,8 @@ export default function Home() {
                     La idea es que, desde ese aprendizaje, generado
                     colaborativamente, los referentes y educadores sociales
                     puedan hacerse cargo del poder que tienen y que, poniendo en
-                    valor su muy rico universo emocional, éste se convierta en su
-                    motor para la acción.
+                    valor su muy rico universo emocional, éste se convierta en
+                    su motor para la acción.
                   </p>
                 </div>
               </div>
