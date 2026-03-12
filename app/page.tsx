@@ -1197,7 +1197,7 @@ useEffect(() => {
   <div className="max-w-[1474px] mx-auto px-6">
     <AnimatedSection className="mb-6 text-center" delay={0.08}>
       <p className="text-stone-700 text-xl md:text-2xl font-swanky font-normal leading-tight">
-        Organizaciones con las que trabajé
+        Clientes
       </p>
     </AnimatedSection>
 
