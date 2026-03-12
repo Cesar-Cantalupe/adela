@@ -6,7 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Sin dominio verificado, Resend solo permite enviar a tu propio email.
 // Para enviar a otros (ej. adelacavia@gmail.com): verificar dominio en resend.com/domains
 // y cambiar `from` a un email de ese dominio (ej. contacto@tudominio.com).
-const DESTINATION_EMAIL = process.env.CONTACT_DESTINATION_EMAIL ?? "adelacavia@gmail.com";
+// const DESTINATION_EMAIL = process.env.CONTACT_DESTINATION_EMAIL ?? "adelacavia@gmail.com";
+const DESTINATION_EMAIL = "ulises@cantalupe.com.ar";
+
 
 export async function POST(request: Request) {
   try {
