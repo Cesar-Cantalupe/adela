@@ -43,6 +43,20 @@ const scrollToGallery = (index: number) => {
   { src: "/images/logos/cencosud.png", alt: "Cencosud" },
   { src: "/images/logos/deloitte.png", alt: "Deloitte" },
   { src: "/images/logos/elea.png", alt: "Elea" },
+  { src: "/images/logos/cac_recolor.png", alt: "Cac" },
+  { src: "/images/logos/endeavor.png", alt: "Endeavor" },
+  { src: "/images/logos/hsbc.png", alt: "HSBC" },
+  { src: "/images/logos/icba.png", alt: "Icba" },
+  { src: "/images/logos/ksfilms_recolor.png", alt: "Ksfilms" },
+  { src: "/images/logos/lanacion.png", alt: "La Nación" },
+  { src: "/images/logos/mundo sano.png", alt: "Mundo Sano" },
+  { src: "/images/logos/nextel_recolor.png", alt: "Nextel" },
+  { src: "/images/logos/quilmes_recolor.png", alt: "Quilmes" },
+  { src: "/images/logos/san_miguel_recolor.png", alt: "San Miguel" },
+  { src: "/images/logos/sanofi_recolor.png", alt: "Sanofi" },
+  { src: "/images/logos/unilever_recolor.png", alt: "Unilever" },
+  { src: "/images/logos/ceva_recolor.png", alt: "ceva" },
+  { src: "/images/logos/insud.png", alt: "insud" },
 ];
 
   
