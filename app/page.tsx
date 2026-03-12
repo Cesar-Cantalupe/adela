@@ -26,7 +26,7 @@ export default function Home() {
   const [contactSuccess, setContactSuccess] = useState(false);
   const [contactError, setContactError] = useState<string | null>(null);
 
-  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+/*  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setContactError(null);
     setContactSuccess(false);
@@ -55,7 +55,49 @@ export default function Home() {
     } finally {
       setContactLoading(false);
     }
-  };
+  }; */
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setContactError(null);
+  setContactSuccess(false);
+  setContactLoading(true);
+
+  try {
+    const object = {
+        access_key: "TU_ACCESS_KEY_DE_WEB3FORMS",
+        subject: "Nuevo mensaje desde la web de Adela",
+        name: contactNombre.trim(),
+        email: contactEmail.trim(),
+        message: contactMensaje.trim(),
+        botcheck: "",
+      };
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(object),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      setContactError(data.message || "Error al enviar. Intentá de nuevo.");
+      return;
+    }
+
+    setContactSuccess(true);
+    setContactNombre("");
+    setContactEmail("");
+    setContactMensaje("");
+  } catch {
+    setContactError("Error de conexión. Intentá de nuevo.");
+  } finally {
+    setContactLoading(false);
+  }
+};
 
   useEffect(() => {
     if (aseVideoPlaying && aseVideoRef.current) {
@@ -1048,6 +1090,14 @@ export default function Home() {
                     required
                     disabled={contactLoading}
                     className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-black text-base font-light font-poppins leading-7 placeholder:text-black/40 disabled:opacity-60"
+                  />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
                   />
                 </div>
                 <div>
