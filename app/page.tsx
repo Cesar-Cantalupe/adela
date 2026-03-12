@@ -97,7 +97,7 @@ export default function Home() {
                   Sobre mí
                 </h2>
                 <p className="text-black text-sm font-light font-poppins leading-7 max-w-[475px] flex-1">
-                  Trabaajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
+                  Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
                 </p>
                 <button
                   type="button"
