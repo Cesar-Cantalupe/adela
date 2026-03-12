@@ -149,7 +149,7 @@ useEffect(() => {
 
           {!sobreMiExpanded ? (
             /* Vista colapsada: texto izquierda, imagen derecha */
-            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-10 px-6 py-10 lg:px-[92px] xl:px-[130px] md:py-14 xl:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[130px] md:py-16">
               <AnimatedSection className="flex flex-col min-h-0" direction="right" delay={0.1}>
                 <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
                   Sobre mí
@@ -176,7 +176,7 @@ useEffect(() => {
             </div>
           ) : (
             /* Vista expandida: título, 2 columnas de texto, Leer menos, imagen abajo */
-            <div className="px-6 py-10 lg:px-[92px] xl:px-[181px] md:py-14 xl:py-16 flex flex-col">
+            <div className="px-6 py-12 md:px-[181px] md:py-16 flex flex-col">
               <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
                 Sobre mí
               </h2>
@@ -230,7 +230,7 @@ useEffect(() => {
       </section>
 
       {/* ¿En qué estoy trabajando? */}
-      <section id="trabajando" className="relative py-16 xl:py-24 bg-white">
+      <section id="trabajando" className="relative py-24 bg-white">
         <div className="max-w-[1474px] mx-auto px-6">
           {/* Imagen decorativa + título centrados */}
           <AnimatedSection className="flex flex-col items-center text-center mb-12" delay={0.1}>
@@ -419,7 +419,7 @@ useEffect(() => {
 
       {/* We Human Lab */}
       <section id="we-human-lab" className="relative overflow-hidden bg-[#E6CC76]/25">
-        <AnimatedSection className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-14 lg:py-16 xl:py-24 text-center" delay={0.1}>
+        <AnimatedSection className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:py-24 text-center" delay={0.1}>
           <div className="w-20 h-20 sm:w-24 sm:h-24 relative mx-auto mb-6 md:mb-8">
             <Image
               src="/images/We Human 1.png"
@@ -505,7 +505,7 @@ useEffect(() => {
 
       {/* Red Communia */}
       <section id="red-communia" className="relative overflow-hidden bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-14 lg:py-16 xl:py-24">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-8 lg:gap-12 mb-8 lg:mb-12">
             <AnimatedSection className="order-2 lg:order-1" direction="right" delay={0.1}>
               <h2 className="text-yellow-600 text-3xl sm:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
@@ -1075,9 +1075,9 @@ useEffect(() => {
       </section>
 
       {/* Aprendizaje socioemocional */}
-      <section id="ase" className="relative w-full bg-white overflow-hidden lg:min-h-[620px] xl:min-h-[746px]">
+      <section id="ase" className="relative w-full min-h-[746px] bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-30 bg-orange-300/25 pointer-events-none" aria-hidden />
-        <div className="relative max-w-[1474px] mx-auto px-6 py-10 md:py-14 lg:px-[92px] xl:px-[114px] lg:pt-[96px] xl:pt-[132px] lg:pb-12 xl:pb-16">
+        <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[114px] lg:pt-[132px] lg:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12 xl:gap-[188px] items-start">
             {/* Columna izquierda */}
             <AnimatedSection className="flex flex-col min-w-0" direction="right" delay={0.1}>
@@ -1251,7 +1251,7 @@ useEffect(() => {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
             {/* Imagen izquierda */}
-            <AnimatedSection className="relative w-full h-full min-h-[520px] lg:min-h-[620px] xl:min-h-[850px]" direction="right" delay={0.05}>
+            <AnimatedSection className="relative w-full h-full min-h-[850px]" direction="right" delay={0.05}>
               <Image
                 src="/images/Gastro-Session-4-28 1.png"
                 alt="Contacto"
@@ -1261,7 +1261,7 @@ useEffect(() => {
               />
             </AnimatedSection>
             {/* Columna derecha: título + form */}
-            <AnimatedSection className="flex flex-col items-center justify-center px-6 md:px-10 lg:px-12 xl:px-16 py-10 lg:py-12 xl:py-16" direction="left" delay={0.15}>
+            <AnimatedSection className="flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 py-12 lg:py-16" direction="left" delay={0.15}>
               <div className="flex items-start gap-4 mb-8">
                 <h2 className="text-[#C58770] text-3xl font-normal font-swanky leading-[96px] tracking-wider">
                   ¡Enviame un mensaje!
