@@ -752,15 +752,13 @@ export default function Home() {
 
                 <div className="text-stone-900 text-sm font-light font-poppins leading-7">
                   <div className="space-y-10">
-                    <p className="italic">
+                    <p >
                       &quot;En este programa aprendí a desnudar mi alma. Fue difícil,
                       pero me permitió aceptarme como soy, reconocer, además de mis
                       partes oscuras, también mi lado luminoso, reconocer mis
                       fortalezas y desde allí abrirme al aprendizaje...&quot; –
                       referente Barrio Villa Itatí, Quilmes.
-                    </p>
 
-                    <p className="italic">
                       &quot;En nuestros encuentros empecé a conocer mi interioridad,
                       a conectarme con mi debilidad y a validarla, a hablar de lo
                       que nos frustra y de qué podemos hacer para gestionar esa
