@@ -133,7 +133,7 @@ export default function Home() {
 
           {!sobreMiExpanded ? (
             /* Vista colapsada: texto izquierda, imagen derecha */
-            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[181px] md:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[130px] md:py-16">
               <AnimatedSection className="flex flex-col min-h-0" direction="right" delay={0.1}>
                 <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
                   Sobre mí
@@ -644,7 +644,7 @@ export default function Home() {
               />
             </div>
 
-            <p className="text-stone-900 text-sm font-light font-poppins leading-7 max-w-[475px] mb-8">
+            <p className="text-stone-900 text-sm font-light font-poppins leading-7 max-w-[478px] mb-8">
               Como me moviliza mucho la desigualdad, he diseñado,
               implementado y medido el impacto individual y comunitario de
               programas de entrenamiento socioemocional con referentes y
