@@ -638,63 +638,63 @@ useEffect(() => {
     <AnimatedSection delay={0.08} className="space-y-8 md:space-y-10">
       <AnimatePresence mode="wait" initial={false}>
         {!lideresExpanded ? (
-          <motion.div
-            key="lideres-collapsed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-          >
-            <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 md:mb-10 max-w-[656px]">
-              MI TRABAJO CON LÍDERES SOCIALES
-            </h2>
+      <motion.div
+  key="lideres-collapsed"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.22, ease: "easeOut" }}
+>
+  <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 md:mb-10 max-w-[656px]">
+    MI TRABAJO CON LÍDERES SOCIALES
+  </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12 xl:gap-[188px] items-start">
-              <div className="flex flex-col min-w-0">
-                <div className="w-32 h-32 relative flex-shrink-0 mb-8">
-                  <Image
-                    src="/images/19 1.png"
-                    alt=""
-                    width={128}
-                    height={128}
-                    className="w-32 h-32 object-cover"
-                  />
-                </div>
+  <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10 xl:gap-14 items-start">
+    <div className="flex flex-col min-w-0">
+      <div className="w-32 h-32 relative flex-shrink-0 mb-8">
+        <Image
+          src="/images/19 1.png"
+          alt=""
+          width={128}
+          height={128}
+          className="w-32 h-32 object-cover"
+        />
+      </div>
 
-                <p className="max-w-[600px] text-stone-900 text-sm font-light font-poppins leading-7 mb-8">
-                  Como me moviliza mucho la desigualdad, he diseñado,
-                  implementado y medido el impacto individual y comunitario de
-                  programas de entrenamiento socioemocional con referentes y
-                  líderes sociales de barrios populares, especialmente en la
-                  ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
-                  Santiago del Estero. Los programas buscan acelerar la
-                  transformación social contribuyendo a la formación de
-                  liderazgos sociales.
-                </p>
+      <p className="max-w-[600px] text-stone-900 text-sm font-light font-poppins leading-7 mb-8">
+        Como me moviliza mucho la desigualdad, he diseñado,
+        implementado y medido el impacto individual y comunitario de
+        programas de entrenamiento socioemocional con referentes y
+        líderes sociales de barrios populares, especialmente en la
+        ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
+        Santiago del Estero. Los programas buscan acelerar la
+        transformación social contribuyendo a la formación de
+        liderazgos sociales.
+      </p>
 
-                <button
-                  type="button"
-                  onClick={() => setLideresExpanded(true)}
-                  className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition"
-                >
-                  Leer más
-                </button>
-              </div>
+      <button
+        type="button"
+        onClick={() => setLideresExpanded(true)}
+        className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition"
+      >
+        Leer más
+      </button>
+    </div>
 
-              <div className="relative w-full mt-8 lg:mt-0">
-                <div className="relative w-full aspect-[720/783] max-w-[560px] lg:ml-auto">
-                  <Image
-                    src="/images/Adela Saenz Cavia9 1.png"
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 560px"
-                    unoptimized
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
+    <div className="relative w-full mt-8 lg:mt-0">
+      <div className="relative w-full aspect-[760/820] max-w-[760px] lg:ml-auto">
+        <Image
+          src="/images/Adela Saenz Cavia9 1.png"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 760px"
+          unoptimized
+        />
+      </div>
+    </div>
+  </div>
+</motion.div>
         ) : (
           <motion.div
             key="lideres-expanded"
