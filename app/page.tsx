@@ -619,7 +619,7 @@ export default function Home() {
 
       {/* Mi trabajo con líderes sociales */}
 <section className="relative py-24 bg-white overflow-hidden">
-  <div className="max-w-[1474px] mx-auto relative px-6 md:px-[96px]">
+  <div className="max-w-[1474px] mx-auto relative px-6 md:px-[181px]">
     {/* Título fijo: no se remonta al abrir/cerrar */}
     <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 md:mb-10 max-w-[656px]">
       MI TRABAJO CON LÍDERES SOCIALES
@@ -630,7 +630,7 @@ export default function Home() {
         {/* Vista colapsada desktop/mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-start md:gap-[152px]">
           <AnimatedSection
-            className="flex flex-col max-w-[478px]"
+            className="flex flex-col max-w-[475px]"
             direction="right"
             delay={0.1}
           >
@@ -644,7 +644,7 @@ export default function Home() {
               />
             </div>
 
-            <p className="text-stone-900 text-sm font-light font-poppins leading-7 max-w-[478px] mb-8">
+            <p className="text-stone-900 text-sm font-light font-poppins leading-7 max-w-[475px] mb-8">
               Como me moviliza mucho la desigualdad, he diseñado,
               implementado y medido el impacto individual y comunitario de
               programas de entrenamiento socioemocional con referentes y
