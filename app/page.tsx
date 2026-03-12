@@ -634,229 +634,132 @@ useEffect(() => {
 
 {/* Mi trabajo con líderes sociales */}
 <section className="relative py-24 bg-white overflow-hidden">
-<div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[92px]">
-    <AnimatedSection delay={0.08} className="space-y-8 md:space-y-10">
-      <AnimatePresence mode="wait" initial={false}>
-        {!lideresExpanded ? (
-                  <motion.div
-              key="lideres-collapsed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-            >
-              <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 md:mb-10 max-w-[656px]">
+  <div className="relative max-w-[1474px] mx-auto">
+    <AnimatePresence mode="wait" initial={false}>
+      {!lideresExpanded ? (
+        <motion.div
+          key="lideres-collapsed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="px-6 py-12 md:py-16 lg:px-[92px]"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-[0.74fr_1.26fr] lg:gap-8 xl:gap-12 items-start">
+            {/* Columna izquierda */}
+            <div className="flex flex-col min-w-0 max-w-[620px]">
+              <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-10 max-w-[656px]">
                 MI TRABAJO CON LÍDERES SOCIALES
               </h2>
-            
-              <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] lg:gap-6 xl:gap-8 items-start">
-                <div className="flex flex-col min-w-0">
-                  <div className="w-32 h-32 relative flex-shrink-0 mb-8">
-                    <Image
-                      src="/images/19 1.png"
-                      alt=""
-                      width={128}
-                      height={128}
-                      className="w-32 h-32 object-cover"
-                    />
-                  </div>
-            
-                  <p className="max-w-[600px] text-stone-900 text-sm font-light font-poppins leading-7 mb-8">
-                    Como me moviliza mucho la desigualdad, he diseñado,
-                    implementado y medido el impacto individual y comunitario de
-                    programas de entrenamiento socioemocional con referentes y
-                    líderes sociales de barrios populares, especialmente en la
-                    ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
-                    Santiago del Estero. Los programas buscan acelerar la
-                    transformación social contribuyendo a la formación de
-                    liderazgos sociales.
-                  </p>
-            
-                  <button
-                    type="button"
-                    onClick={() => setLideresExpanded(true)}
-                    className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition"
-                  >
-                    Leer más
-                  </button>
-                </div>
-            
-                <div className="relative w-full mt-8 lg:mt-0">
-                  <div className="relative w-full aspect-[860/900] max-w-[860px] lg:ml-auto">
-                    <Image
-                      src="/images/Adela Saenz Cavia9 1.png"
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 860px"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-        ) : (
-          <motion.div
-            key="lideres-expanded"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-          >
-            {/* Desktop expandido */}
-            <div className="hidden md:block">
-              {/* Fila 1: título + árbol alineados arriba */}
-              <div className="grid md:grid-cols-[minmax(0,560px)_minmax(0,470px)] gap-x-16 xl:gap-x-24 items-start mb-8">
-                <div>
-                  <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest max-w-[656px]">
-                    MI TRABAJO CON LÍDERES SOCIALES
-                  </h2>
-                </div>
 
-                <div className="flex justify-center md:justify-start">
-                  <div className="w-24 h-24 relative">
-                    <Image
-                      src="/images/19 1.png"
-                      alt=""
-                      width={96}
-                      height={96}
-                      className="w-24 h-24 object-contain"
-                    />
-                  </div>
-                </div>
+              <div className="w-32 h-32 relative flex-shrink-0 mb-8">
+                <Image
+                  src="/images/19 1.png"
+                  alt=""
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 object-contain"
+                />
               </div>
 
-              {/* Fila 2: las dos columnas de texto arrancan a la misma altura */}
-              <div className="grid md:grid-cols-[minmax(0,560px)_minmax(0,470px)] gap-x-16 xl:gap-x-24 items-start">
-                <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-10">
-                  <p>
-                    Como me moviliza mucho la desigualdad, he diseñado,
-                    implementado y medido el impacto individual y comunitario de
-                    programas de entrenamiento socioemocional con referentes y
-                    líderes sociales de barrios populares, especialmente en la
-                    ciudad de Buenos Aires y el conurbano, pero también en Córdoba
-                    y Santiago del Estero. Los programas buscan acelerar la
-                    transformación social contribuyendo a la formación de
-                    liderazgos sociales. Sabemos que las competencias emocionales y
-                    sociales se pueden entrenar y hacerlo con personas que tienen
-                    tanto impacto social comunitario y que, además, muchas de ellas
-                    han nacido y viven en entornos de vulneración de derechos, es
-                    no solo un desafío personal, sino también un proyecto que me
-                    llena de ilusión y de esperanza.
-                  </p>
+              <p className="text-stone-900 text-sm font-light font-poppins leading-7 max-w-[620px] mb-8">
+                Como me moviliza mucho la desigualdad, he diseñado,
+                implementado y medido el impacto individual y comunitario de
+                programas de entrenamiento socioemocional con referentes y
+                líderes sociales de barrios populares, especialmente en la
+                ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
+                Santiago del Estero. Los programas buscan acelerar la
+                transformación social contribuyendo a la formación de
+                liderazgos sociales.
+              </p>
 
-                  <p>
-                    Los resultados alcanzados en estos programas, por los que han
-                    pasado más de 400 referentes y líderes comunitarios, son
-                    alucinantes y muy positivos y así lo refieren ellos/as
-                    mismos/as ya que estos proyectos se miden y evalúan (y son
-                    parte de mi tesis de doctorado en Psicología social).
-                  </p>
+              <button
+                type="button"
+                onClick={() => setLideresExpanded(true)}
+                className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition"
+              >
+                Leer más
+              </button>
+            </div>
 
-                  <p>
-                    Algunos de los programas que hemos implementado, como el
-                    programa &quot;Mujeres al frente&quot; realizado en Ciudad de
-                    Buenos Aires y que lleva ya 8 ediciones o el programa
-                    &quot;Con voz popular&quot; que cumplió su 5ta edición u otros
-                    programas como el realizado con espacios comunitarios del
-                    Conurbano (Quilmes, Florencio Varela, La Matanza, José C Paz,
-                    Polvorines, Alto San Isidro) han mostrado resultados preciosos
-                    que se condensan en algunas de las palabras que los mismos
-                    referentes nos dicen:
-                  </p>
-                </div>
-
-                <div className="text-stone-900 text-sm font-light font-poppins leading-7">
-                  <div className="space-y-10">
-                    <p >
-                      &quot;En este programa aprendí a desnudar mi alma. Fue difícil,
-                      pero me permitió aceptarme como soy, reconocer, además de mis
-                      partes oscuras, también mi lado luminoso, reconocer mis
-                      fortalezas y desde allí abrirme al aprendizaje...&quot; –
-                      referente Barrio Villa Itatí, Quilmes.
-
-                      &quot;En nuestros encuentros empecé a conocer mi interioridad,
-                      a conectarme con mi debilidad y a validarla, a hablar de lo
-                      que nos frustra y de qué podemos hacer para gestionar esa
-                      frustración. Y dejarme finalmente habitar por el amor y por
-                      esa sensación de sentirme parte de algo más grande&quot; –
-                      referenta social Barrio Almafuerte, La Matanza.
-                    </p>
-
-                    <p>
-                      La idea es que, desde ese aprendizaje, generado
-                      colaborativamente, los referentes y educadores sociales
-                      puedan hacerse cargo del poder que tienen y que, poniendo en
-                      valor su muy rico universo emocional, éste se convierta en su
-                      motor para la acción.
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setLideresExpanded(false)}
-                    className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-8"
-                  >
-                    Leer menos
-                  </button>
-                </div>
-              </div>
-
-              {/* Fila 3: imagen abajo */}
-              <div className="mt-10 relative w-full max-w-[1120px] mx-auto aspect-[1120/360]">
+            {/* Columna derecha: imagen grande */}
+            <div className="relative w-full mt-8 lg:mt-0">
+              <div className="relative w-full aspect-[900/900] max-w-[900px] lg:ml-auto">
                 <Image
                   src="/images/Adela Saenz Cavia9 1.png"
                   alt=""
                   fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 1120px"
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 900px"
                   unoptimized
                 />
               </div>
             </div>
-
-            {/* Mobile expandido */}
-            <div className="md:hidden">
-              <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 max-w-[656px]">
-                MI TRABAJO CON LÍDERES SOCIALES
-              </h2>
-
-              <div className="w-24 h-24 relative mb-8">
-                <Image
-                  src="/images/19 1.png"
-                  alt=""
-                  width={96}
-                  height={96}
-                  className="w-24 h-24 object-contain"
-                />
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="lideres-expanded"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="px-6 py-12 md:py-16 lg:px-[114px]"
+        >
+          {/* Desktop expandido */}
+          <div className="hidden md:block">
+            {/* Fila 1: título + árbol */}
+            <div className="grid md:grid-cols-[minmax(0,560px)_minmax(0,470px)] gap-x-16 xl:gap-x-24 items-start mb-8">
+              <div>
+                <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest max-w-[656px]">
+                  MI TRABAJO CON LÍDERES SOCIALES
+                </h2>
               </div>
 
-              <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-4">
+              <div className="flex justify-center md:justify-start">
+                <div className="w-24 h-24 relative">
+                  <Image
+                    src="/images/19 1.png"
+                    alt=""
+                    width={96}
+                    height={96}
+                    className="w-24 h-24 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Fila 2: columnas de texto alineadas */}
+            <div className="grid md:grid-cols-[minmax(0,560px)_minmax(0,470px)] gap-x-16 xl:gap-x-24 items-start">
+              <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-10">
                 <p>
                   Como me moviliza mucho la desigualdad, he diseñado,
                   implementado y medido el impacto individual y comunitario de
                   programas de entrenamiento socioemocional con referentes y
                   líderes sociales de barrios populares, especialmente en la
-                  ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
-                  Santiago del Estero. Los programas buscan acelerar la
-                  transformación social contribuyendo a la formación de liderazgos
-                  sociales.
+                  ciudad de Buenos Aires y el conurbano, pero también en Córdoba
+                  y Santiago del Estero. Los programas buscan acelerar la
+                  transformación social contribuyendo a la formación de
+                  liderazgos sociales.
                 </p>
+
                 <p>
                   Sabemos que las competencias emocionales y sociales se pueden
                   entrenar y hacerlo con personas que tienen tanto impacto social
-                  comunitario y que, además, muchas de ellas han nacido y viven en
-                  entornos de vulneración de derechos, es no solo un desafío
-                  personal, sino también un proyecto que me llena de ilusión y de
-                  esperanza.
+                  comunitario y que, además, muchas de ellas han nacido y viven
+                  en entornos de vulneración de derechos, es no solo un desafío
+                  personal, sino también un proyecto que me llena de ilusión y
+                  de esperanza.
                 </p>
+
                 <p>
                   Los resultados alcanzados en estos programas, por los que han
                   pasado más de 400 referentes y líderes comunitarios, son
-                  alucinantes y muy positivos y así lo refieren ellos/as mismos/as
-                  ya que estos proyectos se miden y evalúan (y son parte de mi
-                  tesis de doctorado en Psicología social).
+                  alucinantes y muy positivos y así lo refieren ellos/as
+                  mismos/as ya que estos proyectos se miden y evalúan (y son
+                  parte de mi tesis de doctorado en Psicología social).
                 </p>
+
                 <p>
                   Algunos de los programas que hemos implementado, como el
                   programa &quot;Mujeres al frente&quot; realizado en Ciudad de
@@ -868,53 +771,158 @@ useEffect(() => {
                   que se condensan en algunas de las palabras que los mismos
                   referentes nos dicen:
                 </p>
-                <p className="italic">
-                  &quot;En este programa aprendí a desnudar mi alma. Fue difícil,
-                  pero me permitió aceptarme como soy, reconocer, además de mis
-                  partes oscuras, también mi lado luminoso, reconocer mis
-                  fortalezas y desde allí abrirme al aprendizaje...&quot; –
-                  referente Barrio Villa Itatí, Quilmes.
-                </p>
-                <p className="italic">
-                  &quot;En nuestros encuentros empecé a conocer mi interioridad, a
-                  conectarme con mi debilidad y a validarla, a hablar de lo que
-                  nos frustra y de qué podemos hacer para gestionar esa
-                  frustración. Y dejarme finalmente habitar por el amor y por esa
-                  sensación de sentirme parte de algo más grande&quot; – referenta
-                  social Barrio Almafuerte, La Matanza.
-                </p>
-                <p>
-                  La idea es que, desde ese aprendizaje, generado
-                  colaborativamente, los referentes y educadores sociales puedan
-                  hacerse cargo del poder que tienen y que, poniendo en valor su
-                  muy rico universo emocional, éste se convierta en su motor para
-                  la acción.
-                </p>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setLideresExpanded(false)}
-                className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-8"
-              >
-                Leer menos
-              </button>
+              <div className="text-stone-900 text-sm font-light font-poppins leading-7">
+                <div className="space-y-10">
+                  <p>
+                    &quot;En este programa aprendí a desnudar mi alma. Fue
+                    difícil, pero me permitió aceptarme como soy, reconocer,
+                    además de mis partes oscuras, también mi lado luminoso,
+                    reconocer mis fortalezas y desde allí abrirme al
+                    aprendizaje...&quot; – referente Barrio Villa Itatí,
+                    Quilmes.
 
-              <div className="mt-8 relative w-full aspect-[720/783]">
-                <Image
-                  src="/images/Adela Saenz Cavia9 1.png"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  unoptimized
-                />
+                    &quot;En nuestros encuentros empecé a conocer mi
+                    interioridad, a conectarme con mi debilidad y a validarla, a
+                    hablar de lo que nos frustra y de qué podemos hacer para
+                    gestionar esa frustración. Y dejarme finalmente habitar por
+                    el amor y por esa sensación de sentirme parte de algo más
+                    grande&quot; – referenta social Barrio Almafuerte, La
+                    Matanza.
+                  </p>
+
+                  <p>
+                    La idea es que, desde ese aprendizaje, generado
+                    colaborativamente, los referentes y educadores sociales
+                    puedan hacerse cargo del poder que tienen y que, poniendo en
+                    valor su muy rico universo emocional, éste se convierta en su
+                    motor para la acción.
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setLideresExpanded(false)}
+                  className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-8"
+                >
+                  Leer menos
+                </button>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </AnimatedSection>
+
+            {/* Fila 3: imagen horizontal */}
+            <div className="mt-10 relative w-full max-w-[1120px] mx-auto aspect-[1120/360]">
+              <Image
+                src="/images/Adela Saenz Cavia9 1.png"
+                alt=""
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 1120px"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          {/* Mobile expandido */}
+          <div className="md:hidden">
+            <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 max-w-[656px]">
+              MI TRABAJO CON LÍDERES SOCIALES
+            </h2>
+
+            <div className="w-24 h-24 relative mb-8">
+              <Image
+                src="/images/19 1.png"
+                alt=""
+                width={96}
+                height={96}
+                className="w-24 h-24 object-contain"
+              />
+            </div>
+
+            <div className="text-stone-900 text-sm font-light font-poppins leading-7 space-y-4">
+              <p>
+                Como me moviliza mucho la desigualdad, he diseñado,
+                implementado y medido el impacto individual y comunitario de
+                programas de entrenamiento socioemocional con referentes y
+                líderes sociales de barrios populares, especialmente en la
+                ciudad de Buenos Aires y el conurbano, pero también en Córdoba y
+                Santiago del Estero. Los programas buscan acelerar la
+                transformación social contribuyendo a la formación de liderazgos
+                sociales.
+              </p>
+              <p>
+                Sabemos que las competencias emocionales y sociales se pueden
+                entrenar y hacerlo con personas que tienen tanto impacto social
+                comunitario y que, además, muchas de ellas han nacido y viven en
+                entornos de vulneración de derechos, es no solo un desafío
+                personal, sino también un proyecto que me llena de ilusión y de
+                esperanza.
+              </p>
+              <p>
+                Los resultados alcanzados en estos programas, por los que han
+                pasado más de 400 referentes y líderes comunitarios, son
+                alucinantes y muy positivos y así lo refieren ellos/as mismos/as
+                ya que estos proyectos se miden y evalúan (y son parte de mi
+                tesis de doctorado en Psicología social).
+              </p>
+              <p>
+                Algunos de los programas que hemos implementado, como el
+                programa &quot;Mujeres al frente&quot; realizado en Ciudad de
+                Buenos Aires y que lleva ya 8 ediciones o el programa
+                &quot;Con voz popular&quot; que cumplió su 5ta edición u otros
+                programas como el realizado con espacios comunitarios del
+                Conurbano (Quilmes, Florencio Varela, La Matanza, José C Paz,
+                Polvorines, Alto San Isidro) han mostrado resultados preciosos
+                que se condensan en algunas de las palabras que los mismos
+                referentes nos dicen:
+              </p>
+              <p className="italic">
+                &quot;En este programa aprendí a desnudar mi alma. Fue difícil,
+                pero me permitió aceptarme como soy, reconocer, además de mis
+                partes oscuras, también mi lado luminoso, reconocer mis
+                fortalezas y desde allí abrirme al aprendizaje...&quot; –
+                referente Barrio Villa Itatí, Quilmes.
+              </p>
+              <p className="italic">
+                &quot;En nuestros encuentros empecé a conocer mi interioridad, a
+                conectarme con mi debilidad y a validarla, a hablar de lo que
+                nos frustra y de qué podemos hacer para gestionar esa
+                frustración. Y dejarme finalmente habitar por el amor y por esa
+                sensación de sentirme parte de algo más grande&quot; – referenta
+                social Barrio Almafuerte, La Matanza.
+              </p>
+              <p>
+                La idea es que, desde ese aprendizaje, generado
+                colaborativamente, los referentes y educadores sociales puedan
+                hacerse cargo del poder que tienen y que, poniendo en valor su
+                muy rico universo emocional, éste se convierta en su motor para
+                la acción.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setLideresExpanded(false)}
+              className="inline-flex items-center justify-center w-28 h-8 bg-[#E6CC76] text-neutral-800 text-sm font-medium font-poppins leading-7 hover:bg-[#d4b96a] transition mt-8"
+            >
+              Leer menos
+            </button>
+
+            <div className="mt-8 relative w-full aspect-[720/783]">
+              <Image
+                src="/images/Adela Saenz Cavia9 1.png"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="100vw"
+                unoptimized
+              />
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   </div>
 </section>
 
