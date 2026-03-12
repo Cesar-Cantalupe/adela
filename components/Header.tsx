@@ -295,7 +295,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease }}
-          className="absolute right-[350px] top-[293px] text-right font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
+          className="absolute right-[210px] xl:right-[350px] top-[293px] text-right font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
         >
           Sáenz
         </motion.div>
