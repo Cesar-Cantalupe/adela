@@ -1082,7 +1082,7 @@ useEffect(() => {
             {/* Columna izquierda */}
             <AnimatedSection className="flex flex-col min-w-0" direction="right" delay={0.1}>
               <h2 className="text-yellow-600 text-3xl sm:text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest max-w-[800px] mb-6">
-                Aprendizaje socioemocional <br /> (ASE / SEL)
+                Aprendizaje socioemocional (ASE / SEL)
               </h2>
               <div className="w-28 h-28 relative flex-shrink-0 mb-6">
                 <Image src="/images/08 1.png" alt="" width={118} height={118} className="object-contain" />
