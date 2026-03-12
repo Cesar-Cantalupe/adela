@@ -1178,8 +1178,8 @@ useEffect(() => {
         </div>
       </section>
 
-      {/* Logos carousel */}
-<section className="relative w-full bg-white overflow-hidden py-8 md:py-10">
+{/* Logos carousel */}
+<section className="relative w-full overflow-hidden py-8 md:py-10 bg-[#E6E6E6]">
   <div className="max-w-[1474px] mx-auto px-6">
     <AnimatedSection className="mb-6 text-center" delay={0.08}>
       <p className="text-stone-700 text-xl md:text-2xl font-swanky font-normal leading-tight">
@@ -1192,14 +1192,14 @@ useEffect(() => {
         {[...partnerLogos, ...partnerLogos].map((logo, index) => (
           <div
             key={`${logo.alt}-${index}`}
-            className="logos-item flex-shrink-0 w-[170px] h-[80px] rounded-[10px] bg-[#F9F1EF] flex items-center justify-center px-4"
+            className="flex-shrink-0 w-[170px] h-[80px] flex items-center justify-center bg-transparent"
           >
             <Image
               src={logo.src}
               alt={logo.alt}
               width={170}
               height={80}
-              className="max-w-[170px] max-h-[80px] w-auto h-auto object-contain"
+              className="w-[170px] h-[80px] object-contain"
               unoptimized
             />
           </div>
@@ -1229,7 +1229,7 @@ useEffect(() => {
     .logos-track {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 32px;
       width: max-content;
       animation: logosMarquee 26s linear infinite;
     }
@@ -1243,14 +1243,14 @@ useEffect(() => {
         transform: translateX(0);
       }
       to {
-        transform: translateX(calc(-50% - 12px));
+        transform: translateX(calc(-50% - 16px));
       }
     }
 
     @media (max-width: 768px) {
       .logos-track {
-        animation-duration: 18s;
-        gap: 16px;
+        gap: 20px;
+        animation-duration: 20s;
       }
     }
   `}</style>
