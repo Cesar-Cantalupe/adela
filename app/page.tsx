@@ -35,6 +35,16 @@ const scrollToGallery = (index: number) => {
 
   setGalleryIndex(index);
 };
+
+  const partnerLogos = [
+  { src: "/images/logos/logo-1.png", alt: "Logo 1" },
+  { src: "/images/logos/logo-2.png", alt: "Logo 2" },
+  { src: "/images/logos/logo-3.png", alt: "Logo 3" },
+  { src: "/images/logos/logo-4.png", alt: "Logo 4" },
+  { src: "/images/logos/logo-5.png", alt: "Logo 5" },
+  { src: "/images/logos/logo-6.png", alt: "Logo 6" },
+];
+
   
   // Contact form state
   const [contactNombre, setContactNombre] = useState("");
@@ -1168,6 +1178,85 @@ useEffect(() => {
         </div>
       </section>
 
+      {/* Logos carousel */}
+<section className="relative w-full bg-white overflow-hidden py-8 md:py-10">
+  <div className="max-w-[1474px] mx-auto px-6">
+    <AnimatedSection className="mb-6 text-center" delay={0.08}>
+      <p className="text-stone-700 text-xl md:text-2xl font-swanky font-normal leading-tight">
+        Organizaciones con las que trabajé
+      </p>
+    </AnimatedSection>
+
+    <div className="relative overflow-hidden logos-fade">
+      <div className="logos-track">
+        {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+          <div
+            key={`${logo.alt}-${index}`}
+            className="logos-item flex-shrink-0 w-[170px] h-[80px] rounded-[10px] bg-[#F9F1EF] flex items-center justify-center px-4"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={170}
+              height={80}
+              className="max-w-[170px] max-h-[80px] w-auto h-auto object-contain"
+              unoptimized
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <style jsx>{`
+    .logos-fade {
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+      );
+    }
+
+    .logos-track {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: max-content;
+      animation: logosMarquee 26s linear infinite;
+    }
+
+    .logos-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes logosMarquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(-50% - 12px));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logos-track {
+        animation-duration: 18s;
+        gap: 16px;
+      }
+    }
+  `}</style>
+</section>
+
+      
       {/* Proyectos con toda Iberoamérica - Mapa */}
       <section className="relative w-full bg-white overflow-hidden">
         <div className="w-full relative aspect-[1474/721] overflow-hidden">
