@@ -9,3 +9,15 @@ html {
 :root {
   --font-swanky: "Swanky and Moo Moo", cursive;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
