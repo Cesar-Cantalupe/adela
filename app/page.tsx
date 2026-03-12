@@ -622,7 +622,7 @@ export default function Home() {
   <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[114px]">
     <AnimatedSection direction="right" delay={0.08}>
       <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest mb-8 md:mb-10 max-w-[656px]">
-        MI TRABAJO CON LÍDERES SOCIALES
+        MI TRABAJO CoON LÍDERES SOCIALES
       </h2>
     </AnimatedSection>
 
