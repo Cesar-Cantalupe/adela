@@ -211,7 +211,7 @@ export function Header() {
   );
 }
 
-export function Hero() {
+/* export function Hero() {
   const accent = "#D49A89";
   const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -351,6 +351,147 @@ export function Hero() {
             {arrowSvgs[i]}
           </motion.div>
         ))}
+      </div>
+    </div>
+  );
+}*/
+
+  export function Hero() {
+  const accent = "#D49A89";
+  const ease = [0.22, 1, 0.36, 1] as const;
+
+  const frases = [
+    { text: "buscando siempre lo que une por sobre lo que separa", className: "left-[6%] top-[14%]" },
+    { text: "curiosa por naturaleza en un mundo con tanto por descubrir", className: "right-[7%] top-[11%]" },
+    { text: "convencida de que todos podemos cambiar si nos lo proponemos", className: "left-[9%] bottom-[18%]" },
+    { text: "apasionada del conocimiento y de entender lo que mueve a las personas", className: "right-[7%] bottom-[24%]" },
+  ];
+
+  return (
+    <div data-layer="banner home" className="w-full overflow-hidden bg-[#F9F1EF]">
+      {/* Mobile & tablet */}
+      <div className="relative w-full min-h-[100svh] lg:hidden flex flex-col pt-20 sm:pt-24 px-4 pb-0 sm:px-6">
+        <div className="flex flex-col items-center flex-shrink-0 max-w-lg mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease }}
+            className="font-poppins font-light text-black uppercase leading-tight tracking-wide text-3xl sm:text-4xl md:text-5xl text-center"
+          >
+            Adela Cavia Sáenz
+          </motion.h1>
+
+          <motion.blockquote
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease }}
+            className="mt-5 sm:mt-6 text-center font-swanky text-[15px] sm:text-base font-normal leading-relaxed text-[#D49A89]"
+          >
+            Curiosa por naturaleza en un mundo con tanto por descubrir. Apasionada del conocimiento y de entender lo que mueve a las personas. Convencida de que todos podemos cambiar si nos lo proponemos. Buscando siempre lo que une por sobre lo que separa.
+          </motion.blockquote>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.35, ease }}
+          className="relative w-full max-w-[320px] aspect-[384/589] sm:max-w-[360px] mx-auto mt-auto pt-8 sm:pt-10 pb-0 min-h-0"
+        >
+          <Image
+            src="/images/hero/Adela Saenz Cavia25 2.png"
+            alt="Adela Sáenz"
+            fill
+            className="object-cover object-top"
+            unoptimized
+          />
+        </motion.div>
+      </div>
+
+      {/* Desktop responsive */}
+      <div className="relative hidden lg:block w-full bg-[#F9F1EF]">
+        <div className="relative max-w-[1474px] mx-auto min-h-[640px] xl:min-h-[746px] px-8 xl:px-12 pt-24 xl:pt-28 pb-8">
+          {/* Frases decorativas solo en desktop amplio */}
+          <div className="hidden xl:block">
+            {frases.map((frase, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.45 + i * 0.08, ease }}
+                className={`absolute w-56 text-center font-swanky text-xl font-normal leading-5 text-[#D49A89] ${frase.className}`}
+              >
+                {frase.text}
+              </motion.p>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0, pathLength: 0 }}
+              animate={{ opacity: 1, pathLength: 1 }}
+              transition={{ duration: 0.8, delay: 0.7, ease }}
+              className="absolute left-[24%] top-[66%]"
+              aria-hidden
+            >
+              <svg width={47} height={27} viewBox="0 0 47 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M46.4557 24.1846C25.1998 5.77418 9.21546 13.8137 4.85643 16.3072C0.497396 18.8007 -1.98066 23.9697 4.24757 25.8734C10.4758 27.7772 26.5919 12.4487 7.13713 0.425317" stroke={accent} />
+              </svg>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, pathLength: 0 }}
+              animate={{ opacity: 1, pathLength: 1 }}
+              transition={{ duration: 0.8, delay: 0.74, ease }}
+              className="absolute right-[29%] top-[18%]"
+              aria-hidden
+            >
+              <svg width={42} height={31} viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.495323 30.5512C4.66641 0.0426231 29.6375 -1.46266 41.6017 1.59828" stroke={accent} />
+              </svg>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-[minmax(0,1fr)_340px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_384px_minmax(0,1fr)] items-center gap-4 xl:gap-8">
+            {/* Izquierda */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease }}
+              className="text-right pr-2 xl:pr-4"
+            >
+              <div className="font-poppins font-light text-black uppercase leading-[0.92] tracking-[0.055em] text-[clamp(58px,6.4vw,88px)]">
+                <div>Adela</div>
+                <div>Cavia</div>
+              </div>
+            </motion.div>
+
+            {/* Centro */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.1, ease }}
+              className="relative w-[340px] h-[522px] xl:w-96 xl:h-[589px] mx-auto"
+            >
+              <Image
+                src="/images/hero/Adela Saenz Cavia25 2.png"
+                alt="Adela Sáenz"
+                fill
+                className="object-cover object-top"
+                unoptimized
+              />
+            </motion.div>
+
+            {/* Derecha */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.32, ease }}
+              className="text-left pl-2 xl:pl-4 self-start pt-[168px] xl:pt-[186px]"
+            >
+              <div className="font-poppins font-light text-black uppercase leading-[0.92] tracking-[0.055em] text-[clamp(58px,6.4vw,88px)] whitespace-nowrap">
+                Sáenz
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );
