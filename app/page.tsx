@@ -649,7 +649,7 @@ export default function Home() {
               </div>
 
               <p className="max-w-[600px] text-stone-900 text-sm font-light font-poppins leading-7 mb-8">
-                Como me moviliza mucho la desigualdad, he diseñado,
+                Coooomo me moviliza mucho la desigualdad, he diseñado,
                 implementado y medido el impacto individual y comunitario de
                 programas de entrenamiento socioemocional con referentes y
                 líderes sociales de barrios populares, especialmente en la
