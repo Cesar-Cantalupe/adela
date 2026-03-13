@@ -294,10 +294,10 @@ export default function QueTeApasionaPage() {
   </div>
 </section>
 
-       {/* TEMAS DEL LIBRO */}
+{/* TEMAS DEL LIBRO */}
 <section className="relative overflow-hidden bg-[#FBFBF8]">
   {/* Forma de fondo inferior */}
-  <div className="pointer-events-none absolute bottom-0 left-0 h-[260px] w-[78%] opacity-35 md:h-[320px]">
+  <div className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[92%] opacity-60 md:h-[360px] lg:h-[400px]">
     <Image
       src="/images/libro/forma1.png"
       alt=""
@@ -307,10 +307,10 @@ export default function QueTeApasionaPage() {
     />
   </div>
 
-  <div className="relative z-10 mx-auto max-w-[980px] px-6 py-16 md:px-10 lg:py-20">
+  <div className="relative z-10 mx-auto max-w-[900px] px-6 py-16 md:px-10 lg:py-20">
     {/* Título manuscrito */}
     <div className="mb-14 text-center">
-      <p className="mx-auto max-w-[560px] text-[27px] leading-[1.35] font-swanky text-[#8E99A8]">
+      <p className="mx-auto max-w-[500px] text-[27px] leading-[1.35] font-swanky text-[#8E99A8]">
         El libro plantea una aventura para ir al
         <br />
         encuentro de lo que te apasiona y
@@ -320,9 +320,9 @@ export default function QueTeApasionaPage() {
     </div>
 
     {/* Tabla de temas */}
-    <div className="mx-auto max-w-[820px] border-t border-[#C8CED3]">
+    <div className="mx-auto max-w-[760px] border-t border-[#C8CED3]">
       {/* Fila 1 */}
-      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[190px_minmax(0,1fr)] md:gap-7 border-b border-[#C8CED3]">
+      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[230px_minmax(0,1fr)] md:gap-8 border-b border-[#C8CED3]">
         <div>
           <p className="text-[12px] leading-[1.15] font-poppins uppercase tracking-[0.04em] text-[#D2BE61]">
             Sobre la aventura de descubrir y hacer lo que te apasiona
@@ -336,7 +336,7 @@ export default function QueTeApasionaPage() {
       </div>
 
       {/* Fila 2 */}
-      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[190px_minmax(0,1fr)] md:gap-7 border-b border-[#C8CED3]">
+      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[230px_minmax(0,1fr)] md:gap-8 border-b border-[#C8CED3]">
         <div>
           <p className="text-[12px] leading-[1.15] font-poppins uppercase tracking-[0.04em] text-[#D9A8A0]">
             Primera parte.
@@ -358,7 +358,7 @@ export default function QueTeApasionaPage() {
       </div>
 
       {/* Fila 3 */}
-      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[190px_minmax(0,1fr)] md:gap-7">
+      <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[230px_minmax(0,1fr)] md:gap-8">
         <div>
           <p className="text-[12px] leading-[1.15] font-poppins uppercase tracking-[0.04em] text-[#9AA6B5]">
             Segunda parte.
@@ -383,7 +383,7 @@ export default function QueTeApasionaPage() {
         Ejercicios del libro
       </h3>
 
-      <p className="mx-auto mt-8 max-w-[560px] text-[13px] leading-[2.05] font-light font-poppins text-[#3B3434]">
+      <p className="mx-auto mt-8 max-w-[500px] text-[13px] leading-[2.05] font-light font-poppins text-[#3B3434]">
         Si lo estás leyendo verás que en algunos momentos hay referencia a
         ejercicios y actividades que remiten a mi página web. Acá encontrarás
         esos ejercicios, que los dejo abiertos a todos para que puedan
@@ -392,6 +392,7 @@ export default function QueTeApasionaPage() {
     </div>
   </div>
 </section>
+
 
         {/* ACTIVIDAD 1 */}
         <section className="relative overflow-hidden bg-[#F6F3EA]">
