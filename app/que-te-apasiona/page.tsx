@@ -9,7 +9,7 @@ function Squiggle({
   className,
   stroke = "#E7D6D0",
 }: {
-  className?: string;
+  className?: string; 
   stroke?: string;
 }) {
   return (
