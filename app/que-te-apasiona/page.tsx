@@ -134,20 +134,20 @@ export default function QueTeApasionaPage() {
           </a>
         </section>
 
-     {/* INTRO 2 COLUMNAS */}
+ {/* INTRO 2 COLUMNAS */}
 <section className="relative overflow-hidden bg-[#FBFBF8]">
-  {/* Trazo suave de fondo superior */}
-  <div className="pointer-events-none absolute inset-x-0 top-[-40px] h-[220px] opacity-40">
+  {/* Trazo superior del mismo tono que la sección hero */}
+  <div className="pointer-events-none absolute inset-x-0 top-[-34px] h-[210px] opacity-100">
     <svg
-      viewBox="0 0 1440 260"
+      viewBox="0 0 1440 230"
       className="h-full w-full"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
       <path
-        d="M20 40C180 170 360 170 520 45C650 -55 780 -10 890 60C1010 135 1110 165 1260 95C1340 58 1390 20 1450 -10"
-        stroke="#EDE3E0"
+        d="M10 28C155 145 360 150 520 40C640 -42 760 -8 878 58C1005 130 1110 168 1268 98C1350 62 1405 24 1460 -6"
+        stroke="#F3E5E2"
         strokeWidth="34"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -156,43 +156,43 @@ export default function QueTeApasionaPage() {
   </div>
 
   {/* Decorativos superiores */}
-  <div className="pointer-events-none absolute left-[30px] top-[14px] z-0 hidden md:block">
+  <div className="pointer-events-none absolute left-[24px] top-[14px] z-0 hidden md:block">
     <Image
       src="/images/libro/flechaseccion2.png"
       alt=""
-      width={150}
-      height={70}
-      className="object-contain opacity-90"
+      width={132}
+      height={92}
+      className="object-contain"
       unoptimized
     />
   </div>
 
-  <div className="pointer-events-none absolute left-1/2 top-[18px] z-0 hidden md:block -translate-x-1/2">
+  <div className="pointer-events-none absolute left-1/2 top-[10px] z-0 hidden md:block -translate-x-1/2">
     <Image
       src="/images/libro/garabato1.png"
       alt=""
-      width={46}
-      height={46}
-      className="object-contain opacity-85"
+      width={42}
+      height={42}
+      className="object-contain"
       unoptimized
     />
   </div>
 
-  <div className="pointer-events-none absolute right-[70px] top-[78px] z-0 hidden md:block">
+  <div className="pointer-events-none absolute right-[42px] top-[62px] z-0 hidden md:block">
     <Image
       src="/images/libro/garabato2.png"
       alt=""
-      width={54}
-      height={54}
-      className="object-contain opacity-85"
+      width={48}
+      height={48}
+      className="object-contain"
       unoptimized
     />
   </div>
 
-  <div className="relative z-10 mx-auto grid max-w-[1474px] grid-cols-1 gap-12 px-6 py-16 md:px-10 lg:grid-cols-[minmax(0,700px)_minmax(360px,1fr)] lg:items-center lg:px-[72px] lg:py-24">
+  <div className="relative z-10 mx-auto grid max-w-[1474px] grid-cols-1 gap-10 px-6 py-14 md:px-10 lg:grid-cols-[minmax(0,650px)_minmax(430px,1fr)] lg:items-start lg:px-[28px] lg:py-20 xl:grid-cols-[minmax(0,670px)_minmax(470px,1fr)]">
     {/* Columna izquierda */}
-    <div className="max-w-[700px] lg:pl-[135px]">
-      <div className="mb-12 flex items-start gap-8">
+    <div className="max-w-[650px] lg:pl-[84px] xl:pl-[110px]">
+      <div className="mb-10 flex items-start gap-7">
         <div className="relative h-[112px] w-[112px] flex-shrink-0">
           <Image
             src="/images/libro/maquinaconarbol.png"
@@ -204,7 +204,7 @@ export default function QueTeApasionaPage() {
         </div>
 
         <div className="max-w-[390px] pt-2">
-          <p className="text-[14px] leading-8 font-semibold font-poppins text-[#8C97A3]">
+          <p className="text-[14px] leading-[2.1] font-semibold font-poppins text-[#8C97A3]">
             El tema me interesa tanto, que escribí un libro
             <br />
             sobre ello: “¿Qué te apasiona?
@@ -245,14 +245,14 @@ export default function QueTeApasionaPage() {
     </div>
 
     {/* Columna derecha */}
-    <div className="flex items-center justify-center lg:justify-end lg:pr-[140px]">
-      <div className="relative aspect-[520/520] w-full max-w-[430px]">
+    <div className="flex items-center justify-center lg:justify-end lg:pr-[90px] xl:pr-[120px]">
+      <div className="relative aspect-[560/560] w-full max-w-[500px] xl:max-w-[540px]">
         <Image
           src="/images/libro/libro-flotante.png"
           alt="Libro ¿Qué te apasiona?"
           fill
-          className="object-contain drop-shadow-[0_18px_18px_rgba(0,0,0,0.18)]"
-          sizes="(max-width: 1024px) 100vw, 430px"
+          className="object-contain drop-shadow-[0_18px_20px_rgba(0,0,0,0.16)]"
+          sizes="(max-width: 1024px) 100vw, 540px"
           unoptimized
         />
       </div>
