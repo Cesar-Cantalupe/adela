@@ -707,7 +707,7 @@ useEffect(() => {
       </div>
 
       {/* Columna derecha */}
-      <div className="relative w-full mt-8 lg:mt-0">
+      <div className="relative w-full mt-8 lg:mt-[10%]">
         <div className="relative w-full h-full min-h-[520px] lg:min-h-[560px] xl:min-h-[620px] 2xl:min-h-[760px] overflow-hidden">
           <Image
             src="/images/Adela Saenz Cavia9 1.png"
