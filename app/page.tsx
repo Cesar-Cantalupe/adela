@@ -1456,7 +1456,7 @@ useEffect(() => {
     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
       {/* Imagen izquierda */}
       <AnimatedSection
-        className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[560px] 2xl:min-h-[850px]"
+        className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]"
         direction="right"
         delay={0.05}
       >
@@ -1471,16 +1471,16 @@ useEffect(() => {
 
       {/* Columna derecha: título + form */}
       <AnimatedSection
-        className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-10 2xl:px-16 py-8 lg:py-8 xl:py-10 2xl:py-16"
+        className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-8 lg:py-8 xl:py-9 2xl:py-16"
         direction="left"
         delay={0.15}
       >
-        <div className="flex items-start gap-3 xl:gap-4 mb-5 xl:mb-7 2xl:mb-8">
-          <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[32px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">
+        <div className="flex items-start gap-3 xl:gap-3.5 mb-5 xl:mb-6 2xl:mb-8">
+          <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">
             ¡Enviame un mensaje!
           </h2>
 
-          <div className="relative w-20 h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 flex-shrink-0">
+          <div className="relative w-20 h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
             <Image
               src="/images/19 2.png"
               alt=""
@@ -1491,7 +1491,7 @@ useEffect(() => {
         </div>
 
         <form
-          className="space-y-3 xl:space-y-4 w-full max-w-[400px] xl:max-w-[430px] 2xl:max-w-[462px]"
+          className="space-y-3 xl:space-y-3.5 w-full max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
           onSubmit={handleContactSubmit}
         >
           <div>
