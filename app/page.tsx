@@ -1289,6 +1289,27 @@ useEffect(() => {
         </div>
       </section>
 
+
+      {/* Proyectos con toda Iberoamérica - Mapa */}
+<section className="relative w-full bg-white overflow-hidden">
+  <div className="w-full relative h-[220px] md:h-[280px] lg:h-[340px] xl:h-[380px] 2xl:h-[460px] overflow-hidden">
+    <Image
+      src="/images/mapa.png"
+      alt="Proyectos con toda Iberoamérica"
+      fill
+      className="object-contain object-center"
+      sizes="100vw"
+    />
+
+    <div className="absolute left-1/2 top-4 md:top-6 xl:top-8 -translate-x-1/2 w-full max-w-[320px] px-4 text-center">
+      <h2 className="text-stone-700 text-xl md:text-2xl font-swanky font-normal leading-tight">
+        Proyectos con toda Iberoamérica
+      </h2>
+    </div>
+  </div>
+</section>
+      
+
       {/* Instagram - últimas 3 publicaciones (oculto por ahora) */}
       {false && (
       <section className="relative w-full bg-[#EBD5CD] overflow-hidden">
