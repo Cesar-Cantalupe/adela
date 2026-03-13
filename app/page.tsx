@@ -1273,7 +1273,7 @@ useEffect(() => {
       
       {/* Proyectos con toda Iberoamérica - Mapa */}
       <section className="relative w-full bg-[#EFEFEF] overflow-hidden">
-        <div className="w-full relative h-[280px] md:h-[360px] xl:h-[460px] 2xl:h-[560px] overflow-hidden">
+        <div className="w-full relative h-[280px] md:h-[360px] xl:h-[560px] 2xl:h-[700px] overflow-hidden">
           <Image
             src="/images/mapa.png"
             alt="Proyectos con toda Iberoamérica"
