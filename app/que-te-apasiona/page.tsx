@@ -134,73 +134,132 @@ export default function QueTeApasionaPage() {
           </a>
         </section>
 
-        {/* INTRO 2 COLUMNAS */}
-        <section className="relative overflow-hidden bg-[#FBFBF8]">
-          <Squiggle className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-20" stroke="#E8D9D3" />
+     {/* INTRO 2 COLUMNAS */}
+<section className="relative overflow-hidden bg-[#FBFBF8]">
+  {/* Trazo suave de fondo superior */}
+  <div className="pointer-events-none absolute inset-x-0 top-[-40px] h-[220px] opacity-40">
+    <svg
+      viewBox="0 0 1440 260"
+      className="h-full w-full"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M20 40C180 170 360 170 520 45C650 -55 780 -10 890 60C1010 135 1110 165 1260 95C1340 58 1390 20 1450 -10"
+        stroke="#EDE3E0"
+        strokeWidth="34"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
 
-          <div className="mx-auto grid max-w-[1474px] grid-cols-1 gap-10 px-6 py-14 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-[72px] lg:py-16">
-            <div className="max-w-[620px]">
-              <div className="mb-6 flex items-start gap-5">
-                <div className="relative h-20 w-20 flex-shrink-0">
-                  <Image
-                    src="/images/19 1.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
+  {/* Decorativos superiores */}
+  <div className="pointer-events-none absolute left-[30px] top-[14px] z-0 hidden md:block">
+    <Image
+      src="/images/libro/flechaseccion2.png"
+      alt=""
+      width={150}
+      height={70}
+      className="object-contain opacity-90"
+      unoptimized
+    />
+  </div>
 
-                <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                  El tema me interesa tanto, que escribí un libro sobre ello:
-                  <br />
-                  <span className="font-medium">
-                    “¿Qué te apasiona? Al encuentro de tu pasión”.
-                  </span>
-                </p>
-              </div>
+  <div className="pointer-events-none absolute left-1/2 top-[18px] z-0 hidden md:block -translate-x-1/2">
+    <Image
+      src="/images/libro/garabato1.png"
+      alt=""
+      width={46}
+      height={46}
+      className="object-contain opacity-85"
+      unoptimized
+    />
+  </div>
 
-              <div className="space-y-5 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                <p>
-                  No busco con este libro proponer una visión simplista de la pasión, del tipo
-                  “la tienes o no la tienes”. Lo que ofrezco es un mapa, un camino, una guía
-                  para intentar conectar con ella y recuperarla, una misión conquistadora para
-                  poseerla.
-                </p>
-                <p>
-                  Descubrir lo que nos apasiona puede ser un camino muy directo y llano para
-                  algunos, pero sinuoso y con vueltas para otros. Y eso no está mal. De lo que
-                  se trata es de poder saborear ambos procesos.
-                </p>
-                <p>
-                  También con este libro, quiero crear una conexión entre el propósito y el
-                  sentido profundo de la vida, el norte en nuestro mapa de la pasión. Lo que nos
-                  apasiona es ese motor que nos permite tener la energía para recorrer el camino
-                  con ilusión y entusiasmo durante toda la vida, más allá de las dificultades que,
-                  sin duda, surgirán.
-                </p>
-                <p>
-                  Pero, más allá de mis intenciones y deseos, este libro es tu viaje; yo solo
-                  estoy para guiarte y compartir algunos aprendizajes con la idea de que te los
-                  apropies, los adaptes y los uses de la forma más personal posible.
-                </p>
-              </div>
-            </div>
+  <div className="pointer-events-none absolute right-[70px] top-[78px] z-0 hidden md:block">
+    <Image
+      src="/images/libro/garabato2.png"
+      alt=""
+      width={54}
+      height={54}
+      className="object-contain opacity-85"
+      unoptimized
+    />
+  </div>
 
-            <div className="flex items-center justify-center lg:justify-end">
-              <div className="relative aspect-[760/470] w-full max-w-[520px]">
-                <Image
-                  src="/images/libro/libro-flotante.png"
-                  alt="Libro ¿Qué te apasiona?"
-                  fill
-                  className="object-contain drop-shadow-[0_18px_22px_rgba(0,0,0,0.12)]"
-                  sizes="(max-width: 1024px) 100vw, 520px"
-                  unoptimized
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+  <div className="relative z-10 mx-auto grid max-w-[1474px] grid-cols-1 gap-12 px-6 py-16 md:px-10 lg:grid-cols-[minmax(0,700px)_minmax(360px,1fr)] lg:items-center lg:px-[72px] lg:py-24">
+    {/* Columna izquierda */}
+    <div className="max-w-[700px] lg:pl-[135px]">
+      <div className="mb-12 flex items-start gap-8">
+        <div className="relative h-[112px] w-[112px] flex-shrink-0">
+          <Image
+            src="/images/libro/maquinaconarbol.png"
+            alt=""
+            fill
+            className="object-contain"
+            unoptimized
+          />
+        </div>
+
+        <div className="max-w-[390px] pt-2">
+          <p className="text-[14px] leading-8 font-semibold font-poppins text-[#8C97A3]">
+            El tema me interesa tanto, que escribí un libro
+            <br />
+            sobre ello: “¿Qué te apasiona?
+            <br />
+            Al encuentro de tu pasión”.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-[660px] space-y-6 text-[13px] leading-[2.05] font-light font-poppins text-[#3B3434]">
+        <p>
+          No busco con este libro proponer una visión simplista de la pasión, del tipo
+          “la tienes o no la tienes”. Lo que ofrezco es un mapa, un camino, una guía
+          para intentar conectar con ella y recuperarla, una misión conquistadora
+          para poseerla.
+        </p>
+
+        <p>
+          Descubrir lo que nos apasiona puede ser un camino muy directo y llano
+          para algunos, pero sinuoso y con vueltas para otros. Y eso no está mal.
+          De lo que se trata es de poder saborear ambos procesos.
+        </p>
+
+        <p>
+          También con este libro, quiero crear una conexión entre el propósito y el
+          sentido profundo de la vida, el norte en nuestro mapa de la pasión. Lo que
+          nos apasiona es ese motor que nos permite tener la energía para recorrer
+          el camino con ilusión y entusiasmo durante toda la vida, más allá de las
+          dificultades que, sin duda, surgirán.
+        </p>
+
+        <p>
+          Pero, más allá de mis intenciones y deseos, este libro es tu viaje; yo solo
+          estoy para guiarte y compartir algunos aprendizajes con la idea de que te
+          los apropies, los adaptes y los uses de la forma más personal posible.
+        </p>
+      </div>
+    </div>
+
+    {/* Columna derecha */}
+    <div className="flex items-center justify-center lg:justify-end lg:pr-[140px]">
+      <div className="relative aspect-[520/520] w-full max-w-[430px]">
+        <Image
+          src="/images/libro/libro-flotante.png"
+          alt="Libro ¿Qué te apasiona?"
+          fill
+          className="object-contain drop-shadow-[0_18px_18px_rgba(0,0,0,0.18)]"
+          sizes="(max-width: 1024px) 100vw, 430px"
+          unoptimized
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* MANIFIESTO CENTRAL */}
         <section className="relative overflow-hidden bg-[#F4F3F1]">
