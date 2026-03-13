@@ -1450,6 +1450,141 @@ useEffect(() => {
         </div>
       </section>
 
+{/* Contacto - Form section */}
+<section id="contacto" className="relative w-full bg-white overflow-hidden">
+  <div className="w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
+      {/* Imagen izquierda */}
+      <AnimatedSection
+        className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[560px] 2xl:min-h-[850px]"
+        direction="right"
+        delay={0.05}
+      >
+        <Image
+          src="/images/Gastro-Session-4-28 1.png"
+          alt="Contacto"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </AnimatedSection>
+
+      {/* Columna derecha: título + form */}
+      <AnimatedSection
+        className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-10 2xl:px-16 py-8 lg:py-8 xl:py-10 2xl:py-16"
+        direction="left"
+        delay={0.15}
+      >
+        <div className="flex items-start gap-3 xl:gap-4 mb-5 xl:mb-7 2xl:mb-8">
+          <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[32px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">
+            ¡Enviame un mensaje!
+          </h2>
+
+          <div className="relative w-20 h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 flex-shrink-0">
+            <Image
+              src="/images/19 2.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        <form
+          className="space-y-3 xl:space-y-4 w-full max-w-[400px] xl:max-w-[430px] 2xl:max-w-[462px]"
+          onSubmit={handleContactSubmit}
+        >
+          <div>
+            <label
+              htmlFor="nombre"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              Nombre y Apellido
+            </label>
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              placeholder=" "
+              value={contactNombre}
+              onChange={(e) => setContactNombre(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 disabled:opacity-60"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              E-mail
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder=" "
+              value={contactEmail}
+              onChange={(e) => setContactEmail(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 disabled:opacity-60"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="mensaje"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              Mensaje
+            </label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder=" "
+              rows={4}
+              value={contactMensaje}
+              onChange={(e) => setContactMensaje(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 resize-y min-h-[80px] xl:min-h-[90px] 2xl:min-h-[100px] disabled:opacity-60"
+            />
+          </div>
+
+          {contactError && (
+            <p className="text-red-600 text-sm font-poppins">{contactError}</p>
+          )}
+
+          {contactSuccess && (
+            <p className="text-green-700 text-sm font-poppins">
+              Mensaje enviado correctamente.
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={contactLoading}
+            className="mt-4 xl:mt-5 2xl:mt-6 w-24 h-8 bg-[#C58770] flex items-center justify-center text-white text-sm font-medium font-poppins uppercase leading-7 hover:bg-[#b07860] transition disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {contactLoading ? "..." : "enviar"}
+          </button>
+        </form>
+      </AnimatedSection>
+    </div>
+  </div>
+</section>
+      
       {/* Footer */}
       <motion.footer
         initial={{ opacity: 0 }}
