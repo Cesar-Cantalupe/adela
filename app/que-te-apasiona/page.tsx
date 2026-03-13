@@ -307,7 +307,7 @@ export default function QueTeApasionaPage() {
     />
   </div>
 
-  <div className="relative z-10 mx-auto max-w-[900px] px-6 py-16 md:px-10 lg:py-20">
+  <div className="relative z-10 mx-auto max-w-[860px] px-6 py-16 md:px-10 lg:py-20">
     {/* Título manuscrito */}
     <div className="mb-14 text-center">
       <p className="mx-auto max-w-[500px] text-[27px] leading-[1.35] font-swanky text-[#8E99A8]">
@@ -320,7 +320,7 @@ export default function QueTeApasionaPage() {
     </div>
 
     {/* Tabla de temas */}
-    <div className="mx-auto max-w-[760px] border-t border-[#C8CED3]">
+    <div className="mx-auto max-w-[720px] border-t border-[#C8CED3]">
       {/* Fila 1 */}
       <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[230px_minmax(0,1fr)] md:gap-8 border-b border-[#C8CED3]">
         <div>
