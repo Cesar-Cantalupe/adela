@@ -272,85 +272,88 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Desktop: layout original con posiciones fijas */}
-     <div className="relative hidden lg:block w-full max-w-[1474px] mx-auto bg-[#F9F1EF] h-[620px] xl:h-[680px] 2xl:h-[746px] overflow-hidden">
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.2, ease }}
-  className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
->
-  Adela
-</motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35, ease }}
-          className="absolute left-[260px] top-[398px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
-        >
-          Cavia
-        </motion.div>
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.2, ease }}
-  className="absolute right-[170px] 2xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
->
-  Sáenz
-</motion.div>
+ {/* Desktop: layout original con posiciones fijas */}
+<div className="relative hidden lg:block w-full max-w-[1474px] mx-auto bg-[#F9F1EF] h-[620px] xl:h-[680px] 2xl:h-[746px] overflow-hidden">
+  <div className="relative w-full h-full -translate-y-[8%] xl:-translate-y-[4%] 2xl:translate-y-0">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2, ease }}
+      className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
+    >
+      Adela
+    </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.1, ease }}
-          className="absolute left-[512.66px] top-[157px] w-96 h-[589px]"
-        >
-          <Image
-            src="/images/hero/Adela Saenz Cavia25 2.png"
-            alt="Adela Sáenz"
-            fill
-            className="object-cover object-top"
-            unoptimized
-          />
-        </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.35, ease }}
+      className="absolute left-[260px] top-[398px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
+    >
+      Cavia
+    </motion.div>
 
-        {[
-          { left: 976, top: 179 },
-          { left: 1004, top: 483 },
-          { left: 175, top: 569 },
-          { left: 123, top: 203 },
-        ].map((pos, i) => (
-          <motion.p
-            key={i}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: frases[i].delay, ease }}
-            className="absolute w-56 text-center font-swanky text-xl font-normal leading-5 text-[#D49A89]"
-            style={{ left: pos.left, top: pos.top, maxWidth: "14rem" }}
-          >
-            {frases[i].text}
-          </motion.p>
-        ))}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2, ease }}
+      className="absolute right-[170px] 2xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
+    >
+      Sáenz
+    </motion.div>
 
-        {[
-          { left: 427, top: 540, delay: 0.7 },
-          { left: 910, top: 183, delay: 0.65 },
-          { left: 344, top: 226, delay: 0.72 },
-          { left: 948, top: 425, delay: 0.68 },
-        ].map((pos, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, pathLength: 0 }}
-            animate={{ opacity: 1, pathLength: 1 }}
-            transition={{ duration: 0.8, delay: pos.delay, ease }}
-            className="absolute"
-            style={{ left: pos.left, top: pos.top }}
-            aria-hidden
-          >
-            {arrowSvgs[i]}
-          </motion.div>
-        ))}
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.9, delay: 0.1, ease }}
+      className="absolute left-[512.66px] top-[157px] w-96 h-[589px]"
+    >
+      <Image
+        src="/images/hero/Adela Saenz Cavia25 2.png"
+        alt="Adela Sáenz"
+        fill
+        className="object-cover object-top"
+        unoptimized
+      />
+    </motion.div>
+
+    {[
+      { left: 976, top: 179 },
+      { left: 1004, top: 483 },
+      { left: 175, top: 569 },
+      { left: 123, top: 203 },
+    ].map((pos, i) => (
+      <motion.p
+        key={i}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: frases[i].delay, ease }}
+        className="absolute w-56 text-center font-swanky text-xl font-normal leading-5 text-[#D49A89]"
+        style={{ left: pos.left, top: pos.top, maxWidth: "14rem" }}
+      >
+        {frases[i].text}
+      </motion.p>
+    ))}
+
+    {[
+      { left: 427, top: 540, delay: 0.7 },
+      { left: 910, top: 183, delay: 0.65 },
+      { left: 344, top: 226, delay: 0.72 },
+      { left: 948, top: 425, delay: 0.68 },
+    ].map((pos, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, pathLength: 0 }}
+        animate={{ opacity: 1, pathLength: 1 }}
+        transition={{ duration: 0.8, delay: pos.delay, ease }}
+        className="absolute"
+        style={{ left: pos.left, top: pos.top }}
+        aria-hidden
+      >
+        {arrowSvgs[i]}
+      </motion.div>
+    ))}
+  </div>
+</div>
   );
 }
