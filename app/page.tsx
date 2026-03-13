@@ -254,7 +254,7 @@ useEffect(() => {
       </section>
 
       {/* ¿En qué estoy trabajando? */}
-      <section id="trabajando" className="relative py-24 bg-white">
+      <section id="trabajando" className="relative py-12 xl:py-16 2xl:py-24 bg-white">
         <div className="max-w-[1474px] mx-auto px-6">
           {/* Imagen decorativa + título centrados */}
           <AnimatedSection className="flex flex-col items-center text-center mb-12" delay={0.1}>
@@ -443,7 +443,7 @@ useEffect(() => {
 
       {/* We Human Lab */}
       <section id="we-human-lab" className="relative overflow-hidden bg-[#E6CC76]/25">
-        <AnimatedSection className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:py-24 text-center" delay={0.1}>
+        <AnimatedSection className="relative max-w-[1474px] mx-auto px-6 py-10 xl:py-14 2xl:py-24 text-center" delay={0.1}>
           <div className="w-20 h-20 sm:w-24 sm:h-24 relative mx-auto mb-6 md:mb-8">
             <Image
               src="/images/We Human 1.png"
@@ -838,7 +838,7 @@ useEffect(() => {
             </div>
 
             {/* Fila 3: imagen horizontal */}
-            <div className="mt-8 relative w-full h-[300px] md:h-[340px] xl:h-[415px] overflow-hidden">
+            <div className="mt-8 relative w-full h-[240px] md:h-[280px] xl:h-[340px] 2xl:h-[415px] overflow-hidden">
               <Image
                 src="/images/Adela Saenz Cavia9 1.png"
                 alt=""
@@ -954,7 +954,7 @@ useEffect(() => {
 
 
       {/* Publicaciones y charlas */}
-      <section className="relative py-16 md:py-24 bg-white overflow-hidden">
+      <section className="relative py-12 xl:py-16 2xl:py-24 bg-white overflow-hidden">
         <div className="max-w-[1474px] mx-auto px-6 relative">
           <div className="absolute inset-0 opacity-30 bg-white pointer-events-none -z-10" aria-hidden />
           {/* Header: icono, título y enlaces */}
@@ -1099,9 +1099,9 @@ useEffect(() => {
       </section>
 
       {/* Aprendizaje socioemocional */}
-      <section id="ase" className="relative w-full min-h-[746px] bg-white overflow-hidden">
+      <section id="ase" className="relative w-full min-h-[560px] xl:min-h-[640px] 2xl:min-h-[746px] bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-30 bg-orange-300/25 pointer-events-none" aria-hidden />
-        <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[114px] lg:pt-[132px] lg:pb-16">
+        <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[114px] lg:pt-[72px] xl:pt-[96px] 2xl:pt-[132px] lg:pb-12 xl:pb-14 2xl:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12 xl:gap-[188px] items-start">
             {/* Columna izquierda */}
             <AnimatedSection className="flex flex-col min-w-0" direction="right" delay={0.1}>
@@ -1273,7 +1273,7 @@ useEffect(() => {
       
       {/* Proyectos con toda Iberoamérica - Mapa */}
       <section className="relative w-full bg-white overflow-hidden">
-        <div className="w-full relative aspect-[1474/721] overflow-hidden">
+        <div className="w-full relative h-[280px] md:h-[360px] xl:h-[460px] 2xl:h-[560px] overflow-hidden">
           <Image
             src="/images/mapa.png"
             alt="Proyectos con toda Iberoamérica"
@@ -1354,7 +1354,7 @@ useEffect(() => {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
             {/* Imagen izquierda */}
-            <AnimatedSection className="relative w-full h-full min-h-[850px]" direction="right" delay={0.05}>
+            <AnimatedSection className="relative w-full h-full min-h-[520px] xl:min-h-[680px] 2xl:min-h-[850px]" direction="right" delay={0.05}>
               <Image
                 src="/images/Gastro-Session-4-28 1.png"
                 alt="Contacto"
@@ -1364,7 +1364,7 @@ useEffect(() => {
               />
             </AnimatedSection>
             {/* Columna derecha: título + form */}
-            <AnimatedSection className="flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 py-12 lg:py-16" direction="left" delay={0.15}>
+            <AnimatedSection className="flex flex-col items-center justify-center px-6 md:px-10 lg:px-12 2xl:px-16 py-10 xl:py-12 2xl:py-16" direction="left" delay={0.15}>
               <div className="flex items-start gap-4 mb-8">
                 <h2 className="text-[#C58770] text-3xl font-normal font-swanky leading-[96px] tracking-wider">
                   ¡Enviame un mensaje!
