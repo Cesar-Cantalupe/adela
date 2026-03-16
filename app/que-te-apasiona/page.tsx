@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Header } from "@/components/Header";
+import { AnimatedSection } from "@/components/AnimatedSection";
+
 
 function Squiggle({
   className,
@@ -36,6 +38,57 @@ export default function QueTeApasionaPage() {
   const [openVisualizacion, setOpenVisualizacion] = useState(false);
   const [openEmocional, setOpenEmocional] = useState(false);
   const [openDiploma, setOpenDiploma] = useState(false);
+
+  const [contactNombre, setContactNombre] = useState("");
+const [contactEmail, setContactEmail] = useState("");
+const [contactMensaje, setContactMensaje] = useState("");
+const [contactLoading, setContactLoading] = useState(false);
+const [contactSuccess, setContactSuccess] = useState(false);
+const [contactError, setContactError] = useState<string | null>(null);
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setContactError(null);
+  setContactSuccess(false);
+  setContactLoading(true);
+
+  try {
+    const object = {
+      access_key: "0f8526b4-fa54-4a6b-a317-4334f3e53a65",
+      subject: "Nuevo mensaje desde la web de Adela",
+      name: contactNombre.trim(),
+      email: contactEmail.trim(),
+      message: contactMensaje.trim(),
+      botcheck: "",
+    };
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(object),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      setContactError(data.message || "Error al enviar. Intentá de nuevo.");
+      return;
+    }
+
+    setContactSuccess(true);
+    setContactNombre("");
+    setContactEmail("");
+    setContactMensaje("");
+  } catch {
+    setContactError("Error de conexión. Intentá de nuevo.");
+  } finally {
+    setContactLoading(false);
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-white text-[#2D2626]">
@@ -694,6 +747,142 @@ export default function QueTeApasionaPage() {
     </div>
   </div>
 </section>
+
+        {/* Contacto - Form section */}
+<section id="contacto" className="relative w-full bg-white overflow-hidden">
+  <div className="w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
+      {/* Imagen izquierda */}
+      <AnimatedSection
+        className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]"
+        direction="right"
+        delay={0.05}
+      >
+        <Image
+          src="/images/Gastro-Session-4-28 1.png"
+          alt="Contacto"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </AnimatedSection>
+
+      {/* Columna derecha: título + form */}
+      <AnimatedSection
+        className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-8 lg:py-8 xl:py-9 2xl:py-16"
+        direction="left"
+        delay={0.15}
+      >
+        <div className="flex items-start gap-3 xl:gap-3.5 mb-5 xl:mb-6 2xl:mb-8">
+          <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">
+            ¡Enviame un mensaje!
+          </h2>
+
+          <div className="relative w-20 h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
+            <Image
+              src="/images/19 2.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        <form
+          className="space-y-3 xl:space-y-3.5 w-full max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
+          onSubmit={handleContactSubmit}
+        >
+          <div>
+            <label
+              htmlFor="nombre"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              Nombre y Apellido
+            </label>
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              placeholder=" "
+              value={contactNombre}
+              onChange={(e) => setContactNombre(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 disabled:opacity-60"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              E-mail
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder=" "
+              value={contactEmail}
+              onChange={(e) => setContactEmail(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 disabled:opacity-60"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="mensaje"
+              className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7"
+            >
+              Mensaje
+            </label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder=" "
+              rows={2}
+              value={contactMensaje}
+              onChange={(e) => setContactMensaje(e.target.value)}
+              required
+              disabled={contactLoading}
+              className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 resize-y min-h-[70px] xl:min-h-[90px] 2xl:min-h-[100px] disabled:opacity-60"
+            />
+          </div>
+
+          {contactError && (
+            <p className="text-red-600 text-sm font-poppins">{contactError}</p>
+          )}
+
+          {contactSuccess && (
+            <p className="text-green-700 text-sm font-poppins">
+              Mensaje enviado correctamente.
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={contactLoading}
+            className="mt-4 xl:mt-5 2xl:mt-6 w-24 h-8 bg-[#C58770] flex items-center justify-center text-white text-sm font-medium font-poppins uppercase leading-7 hover:bg-[#b07860] transition disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {contactLoading ? "..." : "enviar"}
+          </button>
+        </form>
+      </AnimatedSection>
+    </div>
+  </div>
+</section>
+
 
         {/* Footer */}
       <motion.footer
