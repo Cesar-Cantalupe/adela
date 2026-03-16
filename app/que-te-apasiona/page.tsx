@@ -714,7 +714,7 @@ const [contactError, setContactError] = useState<string | null>(null);
             </div>
 
             
-              href="#"
+           <a  href="#"
               className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
             >
               Descargar diploma
