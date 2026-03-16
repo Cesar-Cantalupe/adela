@@ -676,106 +676,106 @@ const [contactError, setContactError] = useState<string | null>(null);
           stroke="#E3DBCF"
         />
 
-        <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
-            {/* Columna izquierda */}
-            <div>
-              <div className="mb-8 flex items-start justify-between gap-6">
-                <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
-                  ACTIVIDAD SOBRE
-                  <br />
-                  TU UNIVERSO
-                  <br />
-                  EMOCIONAL
-                </h3>
-                <div className="relative h-12 w-12 flex-shrink-0">
-                  <Image
-                    src="/images/libro/icono-mapa.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-              </div>
-
-              <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                Para identificar las emociones y los sentimientos que estamos experimentando te
-                propongo una herramienta llamada "Medidor emocional". Es un diseño elaborado
-                por la Universidad de Yale en el marco del proyecto RULER. El mismo mide los
-                fenómenos emocionales en dos ejes: uno relativo a la energía, alta o baja; y
-                otro relativo a la sensación, negativa o de displacer y positiva o de bienestar.
-              </p>
-
-              <div className="mt-8">
-                <div className="relative aspect-[560/470] w-full max-w-[520px]">
-                  <Image
-                    src="/images/libro/medidor-emocional.png"
-                    alt="Medidor emocional"
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                    unoptimized
-                  />
-                </div>
-
-                
-                <a  href="/images/libro/medidor-emocional.png"
-                  download="medidor-emocional.png"
-                  className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-
-            {/* Columna derecha */}
-            <div className="max-w-[620px] lg:pt-[160px]">
-              <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                La siguiente actividad es enfocarte en alguna situación que percibas que te
-                está trabando y observarla como si fueras otra persona. Este ejercicio te
-                permite tener otra perspectiva (obsérvala como si estuvieras escuchando a una
-                amiga o amigo e intentando ayudarla/o con esa situación).
-              </p>
-
-              <div className="mt-8 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                <p className="font-medium">
-                  Luego de identificar la situación:
-                </p>
-                <ul className="list-disc space-y-3 pl-5">
-                  <li>
-                    Reconoce lo que estás sintiendo, poniéndole nombre (podemos sentir muchas
-                    cosas, porque el universo emocional es complejo, así que indaga más allá
-                    de lo primero que aparezca).
-                  </li>
-                  <li>
-                    Intenta entender con qué se conecta, y las causas subyacentes y las
-                    consecuencias de esas emociones que estás sintiendo.
-                  </li>
-                  <li>
-                    Valida esas emociones que aparecen, dales un espacio y acepta que tienen
-                    una razón de ser.
-                  </li>
-                  <li>
-                    Y luego de todo eso, busca herramientas para gestionarlas de manera más
-                    asertiva: hablándolo con alguien, haciendo ejercicios de respiración y de
-                    conexión corporal, meditando, haciendo ejercicio, dibujando o escribiendo
-                    lo que aparece. Cosas que te den bienestar y placer y te conecten con
-                    asuntos positivos de la misma situación.
-                  </li>
-                </ul>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setOpenEmocional(false)}
-                className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-              >
-                Ver menos
-              </button>
-            </div>
-          </div>
+   <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
+  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:items-start">
+    {/* Columna izquierda */}
+    <div>
+      <div className="mb-8 flex items-start justify-between gap-6">
+        <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
+          ACTIVIDAD SOBRE
+          <br />
+          TU UNIVERSO
+          <br />
+          EMOCIONAL
+        </h3>
+        <div className="relative h-12 w-12 flex-shrink-0">
+          <Image
+            src="/images/libro/icono-mapa.png"
+            alt=""
+            fill
+            className="object-contain"
+            unoptimized
+          />
         </div>
+      </div>
+
+      <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+        Para identificar las emociones y los sentimientos que estamos experimentando te
+        propongo una herramienta llamada "Medidor emocional". Es un diseño elaborado
+        por la Universidad de Yale en el marco del proyecto RULER. El mismo mide los
+        fenómenos emocionales en dos ejes: uno relativo a la energía, alta o baja; y
+        otro relativo a la sensación, negativa o de displacer y positiva o de bienestar.
+      </p>
+
+      <div className="mt-8">
+        <div className="relative aspect-[560/470] w-full max-w-[520px]">
+          <Image
+            src="/images/libro/medidor-emocional.png"
+            alt="Medidor emocional"
+            fill
+            className="object-contain"
+            sizes="(max-width: 1024px) 100vw, 520px"
+            unoptimized
+          />
+        </div>
+
+        
+         <a href="/images/libro/medidor-emocional.png"
+          download="medidor-emocional.png"
+          className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+        >
+          Descargar
+        </a>
+      </div>
+    </div>
+
+    {/* Columna derecha — empieza a la altura del párrafo, después del título */}
+    <div className="max-w-[620px] lg:pt-[calc(28px*1.1*3+2.5rem)]">
+      <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+        La siguiente actividad es enfocarte en alguna situación que percibas que te
+        está trabando y observarla como si fueras otra persona. Este ejercicio te
+        permite tener otra perspectiva (obsérvala como si estuvieras escuchando a una
+        amiga o amigo e intentando ayudarla/o con esa situación).
+      </p>
+
+      <div className="mt-8 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+        <p className="font-medium">
+          Luego de identificar la situación:
+        </p>
+        <ul className="list-disc space-y-3 pl-5">
+          <li>
+            Reconoce lo que estás sintiendo, poniéndole nombre (podemos sentir muchas
+            cosas, porque el universo emocional es complejo, así que indaga más allá
+            de lo primero que aparezca).
+          </li>
+          <li>
+            Intenta entender con qué se conecta, y las causas subyacentes y las
+            consecuencias de esas emociones que estás sintiendo.
+          </li>
+          <li>
+            Valida esas emociones que aparecen, dales un espacio y acepta que tienen
+            una razón de ser.
+          </li>
+          <li>
+            Y luego de todo eso, busca herramientas para gestionarlas de manera más
+            asertiva: hablándolo con alguien, haciendo ejercicios de respiración y de
+            conexión corporal, meditando, haciendo ejercicio, dibujando o escribiendo
+            lo que aparece. Cosas que te den bienestar y placer y te conecten con
+            asuntos positivos de la misma situación.
+          </li>
+        </ul>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setOpenEmocional(false)}
+        className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+      >
+        Ver menos
+      </button>
+    </div>
+  </div>
+</div>
       </motion.div>
     ) : (
       <motion.div
