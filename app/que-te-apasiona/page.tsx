@@ -609,16 +609,16 @@ export default function QueTeApasionaPage() {
 {/* ACTIVIDAD 3 / DIPLOMA */}
 <section className="relative overflow-hidden bg-[#EFF0F2]">
   <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[430px_72px_minmax(0,1fr)] lg:gap-10 items-start">
       {/* Columna izquierda */}
-      <div>
-        <p className="text-[14px] leading-[1.35] font-swanky text-[#8A99A8]">
+      <div className="max-w-[430px]">
+        <p className="-rotate-[2deg] origin-left text-[14px] leading-[1.35] font-swanky text-[#8A99A8]">
           Desarrollando nuestra
           <br />
           regulación emocional:
         </p>
 
-        <h3 className="mt-6 text-[28px] leading-[1.1] tracking-[0.04em] font-light font-poppins uppercase text-[#8A99A8]">
+        <h3 className="mt-8 text-[30px] leading-[1.14] tracking-[0.035em] font-light font-poppins uppercase text-[#8A99A8]">
           DEL MIEDO Y LA FRUSTRACIÓN
           <br />
           A LA RESILIENCIA Y LA ESPERANZA
@@ -626,7 +626,7 @@ export default function QueTeApasionaPage() {
       </div>
 
       {/* Icono */}
-      <div className="flex items-start justify-start lg:justify-center">
+      <div className="flex items-start justify-start pt-2">
         <div className="relative h-12 w-12">
           <Image
             src="/images/libro/icono-mapa.png"
@@ -656,7 +656,7 @@ export default function QueTeApasionaPage() {
               transition={{ duration: 0.28 }}
               className="overflow-hidden"
             >
-              <div className="mt-8">
+              <div className="mt-10">
                 <div className="relative aspect-[930/620] w-full max-w-[760px]">
                   <Image
                     src="/images/libro/diploma.png"
@@ -667,14 +667,14 @@ export default function QueTeApasionaPage() {
                     unoptimized
                   />
                 </div>
-
-                <a
-                  href="#"
-                  className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-                >
-                  Descargar diploma
-                </a>
               </div>
+
+              <a
+                href="#"
+                className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+              >
+                Descargar diploma
+              </a>
             </motion.div>
           )}
         </AnimatePresence>
@@ -690,6 +690,7 @@ export default function QueTeApasionaPage() {
     </div>
   </div>
 </section>
+
 
         
         {/* ACTIVIDAD 3 / DIPLOMA */}
