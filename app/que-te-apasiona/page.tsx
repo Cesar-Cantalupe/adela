@@ -48,44 +48,43 @@ function AudioPlayer({ src }: { src: string }) {
   };
 
   const bars = [
-    8,16,24,32,20,36,28,40,32,24,38,30,42,34,26,38,28,44,36,30,
-    42,32,24,36,28,40,32,20,36,28,44,36,30,24,38,28,40,32,26,36,
-    28,42,34,22,38,30,44,36,28,32,24,38,30,42,28,20,34,26,38,30,12
+    10,18,28,22,36,26,40,30,20,34,28,42,32,24,38,28,44,34,26,38,
+    30,42,32,22,36,28,40,30,20,34,26,38,30,42,28,18,32,24,36,28,12
   ];
 
   return (
-    <div className="mt-8 flex items-center gap-3 bg-[#ECDCDA] rounded-full px-4 py-3 w-full max-w-[560px]">
+    <div className="mt-6 flex items-center gap-3 bg-[#ECDCDA] rounded-full px-3 py-2.5 max-w-[380px]">
       <audio ref={audioRef} src={src} onEnded={() => setPlaying(false)} />
       <button
         type="button"
         onClick={toggle}
-        className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
+        className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
       >
         {playing ? (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <rect x="2" y="1" width="4" height="12" rx="1.5" />
-            <rect x="8" y="1" width="4" height="12" rx="1.5" />
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+            <rect x="1" y="1" width="3.5" height="10" rx="1" />
+            <rect x="7.5" y="1" width="3.5" height="10" rx="1" />
           </svg>
         ) : (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <path d="M3 1.5l9 5.5-9 5.5V1.5z" />
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+            <path d="M2.5 1.5l8 4.5-8 4.5V1.5z" />
           </svg>
         )}
       </button>
 
-<div className="flex items-center justify-between flex-1 h-[48px]">
-  {bars.map((h, i) => (
-    <div
-      key={i}
-      className="rounded-full bg-white/80 flex-shrink-0 transition-opacity duration-300"
-      style={{
-        width: "2.5px",
-        height: `${h}px`,
-        opacity: playing ? 1 : 0.85,
-      }}
-    />
-  ))}
-</div>
+      <div className="flex items-center justify-between flex-1 h-[36px]">
+        {bars.map((h, i) => (
+          <div
+            key={i}
+            className="rounded-full bg-white/80 flex-shrink-0"
+            style={{
+              width: "2px",
+              height: `${h}px`,
+              opacity: playing ? 1 : 0.85,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
