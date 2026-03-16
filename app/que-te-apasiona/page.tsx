@@ -393,6 +393,403 @@ export default function QueTeApasionaPage() {
   </div>
 </section>
 
+        {/* ACTIVIDAD 1 */}
+<section className="relative overflow-hidden bg-[#F6F3EA]">
+  <div className="mx-auto max-w-[1474px] px-6 py-12 md:px-10 lg:px-[72px] lg:py-14">
+    <AnimatePresence mode="wait" initial={false}>
+      {!openVisualizacion ? (
+        <motion.div
+          key="visualizacion-collapsed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[240px_64px_minmax(0,620px)] lg:items-start lg:gap-12"
+        >
+          <div>
+            <h3 className="text-[26px] leading-[1.05] tracking-[0.08em] font-light font-poppins uppercase text-[#D9A8A0]">
+              Actividad
+              <br />
+              Visualización
+            </h3>
+          </div>
+
+          <div className="flex items-start justify-start lg:justify-center lg:pt-1">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="max-w-[640px]">
+            <p className="text-[14px] leading-[2] font-light font-poppins text-[#3B3434]">
+              En esta etapa del camino te propongo reconstruir y recuperar tus
+              redes interiores. Esas personas que te habitan y te constituyen
+              en la persona que eres hoy. Para ello, puedes hacer una especie de
+              visualización. Necesitas un momento de calma. Silencio y paz.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setOpenVisualizacion(true)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C88C73] px-7 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver más
+            </button>
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="visualizacion-expanded"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12"
+        >
+          <div>
+            <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D2C26A]">
+              Actividad
+              <br />
+              Visualización
+            </h3>
+          </div>
+
+          <div className="flex items-start justify-start lg:justify-center">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="max-w-[760px]">
+            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              En esta etapa del camino te propongo reconstruir y recuperar tus redes
+              interiores. Esas personas que te habitan y te constituyen en la persona que
+              eres hoy. Para ello, puedes hacer una especie de visualización. Necesitas un
+              momento de calma. Silencio y paz.
+            </p>
+
+            <div className="mt-6 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              <p>
+                Te propongo, entonces, que hagas una lista de las diez o quince
+                personas que te inspiran.
+              </p>
+              <p>
+                Enlista sus nombres. Pueden ser personas que conozcas o no, pueden ser
+                personas famosas o alguien cercano, alguien que esté vivo o que ya no
+                esté de manera física.
+              </p>
+              <p>
+                ¿Qué es lo que te inspira de esas personas? ¿Qué enseñanzas te han
+                dejado? ¿En qué momentos de tu vida recurres a ellas para tomar de sus
+                energías o aprendizajes?
+              </p>
+              <p>
+                Una vez hayas hecho esta pequeña visualización, te invito a que tomes
+                tu cuaderno y escribas todo lo que aparece.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOpenVisualizacion(false)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C88C73] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver menos
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</section>
+
+{/* ACTIVIDAD 2 */}
+<section className="relative overflow-hidden bg-[#F3EFE7]">
+  <Squiggle
+    className="pointer-events-none absolute inset-0 h-full w-full opacity-10"
+    stroke="#E3DBCF"
+  />
+
+  <div className="relative z-10 mx-auto max-w-[1474px] px-6 py-12 md:px-10 lg:px-[72px] lg:py-14">
+    <AnimatePresence mode="wait" initial={false}>
+      {!openEmocional ? (
+        <motion.div
+          key="emocional-collapsed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[420px_64px_minmax(0,560px)] lg:items-start lg:gap-12"
+        >
+          <div className="max-w-[430px]">
+            <h3 className="text-[26px] leading-[1.08] tracking-[0.05em] font-light font-poppins uppercase text-[#D1BA64]">
+              Actividad sobre tu
+              <br />
+              universo emocional
+            </h3>
+
+            <p className="mt-10 text-[14px] leading-[2] font-light font-poppins text-[#3B3434]">
+              Para identificar las emociones y los sentimientos que estamos experimentando
+              te propongo una herramienta llamada “Medidor emocional”. Es un diseño
+              elaborado por la Universidad de Yale en el marco del proyecto RULER.
+            </p>
+          </div>
+
+          <div className="flex items-start justify-start lg:justify-center lg:pt-2">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="max-w-[560px]">
+            <p className="text-[14px] leading-[2] font-light font-poppins text-[#3B3434]">
+              La siguiente actividad es enfocarte en alguna situación que percibas que te está
+              trabando y observarla como si fueras otra persona. Este ejercicio te permite tener
+              otra perspectiva.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setOpenEmocional(true)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-7 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver más
+            </button>
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="emocional-expanded"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16"
+        >
+          <div>
+            <div className="mb-8 flex items-start justify-between gap-6">
+              <h3 className="max-w-[420px] text-[28px] leading-[1.18] tracking-[0.04em] font-light font-poppins uppercase text-[#D1BA64]">
+                Actividad sobre tu universo emocional
+              </h3>
+
+              <div className="relative h-12 w-12 flex-shrink-0">
+                <Image
+                  src="/images/libro/icono-mapa.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            </div>
+
+            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              Para identificar las emociones y los sentimientos que estamos experimentando te
+              propongo una herramienta llamada “Medidor emocional”. Es un diseño elaborado
+              por la Universidad de Yale en el marco del proyecto RULER.
+            </p>
+
+            <div className="mt-8">
+              <div className="relative aspect-[560/470] w-full max-w-[520px]">
+                <Image
+                  src="/images/libro/medidor-emocional.png"
+                  alt="Medidor emocional"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  unoptimized
+                />
+              </div>
+
+              <a
+                href="#"
+                className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+              >
+                Descargar
+              </a>
+            </div>
+          </div>
+
+          <div className="max-w-[620px]">
+            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              La siguiente actividad es enfocarte en alguna situación que percibas que te
+              está trabando y observarla como si fueras otra persona. Este ejercicio te
+              permite tener otra perspectiva.
+            </p>
+
+            <div className="mt-8 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              <p className="font-medium">
+                Luego de identificar la situación:
+              </p>
+              <ul className="list-disc space-y-2 pl-5">
+                <li>Reconoce lo que estás sintiendo, poniéndole nombre.</li>
+                <li>Intenta entender con qué se conecta y las causas subyacentes.</li>
+                <li>Valida esas emociones que aparecen, dales un espacio y acepta que tienen una razón de ser.</li>
+                <li>Busca herramientas para gestionarlas de manera más asertiva.</li>
+              </ul>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOpenEmocional(false)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver menos
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</section>
+
+{/* ACTIVIDAD 3 / DIPLOMA */}
+<section className="relative overflow-hidden bg-[#EFF0F2]">
+  <Squiggle
+    className="pointer-events-none absolute inset-0 h-full w-full opacity-10"
+    stroke="#DADDE2"
+  />
+
+  <div className="relative z-10 mx-auto max-w-[1474px] px-6 py-12 md:px-10 lg:px-[72px] lg:py-14">
+    <AnimatePresence mode="wait" initial={false}>
+      {!openDiploma ? (
+        <motion.div
+          key="diploma-collapsed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[420px_64px_minmax(0,560px)] lg:items-start lg:gap-12"
+        >
+          <div className="max-w-[430px]">
+            <p className="text-[22px] leading-[1.35] font-swanky text-[#8E99A8]">
+              Desarrollando nuestra
+              <br />
+              regulación emocional:
+            </p>
+
+            <h3 className="mt-6 text-[44px] leading-[1.08] tracking-[0.06em] font-light font-poppins uppercase text-[#7A7F86]">
+              Del miedo y la frustración
+              <br />
+              a la resiliencia y la esperanza
+            </h3>
+          </div>
+
+          <div className="flex items-start justify-start lg:justify-center lg:pt-2">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="max-w-[560px]">
+            <p className="text-[14px] leading-[2] font-light font-poppins text-[#3B3434]">
+              Hemos llegado hasta este punto y nos parece importante hacer un reconocimiento.
+              Un reconocimiento íntimo y personal por haber hecho el recorrido propuesto hasta
+              acá y por haber atravesado todo este proceso de descubrimiento personal.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setOpenDiploma(true)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#7D90A0] px-7 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver más
+            </button>
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="diploma-expanded"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="mx-auto max-w-[1100px] text-center"
+        >
+          <div className="mx-auto mb-6 relative h-12 w-12">
+            <Image
+              src="/images/libro/icono-mapa.png"
+              alt=""
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
+
+          <p className="text-[14px] font-swanky text-[#8A8686]">
+            Desarrollando nuestra regulación emocional:
+          </p>
+
+          <h3 className="mx-auto mt-3 max-w-[820px] text-[34px] leading-[1.2] tracking-[0.08em] font-light font-poppins uppercase text-[#7A7F86] md:text-[48px]">
+            Del miedo y la frustración a la resiliencia y la esperanza.
+          </h3>
+
+          <p className="mx-auto mt-6 max-w-[720px] text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+            Hemos llegado hasta este punto y nos parece importante hacer un reconocimiento.
+            Un reconocimiento íntimo y personal por haber hecho el recorrido propuesto hasta
+            acá y por haber atravesado todo este proceso de descubrimiento personal.
+          </p>
+
+          <div className="mt-10">
+            <div className="relative mx-auto aspect-[930/620] w-full max-w-[760px]">
+              <Image
+                src="/images/libro/diploma.png"
+                alt="Diploma de reconocimiento"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 760px"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3">
+            <a
+              href="#"
+              className="inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Descargar diploma
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setOpenDiploma(false)}
+              className="inline-flex h-8 items-center justify-center bg-[#7D90A0] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver menos
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</section>
+
+
 
         {/* ACTIVIDAD 1 */}
         <section className="relative overflow-hidden bg-[#F6F3EA]">
