@@ -37,15 +37,12 @@ const scrollToGallery = (index: number) => {
 };
 
   const partnerLogos = [
+  // Logos originales (logosnegros)
   { src: "/images/logosnegros/Axion.png", alt: "Axion" },
-  { src: "/images/logosnegros/Carrefour.png", alt: "Carrefour" },
   { src: "/images/logosnegros/biogenesis_bago_recolor.png", alt: "Bago" },
-  { src: "/images/logosnegros/cencosud.png", alt: "Cencosud" },
-  { src: "/images/logosnegros/deloitte.png", alt: "Deloitte" },
   { src: "/images/logosnegros/elea.png", alt: "Elea" },
   { src: "/images/logosnegros/cac_recolor.png", alt: "Cac" },
   { src: "/images/logosnegros/endeavor.png", alt: "Endeavor" },
-  { src: "/images/logosnegros/hsbc.png", alt: "HSBC" },
   { src: "/images/logosnegros/icba.png", alt: "Icba" },
   { src: "/images/logosnegros/ksfilms_recolor.png", alt: "Ksfilms" },
   { src: "/images/logosnegros/lanacion.png", alt: "La Nación" },
@@ -57,6 +54,18 @@ const scrollToGallery = (index: number) => {
   { src: "/images/logosnegros/unilever_recolor.png", alt: "Unilever" },
   { src: "/images/logosnegros/ceva_recolor.png", alt: "ceva" },
   { src: "/images/logosnegros/insud.png", alt: "insud" },
+  // Nuevos logos (images/logos)
+  { src: "/images/logos/ba.png", alt: "Aerolíneas Argentinas" },
+  { src: "/images/logos/arcerol.png", alt: "Arcerol" },
+  { src: "/images/logos/chevron.png", alt: "Chevron" },
+  { src: "/images/logos/comafi.png", alt: "Comafi" },
+  { src: "/images/logos/dow.png", alt: "Dow" },
+  { src: "/images/logos/ford.png", alt: "Ford" },
+  { src: "/images/logos/lenovo.png", alt: "Lenovo" },
+  { src: "/images/logos/mercadolibre.png", alt: "Mercado Libre" },
+  { src: "/images/logos/personal.png", alt: "Personal" },
+  { src: "/images/logos/siemens.png", alt: "Siemens" },
+  { src: "/images/logos/ypf.png", alt: "YPF" },
 ];
 
   
@@ -558,13 +567,13 @@ useEffect(() => {
           <AnimatedSection className="relative overflow-hidden -mx-6 px-6 py-8 md:py-10" delay={0.2}>
             <div className="relative flex flex-wrap justify-center gap-6 sm:gap-4 md:gap-6 lg:flex-nowrap lg:justify-between lg:gap-4">
             {[
-              { name: "Ercilia Braun", image: "/images/red/ercilia.png" },
+              { name: "Ercilia Braun", image: "/images/red/ercilia.png", link: "https://www.linkedin.com/in/ercilia-braun-629409a/?originalSubdomain=ar" },
               { name: "Adela Saénz Cavia", image: "/images/red/adela.png" },
-              { name: "Miguel Espeche", image: "/images/red/miguel.png" },
-              { name: "Osvaldo Rivolt", image: "/images/red/osvaldo.png" },
-              { name: "María Eugenia Barrio", image: "/images/red/maria.png" },
-              { name: "Lucía Franchi", image: "/images/red/lucia.png" },
-              { name: "Fabiana García Lago", image: "/images/red/fabiana.png" },
+              { name: "Miguel Espeche", image: "/images/red/miguel.png", link: "https://www.linkedin.com/in/miguel-espeche-520106b/" },
+              { name: "Osvaldo Rivolt", image: "/images/red/osvaldo.png", link: "https://www.linkedin.com/in/osvaldo-a-rivolt-465ba12b/" },
+              { name: "María Eugenia Barrio", image: "/images/red/maria.png", link: "https://www.linkedin.com/in/maiu-barrio-234a941b8/" },
+              { name: "Lucía Franchi", image: "/images/red/lucia.png", link: "https://www.linkedin.com/in/lucia-franchi32405/" },
+              { name: "Fabiana García Lago", image: "/images/red/fabiana.png", link: "https://www.linkedin.com/in/fabiana-garcia-lago-248a8a13b/" },
             ].map((person, i) => (
               <motion.div
                 key={person.name}
@@ -574,18 +583,42 @@ useEffect(() => {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="flex flex-col items-center flex-shrink-0"
               >
-                <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    width={128}
-                    height={128}
-                    className="w-full h-full min-w-full min-h-full object-cover object-center"
-                  />
-                </div>
-                <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black hover:text-yellow-600 transition-colors cursor-default">
-                  {person.name}
-                </span>
+                {person.link ? (
+                  <a
+                    href={person.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center cursor-pointer group"
+                  >
+                    <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
+                      <Image
+                        src={person.image}
+                        alt={person.name}
+                        width={128}
+                        height={128}
+                        className="w-full h-full min-w-full min-h-full object-cover object-center"
+                      />
+                    </div>
+                    <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black group-hover:text-yellow-600 transition-colors">
+                      {person.name}
+                    </span>
+                  </a>
+                ) : (
+                  <>
+                    <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
+                      <Image
+                        src={person.image}
+                        alt={person.name}
+                        width={128}
+                        height={128}
+                        className="w-full h-full min-w-full min-h-full object-cover object-center"
+                      />
+                    </div>
+                    <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black cursor-default">
+                      {person.name}
+                    </span>
+                  </>
+                )}
               </motion.div>
             ))}
             </div>
@@ -1362,10 +1395,10 @@ useEffect(() => {
         delay={0.05}
       >
         <Image
-          src="/images/Gastro-Session-4-28 1.png"
+          src="/images/imagen-contacto2.jpg"
           alt="Contacto"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
       </AnimatedSection>
