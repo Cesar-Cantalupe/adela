@@ -564,12 +564,13 @@ export default function QueTeApasionaPage() {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
         <div>
           <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
-            Actividad
+            ACTIVIDAD SOBRE
             <br />
-            sobre tu universo
+            TU UNIVERSO
             <br />
-            emocional
+            EMOCIONAL
           </h3>
+
         </div>
 
         <div className="flex items-start justify-start lg:justify-center">
@@ -605,125 +606,6 @@ export default function QueTeApasionaPage() {
   )}
 </section>
 
-
-        {/* ACTIVIDAD 2 */}
-        <section className="relative overflow-hidden bg-[#F3EFE7]">
-          <Squiggle className="pointer-events-none absolute bottom-0 right-0 h-full w-full opacity-15" stroke="#E3DBCF" />
-
-          <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
-              <div>
-                <div className="mb-8 flex items-start justify-between gap-6">
-                  <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
-                    ACTIVIDAD SOBRE
-                    <br />
-                    TU UNIVERSO
-                    <br />
-                    EMOCIONAL
-                  </h3>
-
-
-                  <div className="relative h-12 w-12 flex-shrink-0">
-                    <Image
-                      src="/images/libro/icono-mapa.png"
-                      alt=""
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-
-                <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                  Para identificar las emociones y los sentimientos que estamos experimentando te
-                  propongo una herramienta llamada “Medidor emocional”. Es un diseño elaborado
-                  por la Universidad de Yale en el marco del proyecto RULER.
-                </p>
-
-                <AnimatePresence initial={false}>
-                  {openEmocional && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-8">
-                        <div className="relative aspect-[560/470] w-full max-w-[520px]">
-                          <Image
-                            src="/images/libro/medidor-emocional.png"
-                            alt="Medidor emocional"
-                            fill
-                            className="object-contain"
-                            sizes="(max-width: 1024px) 100vw, 520px"
-                            unoptimized
-                          />
-                        </div>
-
-                        <a
-                          href="#"
-                          className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-                        >
-                          Descargar
-                        </a>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              <div className="max-w-[620px]">
-                <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                  La siguiente actividad es enfocarte en alguna situación que percibas que te
-                  está trabando y observarla como si fueras otra persona. Este ejercicio te
-                  permite tener otra perspectiva.
-                </p>
-
-                <AnimatePresence initial={false}>
-                  {openEmocional && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-8 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                        <p className="font-medium">
-                          Luego de identificar la situación:
-                        </p>
-                        <ul className="list-disc space-y-2 pl-5">
-                          <li>
-                            Reconoce lo que estás sintiendo, poniéndole nombre.
-                          </li>
-                          <li>
-                            Intenta entender con qué se conecta y las causas subyacentes.
-                          </li>
-                          <li>
-                            Valida esas emociones que aparecen, dales un espacio y acepta que
-                            tienen una razón de ser.
-                          </li>
-                          <li>
-                            Busca herramientas para gestionarlas de manera más asertiva.
-                          </li>
-                        </ul>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <button
-                  type="button"
-                  onClick={() => setOpenEmocional((prev) => !prev)}
-                  className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-                >
-                  {openEmocional ? "Ver menos" : "Ver más"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ACTIVIDAD 3 / DIPLOMA */}
         <section className="relative overflow-hidden bg-[#EFF0F2]">
