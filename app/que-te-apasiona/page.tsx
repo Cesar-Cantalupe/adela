@@ -73,19 +73,19 @@ function AudioPlayer({ src }: { src: string }) {
         )}
       </button>
 
-      <div className="flex items-center gap-[2.5px] flex-1 h-[48px]">
-        {bars.map((h, i) => (
-          <div
-            key={i}
-            className="rounded-full bg-white/80 flex-shrink-0 transition-opacity duration-300"
-            style={{
-              width: "2.5px",
-              height: `${h}px`,
-              opacity: playing ? 1 : 0.85,
-            }}
-          />
-        ))}
-      </div>
+<div className="flex items-center justify-between flex-1 h-[48px]">
+  {bars.map((h, i) => (
+    <div
+      key={i}
+      className="rounded-full bg-white/80 flex-shrink-0 transition-opacity duration-300"
+      style={{
+        width: "2.5px",
+        height: `${h}px`,
+        opacity: playing ? 1 : 0.85,
+      }}
+    />
+  ))}
+</div>
     </div>
   );
 }
@@ -656,141 +656,7 @@ const [contactError, setContactError] = useState<string | null>(null);
 </section>
 
 
-        {/* ACTIVIDAD 2 */}
-<section className="relative overflow-hidden bg-[#F3EFE7]">
-  {openEmocional ? (
-    <>
-      <Squiggle
-        className="pointer-events-none absolute bottom-0 right-0 h-full w-full opacity-15"
-        stroke="#E3DBCF"
-      />
-
-      <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
-          <div>
-            <div className="mb-8 flex items-start justify-between gap-6">
-              <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
-                ACTIVIDAD SOBRE
-                <br />
-                TU UNIVERSO
-                <br />
-                EMOCIONAL
-              </h3>
-              <div className="relative h-12 w-12 flex-shrink-0">
-                <Image
-                  src="/images/libro/icono-mapa.png"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
-            </div>
-
-            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-              Para identificar las emociones y los sentimientos que estamos experimentando te
-              propongo una herramienta llamada “Medidor emocional”. Es un diseño elaborado
-              por la Universidad de Yale en el marco del proyecto RULER.
-            </p>
-
-            <div className="mt-8">
-              <div className="relative aspect-[560/470] w-full max-w-[520px]">
-                <Image
-                  src="/images/libro/medidor-emocional.png"
-                  alt="Medidor emocional"
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 1024px) 100vw, 520px"
-                  unoptimized
-                />
-              </div>
-
-              <a
-                href="#"
-                className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-              >
-                Descargar
-              </a>
-            </div>
-          </div>
-
-          <div className="max-w-[620px]">
-            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-              La siguiente actividad es enfocarte en alguna situación que percibas que te
-              está trabando y observarla como si fueras otra persona. Este ejercicio te
-              permite tener otra perspectiva.
-            </p>
-
-            <div className="mt-8 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-              <p className="font-medium">
-                Luego de identificar la situación:
-              </p>
-              <ul className="list-disc space-y-2 pl-5">
-                <li>Reconoce lo que estás sintiendo, poniéndole nombre.</li>
-                <li>Intenta entender con qué se conecta y las causas subyacentes.</li>
-                <li>Valida esas emociones que aparecen, dales un espacio y acepta que tienen una razón de ser.</li>
-                <li>Busca herramientas para gestionarlas de manera más asertiva.</li>
-              </ul>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setOpenEmocional(false)}
-              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-            >
-              Ver menos
-            </button>
-          </div>
-        </div>
-      </div>
-    </>
-  ) : (
-    <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
-        <div>
-          <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D1BA64]">
-            ACTIVIDAD SOBRE
-            <br />
-            TU UNIVERSO
-            <br />
-            EMOCIONAL
-          </h3>
-
-        </div>
-
-        <div className="flex items-start justify-start lg:justify-center">
-          <div className="relative h-12 w-12">
-            <Image
-              src="/images/libro/icono-mapa.png"
-              alt=""
-              fill
-              className="object-contain"
-              unoptimized
-            />
-          </div>
-        </div>
-
-        <div className="max-w-[760px]">
-          <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-            Para identificar las emociones y los sentimientos que estamos experimentando te
-            propongo una herramienta llamada “Medidor emocional”. Además, la siguiente
-            actividad te invita a enfocarte en una situación que percibas como trabante y
-            observarla como si fueras otra persona.
-          </p>
-
-          <button
-            type="button"
-            onClick={() => setOpenEmocional(true)}
-            className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-          >
-            Ver más
-          </button>
-        </div>
-      </div>
-    </div>
-  )}
-</section>
-
+     
 {/* ACTIVIDAD 2 */}
 <section className="relative overflow-hidden bg-[#F3EFE7]">
   <AnimatePresence initial={false} mode="wait">
