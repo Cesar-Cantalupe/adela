@@ -660,31 +660,13 @@ const [contactError, setContactError] = useState<string | null>(null);
   )}
 </section>
 
-{/* ACTIVIDAD 3 / DIPLOMA */}
+        {/* ACTIVIDAD 3 / DIPLOMA */}
 <section className="relative overflow-hidden bg-[#EFF0F2]">
   <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
-      {/* Columna izquierda */}
-      <div>
-        <p className="-rotate-[2deg] origin-left text-[24px] leading-[1.15] font-swanky text-[#8A99A8]">
-          Desarrollando nuestra
-          <br />
-          regulación emocional:
-        </p>
-
-        <h3 className="mt-8 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
-          <span className="block whitespace-nowrap">
-            Del miedo y la frustración
-          </span>
-          <span className="block whitespace-nowrap">
-            a la resiliencia y la esperanza
-          </span>
-        </h3>
-      </div>
-
-      {/* Icono */}
-      <div className="flex items-start justify-start lg:justify-center">
-        <div className="relative h-12 w-12">
+    {openDiploma ? (
+      /* Layout centrado cuando está expandido */
+      <div className="flex flex-col items-center text-center">
+        <div className="relative h-12 w-12 mb-8">
           <Image
             src="/images/libro/icono-mapa.png"
             alt=""
@@ -693,11 +675,19 @@ const [contactError, setContactError] = useState<string | null>(null);
             unoptimized
           />
         </div>
-      </div>
 
-      {/* Columna derecha */}
-      <div className="max-w-[760px]">
-        <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+        <p className="-rotate-[2deg] text-[24px] leading-[1.15] font-swanky text-[#8A99A8]">
+          Desarrollando nuestra
+          <br />
+          regulación emocional:
+        </p>
+
+        <h3 className="mt-6 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
+          <span className="block">Del miedo y la frustración</span>
+          <span className="block">a la resiliencia y la esperanza</span>
+        </h3>
+
+        <p className="mt-8 max-w-[600px] text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
           Hemos llegado hasta este punto y nos parece importante hacer un
           reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
           recorrido propuesto hasta acá y por haber atravesado todo este proceso
@@ -705,48 +695,213 @@ const [contactError, setContactError] = useState<string | null>(null);
         </p>
 
         <AnimatePresence initial={false}>
-          {openDiploma && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.28 }}
-              className="overflow-hidden"
-            >
-              <div className="mt-10">
-                <div className="relative aspect-[930/620] w-full max-w-[760px]">
-                  <Image
-                    src="/images/libro/diploma.png"
-                    alt="Diploma de reconocimiento"
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 1024px) 100vw, 760px"
-                    unoptimized
-                  />
-                </div>
-              </div>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28 }}
+            className="overflow-hidden w-full flex flex-col items-center"
+          >
+            <div className="mt-10 relative aspect-[930/620] w-full max-w-[760px]">
+              <Image
+                src="/images/libro/diploma.png"
+                alt="Diploma de reconocimiento"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 760px"
+                unoptimized
+              />
+            </div>
 
-              <a
-                href="#"
-                className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-              >
-                Descargar diploma
-              </a>
-            </motion.div>
-          )}
+            
+                     <a  href="/images/libro/diploma.pdf"
+            download="diploma-de-reconocimiento.pdf"
+            className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+          >
+            Descargar diploma
+          </a>
+          </motion.div>
         </AnimatePresence>
 
         <button
           type="button"
-          onClick={() => setOpenDiploma((prev) => !prev)}
-          className="mt-6 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+          onClick={() => setOpenDiploma(false)}
+          className="mt-4 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
         >
-          {openDiploma ? "Ver menos" : "Ver más"}
+          Ver menos
         </button>
       </div>
-    </div>
+    ) : (
+      /* Layout 3 columnas cuando está cerrado */
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
+        <div>
+          <p className="-rotate-[2deg] origin-left text-[24px] leading-[1.15] font-swanky text-[#8A99A8]">
+            Desarrollando nuestra
+            <br />
+            regulación emocional:
+          </p>
+          <h3 className="mt-8 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
+            <span className="block whitespace-nowrap">Del miedo y la frustración</span>
+            <span className="block whitespace-nowrap">a la resiliencia y la esperanza</span>
+          </h3>
+        </div>
+
+        <div className="flex items-start justify-start lg:justify-center">
+          <div className="relative h-12 w-12">
+            <Image
+              src="/images/libro/icono-mapa.png"
+              alt=""
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
+        </div>
+
+        <div className="max-w-[760px]">
+          <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+            Hemos llegado hasta este punto y nos parece importante hacer un
+            reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
+            recorrido propuesto hasta acá y por haber atravesado todo este proceso
+            de descubrimiento personal.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => setOpenDiploma(true)}
+            className="mt-6 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+          >
+            Ver más
+          </button>
+        </div>
+      </div>
+    )}
   </div>
 </section>
+
+        {/* ACTIVIDAD 3 / DIPLOMA */}
+<section className="relative overflow-hidden bg-[#EFF0F2]">
+  <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
+    <AnimatePresence initial={false} mode="wait">
+      {openDiploma ? (
+        <motion.div
+          key="expanded"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.45, ease: "easeInOut" }}
+          className="flex flex-col items-center text-center"
+        >
+          <div className="relative h-12 w-12 mb-8">
+            <Image
+              src="/images/libro/icono-mapa.png"
+              alt=""
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
+
+          <p className="-rotate-[2deg] text-[24px] leading-[1.15] font-swanky text-[#8A99A8]">
+            Desarrollando nuestra
+            <br />
+            regulación emocional:
+          </p>
+
+          <h3 className="mt-6 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
+            <span className="block">Del miedo y la frustración</span>
+            <span className="block">a la resiliencia y la esperanza</span>
+          </h3>
+
+          <p className="mt-8 max-w-[600px] text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+            Hemos llegado hasta este punto y nos parece importante hacer un
+            reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
+            recorrido propuesto hasta acá y por haber atravesado todo este proceso
+            de descubrimiento personal.
+          </p>
+
+          <div className="mt-10 relative aspect-[930/620] w-full max-w-[760px]">
+            <Image
+              src="/images/libro/diploma.png"
+              alt="Diploma de reconocimiento"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 760px"
+              unoptimized
+            />
+          </div>
+
+          
+           <a href="/images/libro/diploma.pdf"
+            download="diploma-de-reconocimiento.pdf"
+            className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+          >
+            Descargar diploma
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setOpenDiploma(false)}
+            className="mt-4 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+          >
+            Ver menos
+          </button>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="collapsed"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.45, ease: "easeInOut" }}
+          className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12"
+        >
+          <div>
+            <p className="-rotate-[2deg] origin-left text-[24px] leading-[1.15] font-swanky text-[#8A99A8]">
+              Desarrollando nuestra
+              <br />
+              regulación emocional:
+            </p>
+            <h3 className="mt-8 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
+              <span className="block whitespace-nowrap">Del miedo y la frustración</span>
+              <span className="block whitespace-nowrap">a la resiliencia y la esperanza</span>
+            </h3>
+          </div>
+
+          <div className="flex items-start justify-start lg:justify-center">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          <div className="max-w-[760px]">
+            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              Hemos llegado hasta este punto y nos parece importante hacer un
+              reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
+              recorrido propuesto hasta acá y por haber atravesado todo este proceso
+              de descubrimiento personal.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setOpenDiploma(true)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver más
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</section>
+
 
         {/* Contacto - Form section */}
 <section id="contacto" className="relative w-full bg-white overflow-hidden">
