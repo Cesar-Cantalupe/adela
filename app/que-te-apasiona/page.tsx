@@ -730,7 +730,7 @@ const [contactError, setContactError] = useState<string | null>(null);
             </div>
 
             {/* Columna derecha */}
-            <div className="max-w-[620px]">
+            <div className="max-w-[620px] lg:pt-[160px]">
               <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
                 La siguiente actividad es enfocarte en alguna situación que percibas que te
                 está trabando y observarla como si fueras otra persona. Este ejercicio te
