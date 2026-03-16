@@ -47,37 +47,41 @@ function AudioPlayer({ src }: { src: string }) {
     setPlaying((prev) => !prev);
   };
 
-  const bars = [6,14,22,18,28,20,32,24,36,28,40,30,36,22,28,18,32,26,38,30,34,20,28,16,24,30,36,28,22,18,26,32,28,24,18,22,30,26,20,16];
+  const bars = [
+    8,16,24,32,20,36,28,40,32,24,38,30,42,34,26,38,28,44,36,30,
+    42,32,24,36,28,40,32,20,36,28,44,36,30,24,38,28,40,32,26,36,
+    28,42,34,22,38,30,44,36,28,32,24,38,30,42,28,20,34,26,38,30,12
+  ];
 
   return (
-    <div className="mt-8 flex items-center gap-4 bg-[#ECDCDA] rounded-full px-5 py-4 max-w-[520px]">
+    <div className="mt-8 flex items-center gap-3 bg-[#ECDCDA] rounded-full px-4 py-3 w-full max-w-[560px]">
       <audio ref={audioRef} src={src} onEnded={() => setPlaying(false)} />
       <button
         type="button"
         onClick={toggle}
-        className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
+        className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
       >
         {playing ? (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <rect x="2" y="1" width="4" height="14" rx="1.5" />
-            <rect x="10" y="1" width="4" height="14" rx="1.5" />
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+            <rect x="2" y="1" width="4" height="12" rx="1.5" />
+            <rect x="8" y="1" width="4" height="12" rx="1.5" />
           </svg>
         ) : (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M4 1.5l10 6.5-10 6.5V1.5z" />
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+            <path d="M3 1.5l9 5.5-9 5.5V1.5z" />
           </svg>
         )}
       </button>
 
-      <div className="flex items-center gap-[3px] flex-1 h-[44px]">
+      <div className="flex items-center gap-[2.5px] flex-1 h-[48px]">
         {bars.map((h, i) => (
           <div
             key={i}
-            className="rounded-full bg-white flex-shrink-0 transition-opacity duration-300"
+            className="rounded-full bg-white/80 flex-shrink-0 transition-opacity duration-300"
             style={{
-              width: "3px",
+              width: "2.5px",
               height: `${h}px`,
-              opacity: playing ? 1 : 0.75,
+              opacity: playing ? 1 : 0.85,
             }}
           />
         ))}
@@ -651,84 +655,6 @@ const [contactError, setContactError] = useState<string | null>(null);
   </AnimatePresence>
 </section>
 
-
-
-  {/* ACTIVIDAD 1 */}
-        <section className="relative overflow-hidden bg-[#F6F3EA]">
-          <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
-              <div>
-                <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D2C26A]">
-                  Actividad 1
-                  <br />
-                  Visualización
-                </h3>
-              </div>
-
-              <div className="flex items-start justify-start lg:justify-center">
-                <div className="relative h-12 w-12">
-                  <Image
-                    src="/images/libro/icono-mapa.png"
-                    alt=""
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-              </div>
-
-              <div className="max-w-[760px]">
-                <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                  En esta etapa del camino te propongo reconstruir y recuperar tus redes
-                  interiores. Esas personas que te habitan y te constituyen en la persona que
-                  eres hoy. Para ello, puedes hacer una especie de visualización. Necesitas un
-                  momento de calma. Silencio y paz.
-                </p>
-
-                <AnimatePresence initial={false}>
-                  {openVisualizacion && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-6 space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
-                        <p>
-                          Te propongo, entonces, que hagas una lista de las diez o quince
-                          personas que te inspiran.
-                        </p>
-                        <p>
-                          Enlista sus nombres. Pueden ser personas que conozcas o no, pueden ser
-                          personas famosas o alguien cercano, alguien que esté vivo o que ya no
-                          esté de manera física.
-                        </p>
-                        <p>
-                          ¿Qué es lo que te inspira de esas personas? ¿Qué enseñanzas te han
-                          dejado? ¿En qué momentos de tu vida recurres a ellas para tomar de sus
-                          energías o aprendizajes?
-                        </p>
-                        <p>
-                          Una vez hayas hecho esta pequeña visualización, te invito a que tomes
-                          tu cuaderno y escribas todo lo que aparece.
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <button
-                  type="button"
-                  onClick={() => setOpenVisualizacion((prev) => !prev)}
-                  className="mt-6 inline-flex h-8 items-center justify-center bg-[#C88C73] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
-                >
-                  {openVisualizacion ? "Ver menos" : "Ver más"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ACTIVIDAD 2 */}
 <section className="relative overflow-hidden bg-[#F3EFE7]">
