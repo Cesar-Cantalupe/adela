@@ -568,7 +568,7 @@ useEffect(() => {
             <div className="relative flex flex-wrap justify-center gap-6 sm:gap-4 md:gap-6 lg:flex-nowrap lg:justify-between lg:gap-4">
             {[
               { name: "Ercilia Braun", image: "/images/red/ercilia.png", link: "https://www.linkedin.com/in/ercilia-braun-629409a/?originalSubdomain=ar" },
-              { name: "Adela Saénz Cavia", image: "/images/red/adela.png" },
+              { name: "Adela Saénz Cavia", image: "/images/red/adela.png", link: "https://www.linkedin.com/in/adelacavia/" },
               { name: "Miguel Espeche", image: "/images/red/miguel.png", link: "https://www.linkedin.com/in/miguel-espeche-520106b/" },
               { name: "Osvaldo Rivolt", image: "/images/red/osvaldo.png", link: "https://www.linkedin.com/in/osvaldo-a-rivolt-465ba12b/" },
               { name: "María Eugenia Barrio", image: "/images/red/maria.png", link: "https://www.linkedin.com/in/maiu-barrio-234a941b8/" },
@@ -1398,7 +1398,7 @@ useEffect(() => {
           src="/images/imagen-contacto2.jpg"
           alt="Contacto"
           fill
-          className="object-cover object-center"
+          className="object-contain object-center"
           sizes="100vw"
         />
       </AnimatedSection>
