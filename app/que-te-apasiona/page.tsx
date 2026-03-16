@@ -606,7 +606,92 @@ export default function QueTeApasionaPage() {
   )}
 </section>
 
+{/* ACTIVIDAD 3 / DIPLOMA */}
+<section className="relative overflow-hidden bg-[#EFF0F2]">
+  <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
+      {/* Columna izquierda */}
+      <div>
+        <p className="text-[14px] leading-[1.35] font-swanky text-[#8A99A8]">
+          Desarrollando nuestra
+          <br />
+          regulación emocional:
+        </p>
 
+        <h3 className="mt-6 text-[28px] leading-[1.1] tracking-[0.04em] font-light font-poppins uppercase text-[#8A99A8]">
+          DEL MIEDO Y LA FRUSTRACIÓN
+          <br />
+          A LA RESILIENCIA Y LA ESPERANZA
+        </h3>
+      </div>
+
+      {/* Icono */}
+      <div className="flex items-start justify-start lg:justify-center">
+        <div className="relative h-12 w-12">
+          <Image
+            src="/images/libro/icono-mapa.png"
+            alt=""
+            fill
+            className="object-contain"
+            unoptimized
+          />
+        </div>
+      </div>
+
+      {/* Columna derecha */}
+      <div className="max-w-[760px]">
+        <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+          Hemos llegado hasta este punto y nos parece importante hacer un
+          reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
+          recorrido propuesto hasta acá y por haber atravesado todo este proceso
+          de descubrimiento personal.
+        </p>
+
+        <AnimatePresence initial={false}>
+          {openDiploma && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.28 }}
+              className="overflow-hidden"
+            >
+              <div className="mt-8">
+                <div className="relative aspect-[930/620] w-full max-w-[760px]">
+                  <Image
+                    src="/images/libro/diploma.png"
+                    alt="Diploma de reconocimiento"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 760px"
+                    unoptimized
+                  />
+                </div>
+
+                <a
+                  href="#"
+                  className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+                >
+                  Descargar diploma
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <button
+          type="button"
+          onClick={() => setOpenDiploma((prev) => !prev)}
+          className="mt-6 inline-flex h-8 items-center justify-center bg-[#8A99A8] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+        >
+          {openDiploma ? "Ver menos" : "Ver más"}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+        
         {/* ACTIVIDAD 3 / DIPLOMA */}
         <section className="relative overflow-hidden bg-[#EFF0F2]">
           <Squiggle className="pointer-events-none absolute bottom-0 left-0 h-full w-full opacity-10" stroke="#DADDE2" />
