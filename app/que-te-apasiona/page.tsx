@@ -65,7 +65,7 @@ export default function QueTeApasionaPage() {
                   que hacen: algunos llaman a esto “sentido de
                   <br />
                   <span className="inline-block w-full text-center">
-                    vida”, otros “propósito” y otros “pasión”.
+                  vida”, otros “propósito” y otros “pasión”.
                   </span>
                 </p>
 
@@ -325,7 +325,7 @@ export default function QueTeApasionaPage() {
       <div className="grid grid-cols-1 gap-5 py-6 md:grid-cols-[230px_minmax(0,1fr)] md:gap-8 border-b border-[#C8CED3]">
         <div>
           <p className="text-[12px] leading-[1.15] font-poppins uppercase tracking-[0.04em] text-[#D2BE61]">
-            Sobre la aventura de descubrir y hacer lo que te apasiona
+            Sobre la aventura de <br /> descubrir y hacer lo <br /> que te apasiona
           </p>
         </div>
         <div className="space-y-1 text-[12px] leading-[1.9] font-light font-poppins text-[#3B3434]">
