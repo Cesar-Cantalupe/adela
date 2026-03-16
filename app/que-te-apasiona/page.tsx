@@ -908,24 +908,27 @@ export default function QueTeApasionaPage() {
 {/* ACTIVIDAD 3 / DIPLOMA */}
 <section className="relative overflow-hidden bg-[#EFF0F2]">
   <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[430px_72px_minmax(0,1fr)] lg:gap-10 items-start">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[360px_72px_minmax(0,1fr)] lg:gap-10">
       {/* Columna izquierda */}
-      <div className="max-w-[430px]">
-        <p className="-rotate-[2deg] origin-left text-[14px] leading-[1.35] font-swanky text-[#8A99A8]">
+      <div>
+        <p className="-rotate-[2deg] origin-left text-[13px] leading-[1.35] font-swanky text-[#8A99A8]">
           Desarrollando nuestra
           <br />
           regulación emocional:
         </p>
 
-        <h3 className="mt-8 text-[30px] leading-[1.14] tracking-[0.035em] font-light font-poppins uppercase text-[#8A99A8]">
-          DEL MIEDO Y LA FRUSTRACIÓN
-          <br />
-          A LA RESILIENCIA Y LA ESPERANZA
+        <h3 className="mt-8 text-[20px] leading-[1.18] tracking-[0.02em] font-light font-poppins uppercase text-[#8A99A8] xl:text-[21px]">
+          <span className="block whitespace-nowrap">
+            DEL MIEDO Y LA FRUSTRACIÓN
+          </span>
+          <span className="block whitespace-nowrap">
+            A LA RESILIENCIA Y LA ESPERANZA
+          </span>
         </h3>
       </div>
 
       {/* Icono */}
-      <div className="flex items-start justify-start pt-2">
+      <div className="flex items-start justify-start lg:justify-center">
         <div className="relative h-12 w-12">
           <Image
             src="/images/libro/icono-mapa.png"
@@ -939,7 +942,7 @@ export default function QueTeApasionaPage() {
 
       {/* Columna derecha */}
       <div className="max-w-[760px]">
-        <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+        <p className="text-[12px] leading-[2] font-light font-poppins text-[#3B3434]">
           Hemos llegado hasta este punto y nos parece importante hacer un
           reconocimiento. Un reconocimiento íntimo y personal por haber hecho el
           recorrido propuesto hasta acá y por haber atravesado todo este proceso
@@ -989,6 +992,7 @@ export default function QueTeApasionaPage() {
     </div>
   </div>
 </section>
+
       </div>
     </div>
   );
