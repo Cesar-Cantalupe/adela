@@ -695,6 +695,21 @@ export default function QueTeApasionaPage() {
   </div>
 </section>
 
+        {/* Footer */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="w-full h-28 bg-[#C58770] flex flex-wrap items-center justify-center gap-8 md:gap-16 py-6 px-6"
+      >
+        <a href="https://www.linkedin.com/in/adelacavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">LinkedIn</a>
+        <a href="https://instagram.com/adela.cavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@adela.cavia</a>
+        <a href="https://x.com/Adel1ta" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@Adel1ta</a>
+        <a href="https://www.facebook.com/adela.cavia/" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">Facebook</a>
+        <a href="mailto:adelacavia@gmail.com" className="text-orange-100 text-lg font-poppins hover:text-white transition">adelacavia@gmail.com</a>
+      </motion.footer>
+        
       </div>
     </div>
   );
