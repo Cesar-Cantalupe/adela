@@ -715,7 +715,7 @@ const [contactError, setContactError] = useState<string | null>(null);
           </div>
 
           
-            href="/images/libro/diploma.pdf"
+       <a     href="/images/libro/diploma.pdf"
             download="diploma-de-reconocimiento.pdf"
             className="mt-6 inline-flex h-8 items-center justify-center bg-[#C6A62A] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
           >
