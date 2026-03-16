@@ -917,7 +917,7 @@ export default function QueTeApasionaPage() {
           regulación emocional:
         </p>
 
-        <h3 className="mt-8 text-[19px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
+        <h3 className="mt-8 text-[24px] leading-[1.18] tracking-[0.03em] font-light font-poppins uppercase text-[#8A99A8]">
           <span className="block whitespace-nowrap">
             Del miedo y la frustración
           </span>
