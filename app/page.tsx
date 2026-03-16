@@ -550,16 +550,7 @@ useEffect(() => {
             </AnimatedSection>
             <AnimatedSection className="order-1 lg:order-2 lg:max-w-none" direction="left" delay={0.15}>
               <p className="text-black text-sm font-light font-poppins leading-7 max-w-[604px] lg:max-w-none">
-                Muchos de los proyectos que desarrollamos e implementamos requieren de un gran equipo. Para ello, armé{" "}
-                <a
-                  href="https://www.redcommunia.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow-600 font-normal underline hover:opacity-90"
-                >
-                  RedCommunia
-                </a>
-                , una red colaborativa de trabajo conformada por psicólogos, pedagogos, sociólogos, counselors y coaches cuya filosofía es la iteración, exploración e integración de ideas, conocimientos y abordajes.
+                Muchos de los proyectos que desarrollamos e implementamos requieren de un gran equipo. Para ello, armé RedCommunia, una red colaborativa de trabajo conformada por psicólogos, pedagogos, sociólogos, counselors y coaches cuya filosofía es la iteración, exploración e integración de ideas, conocimientos y abordajes.
               </p>
             </AnimatedSection>
           </div>
@@ -1398,7 +1389,7 @@ useEffect(() => {
           src="/images/imagen-contacto2.jpg"
           alt="Contacto"
           fill
-          className="object-contain object-center"
+          className="object-cover object-top"
           sizes="100vw"
         />
       </AnimatedSection>
