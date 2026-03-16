@@ -47,35 +47,37 @@ function AudioPlayer({ src }: { src: string }) {
     setPlaying((prev) => !prev);
   };
 
+  const bars = [6,14,22,18,28,20,32,24,36,28,40,30,36,22,28,18,32,26,38,30,34,20,28,16,24,30,36,28,22,18,26,32,28,24,18,22,30,26,20,16];
+
   return (
-    <div className="mt-8 flex items-center gap-4 bg-[#ECDCDA] rounded-full px-5 py-3 max-w-[500px]">
+    <div className="mt-8 flex items-center gap-4 bg-[#ECDCDA] rounded-full px-5 py-4 max-w-[520px]">
       <audio ref={audioRef} src={src} onEnded={() => setPlaying(false)} />
       <button
         type="button"
         onClick={toggle}
-        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
+        className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
       >
         {playing ? (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <rect x="2" y="1" width="4" height="12" rx="1" />
-            <rect x="8" y="1" width="4" height="12" rx="1" />
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <rect x="2" y="1" width="4" height="14" rx="1.5" />
+            <rect x="10" y="1" width="4" height="14" rx="1.5" />
           </svg>
         ) : (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <path d="M3 1.5l9 5.5-9 5.5V1.5z" />
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4 1.5l10 6.5-10 6.5V1.5z" />
           </svg>
         )}
       </button>
 
-      {/* Barras decorativas de onda */}
-      <div className="flex items-center gap-[3px] flex-1">
-        {Array.from({ length: 40 }).map((_, i) => (
+      <div className="flex items-center gap-[3px] flex-1 h-[44px]">
+        {bars.map((h, i) => (
           <div
             key={i}
-            className="rounded-full bg-white/80 w-[3px] flex-shrink-0"
+            className="rounded-full bg-white flex-shrink-0 transition-opacity duration-300"
             style={{
-              height: `${8 + Math.sin(i * 0.8) * 10 + Math.cos(i * 1.3) * 6}px`,
-              opacity: playing ? 1 : 0.6,
+              width: "3px",
+              height: `${h}px`,
+              opacity: playing ? 1 : 0.75,
             }}
           />
         ))}
