@@ -545,7 +545,7 @@ useEffect(() => {
                 RED COMMUNIA
               </h2>
               <p className="text-stone-700 text-xl sm:text-2xl font-swanky font-normal leading-tight">
-                RedCommunia – mi red de trabajo
+                RedCommunia - mi red de trabajo
               </p>
             </AnimatedSection>
             <AnimatedSection className="order-1 lg:order-2 lg:max-w-none" direction="left" delay={0.15}>
