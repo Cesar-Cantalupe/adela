@@ -400,7 +400,7 @@ export default function QueTeApasionaPage() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
               <div>
                 <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D2C26A]">
-                  Actividad
+                  Actividad 1
                   <br />
                   Visualización
                 </h3>
@@ -484,8 +484,8 @@ export default function QueTeApasionaPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div>
             <div className="mb-8 flex items-start justify-between gap-6">
-              <h3 className="max-w-[420px] text-[28px] leading-[1.18] tracking-[0.04em] font-light font-poppins uppercase text-[#D1BA64]">
-                Actividad sobre tu universo emocional
+              <h3 className="max-w-[420px] text-[27px] leading-[1.18] tracking-[0.04em] font-light font-poppins uppercase text-[#D1BA64]">
+                Actividad sobre<br /> tu universo<br /> emocional
               </h3>
 
               <div className="relative h-12 w-12 flex-shrink-0">
