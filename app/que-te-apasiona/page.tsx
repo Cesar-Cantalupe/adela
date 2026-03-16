@@ -9,7 +9,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 function Squiggle({
   className,
-  stroke = "#E7D6D0",
+  stroke = "#E7D6D0",  
 }: {
   className?: string; 
   stroke?: string;
