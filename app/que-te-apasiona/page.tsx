@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Header } from "@/components/Header";
@@ -30,6 +30,57 @@ function Squiggle({
         strokeLinejoin="round"
       />
     </svg>
+  );
+}
+
+function AudioPlayer({ src }: { src: string }) {
+  const [playing, setPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggle = () => {
+    if (!audioRef.current) return;
+    if (playing) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setPlaying((prev) => !prev);
+  };
+
+  return (
+    <div className="mt-8 flex items-center gap-4 bg-[#ECDCDA] rounded-full px-5 py-3 max-w-[500px]">
+      <audio ref={audioRef} src={src} onEnded={() => setPlaying(false)} />
+      <button
+        type="button"
+        onClick={toggle}
+        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#C88C73] text-white transition hover:opacity-90"
+      >
+        {playing ? (
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+            <rect x="2" y="1" width="4" height="12" rx="1" />
+            <rect x="8" y="1" width="4" height="12" rx="1" />
+          </svg>
+        ) : (
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+            <path d="M3 1.5l9 5.5-9 5.5V1.5z" />
+          </svg>
+        )}
+      </button>
+
+      {/* Barras decorativas de onda */}
+      <div className="flex items-center gap-[3px] flex-1">
+        {Array.from({ length: 40 }).map((_, i) => (
+          <div
+            key={i}
+            className="rounded-full bg-white/80 w-[3px] flex-shrink-0"
+            style={{
+              height: `${8 + Math.sin(i * 0.8) * 10 + Math.cos(i * 1.3) * 6}px`,
+              opacity: playing ? 1 : 0.6,
+            }}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -444,6 +495,158 @@ const [contactError, setContactError] = useState<string | null>(null);
       </p>
     </div>
   </div>
+</section>
+
+
+
+        {/* ACTIVIDAD 1 */}
+<section className="relative overflow-hidden bg-[#F6F3EA]">
+  <AnimatePresence initial={false} mode="wait">
+    {openVisualizacion ? (
+      <motion.div
+        key="expanded"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.45, ease: "easeInOut" }}
+      >
+        <div className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16">
+          {/* Título e ícono arriba */}
+          <div className="mb-10 flex items-center gap-6">
+            <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D2C26A]">
+              Visualización
+            </h3>
+            <div className="relative h-12 w-12 flex-shrink-0">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+
+          {/* Grid 2 columnas */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:items-start">
+            {/* Columna izquierda */}
+            <div>
+              <div className="space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+                <p>
+                  En esta etapa del camino te propongo reconstruir y recuperar tus redes
+                  interiores. Esas personas que te habitan y te constituyen en la persona que
+                  eres hoy.
+                </p>
+                <p>Para ello, puedes hacer una especie de visualización.</p>
+                <p>Necesitas un momento de calma. Silencio y paz.</p>
+              </div>
+
+              {/* Reproductor de audio */}
+              <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+
+              <div className="mt-8 space-y-3 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    Una vez hayas hecho esta pequeña visualización, te invito a que tomes
+                    tu cuaderno y escribas todo lo que aparece.
+                  </li>
+                  <li>
+                    ¿Qué dice lo que escribiste de ti? ¿Qué experiencias y aprendizajes has
+                    recuperado? ¿Qué utilidad crees que tendrán en este camino que estamos
+                    recorriendo juntos?
+                  </li>
+                  <li>
+                    Cuando hayas terminado con esta actividad, realiza la segunda: reflexionar
+                    sobre las personas que te inspiran. Las personas nos pueden inspirar de
+                    muchas maneras diferentes. Por sus ejemplos de vida, por sus enseñanzas,
+                    por algún asunto puntual que hemos conocido de ellas, por la forma en que
+                    hacían algo (por ejemplo, por la forma en que lideraban). En fin, puede
+                    haber muchas razones.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Columna derecha */}
+            <div className="max-w-[620px]">
+              <div className="space-y-4 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+                <p>
+                  Te propongo, entonces, que hagas una lista de las diez o quince personas
+                  que te inspiran:
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    Enlista sus nombres (pueden ser personas que conozcas o no, pueden ser
+                    personas famosas o alguien cercano, alguien que esté vivo o que ya no
+                    esté de manera física)… Puedes poner cualquier nombre en esta lista.
+                  </li>
+                  <li>¿Qué es lo que te inspira de esas personas?</li>
+                  <li>¿Qué enseñanzas te han dejado?</li>
+                  <li>
+                    ¿En qué momentos de tu vida recurres a ellas para tomar de sus energías
+                    o aprendizajes?
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setOpenVisualizacion(false)}
+                className="mt-8 inline-flex h-8 items-center justify-center bg-[#C88C73] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+              >
+                Ver menos
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    ) : (
+      <motion.div
+        key="collapsed"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.45, ease: "easeInOut" }}
+        className="mx-auto max-w-[1474px] px-6 py-14 md:px-10 lg:px-[72px] lg:py-16"
+      >
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_80px_minmax(0,1fr)] lg:gap-12">
+          <div>
+            <h3 className="text-[28px] leading-[1.1] tracking-[0.08em] font-light font-poppins uppercase text-[#D2C26A]">
+              Actividad 1
+              <br />
+              Visualización
+            </h3>
+          </div>
+          <div className="flex items-start justify-start lg:justify-center">
+            <div className="relative h-12 w-12">
+              <Image
+                src="/images/libro/icono-mapa.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
+          <div className="max-w-[760px]">
+            <p className="text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
+              En esta etapa del camino te propongo reconstruir y recuperar tus redes
+              interiores. Esas personas que te habitan y te constituyen en la persona que
+              eres hoy. Para ello, puedes hacer una especie de visualización. Necesitas un
+              momento de calma. Silencio y paz.
+            </p>
+            <button
+              type="button"
+              onClick={() => setOpenVisualizacion(true)}
+              className="mt-6 inline-flex h-8 items-center justify-center bg-[#C88C73] px-5 text-[11px] uppercase tracking-[0.12em] text-white font-poppins transition hover:opacity-90"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
 </section>
 
 
