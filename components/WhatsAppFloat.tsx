@@ -18,7 +18,7 @@ function IconWhatsApp({ size = 28 }: { size?: number }) {
 export function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me"
+      href="https://wa.me/5491140420626"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full shadow-[3px_4px_11px_-1px_rgba(0,0,0,0.25)] transition hover:opacity-90"

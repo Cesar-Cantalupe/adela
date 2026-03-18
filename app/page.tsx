@@ -1400,23 +1400,23 @@ useEffect(() => {
         direction="left"
         delay={0.15}
       >
-        <div className="flex items-start gap-2 sm:gap-3 xl:gap-3.5 mb-4 sm:mb-5 xl:mb-6 2xl:mb-8">
-          <h2 className="text-[#C58770] text-2xl sm:text-[26px] md:text-[28px] lg:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none tracking-wider">
-            ¡Enviame un mensaje!
-          </h2>
-
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
-            <Image
-              src="/images/19 2.png"
-              alt=""
-              fill
-              className="object-contain"
-            />
+        <div className="flex flex-col w-full max-w-full sm:max-w-[360px] md:max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]">
+          <div className="flex items-start gap-2 sm:gap-3 xl:gap-3.5 mb-4 sm:mb-5 xl:mb-6 2xl:mb-8">
+            <h2 className="text-[#C58770] text-2xl sm:text-[26px] md:text-[28px] lg:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none tracking-wider">
+              ¡Enviame un mensaje!
+            </h2>
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
+              <Image
+                src="/images/19 2.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
-        </div>
 
-        <form
-          className="space-y-3 w-full max-w-full sm:max-w-[360px] md:max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
+          <form
+            className="space-y-3 w-full"
           onSubmit={handleContactSubmit}
         >
           <div>
@@ -1505,6 +1505,7 @@ useEffect(() => {
             {contactLoading ? "..." : "enviar"}
           </button>
         </form>
+        </div>
       </AnimatedSection>
     </div>
   </div>

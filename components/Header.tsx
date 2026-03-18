@@ -102,7 +102,7 @@ export function Header() {
               <path d="M5.64363 2.30816C6.32272 2.30816 7.47422 2.3166 7.47422 2.3166V0.00937324C7.47422 0.00937324 6.67281 -0.0117166 5.62676 0.00937324C4.57649 0.030463 1.99931 0.110604 1.99931 3.14753V5.10467H0V7.50469H1.99931V15H4.85909V7.50469H7.19584L7.47422 5.10467H4.85487V3.14753C4.85487 3.14753 4.96454 2.30816 5.64363 2.30816Z" fill="black"/>
             </svg>
           </a>
-          <a href="mailto:adelacavia@gmail.com" className="text-stone-950 hover:opacity-80" aria-label="Email">
+          <a href="mailto:adelacavia@gmail.com" target="_blank" rel="noopener noreferrer" className="text-stone-950 hover:opacity-80" aria-label="Email">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
@@ -195,7 +195,7 @@ export function Header() {
                       <path d="M5.64363 2.30816C6.32272 2.30816 7.47422 2.3166 7.47422 2.3166V0.00937324C7.47422 0.00937324 6.67281 -0.0117166 5.62676 0.00937324C4.57649 0.030463 1.99931 0.110604 1.99931 3.14753V5.10467H0V7.50469H1.99931V15H4.85909V7.50469H7.19584L7.47422 5.10467H4.85487V3.14753C4.85487 3.14753 4.96454 2.30816 5.64363 2.30816Z" fill="black"/>
                     </svg>
                   </a>
-                  <a href="mailto:adelacavia@gmail.com" onClick={closeMenu} className="text-stone-950 hover:opacity-80 p-1" aria-label="Email">
+                  <a href="mailto:adelacavia@gmail.com" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="text-stone-950 hover:opacity-80 p-1" aria-label="Email">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                       <polyline points="22,6 12,13 2,6"/>
