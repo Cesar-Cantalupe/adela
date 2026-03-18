@@ -182,9 +182,9 @@ useEffect(() => {
 
           {!sobreMiExpanded ? (
             /* Vista colapsada: texto izquierda, imagen derecha */
-            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-8 md:gap-12 px-6 py-12 md:px-[130px] md:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] 2xl:px-[130px] py-8 sm:py-10 md:py-12 lg:py-16">
               <AnimatedSection className="flex flex-col min-h-0" direction="right" delay={0.1}>
-                <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
+                <h2 className="text-[#C58770] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-3 sm:mb-4 md:mb-6">
                   Sobre mí
                 </h2>
                 <p className="text-black text-sm font-light font-poppins leading-7 max-w-[475px] flex-1">
@@ -209,11 +209,11 @@ useEffect(() => {
             </div>
           ) : (
             /* Vista expandida: título, 2 columnas de texto, Leer menos, imagen abajo */
-            <div className="px-6 py-12 md:px-[181px] md:py-16 flex flex-col">
-              <h2 className="text-[#C58770] text-5xl md:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-4 md:mb-6">
+            <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[181px] py-8 sm:py-10 md:py-12 lg:py-16 flex flex-col">
+              <h2 className="text-[#C58770] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light font-poppins uppercase tracking-[2.87px] leading-tight mb-3 sm:mb-4 md:mb-6">
                 Sobre mí
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-8 md:mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-16 mb-6 sm:mb-8 md:mb-10">
                 <div className="text-black text-sm font-light font-poppins leading-7 max-w-[520px]">
                   <p className="mb-4">
                     Trabajé por más de 25 años en el mundo corporativo liderando equipos y desafíos muy diversos. Un día sentí que quería probar cosas nuevas e inicié este camino de transformación que me hace muy feliz. Me especialicé en el entrenamiento de competencias socioemocionales (human skills), en neurociencias aplicadas a la educación de adultos y en el desarrollo de herramientas para promover la capacidad de resiliencia. Desde entonces facilito procesos de cambio de personas y equipos con la idea de contribuir a generar nuevos liderazgos, más humanos y sustentables.
@@ -263,32 +263,32 @@ useEffect(() => {
       </section>
 
       {/* ¿En qué estoy trabajando? */}
-      <section id="trabajando" className="relative py-12 xl:py-16 2xl:py-24 bg-white">
-        <div className="max-w-[1474px] mx-auto px-6">
+      <section id="trabajando" className="relative py-8 sm:py-10 md:py-12 xl:py-16 2xl:py-24 bg-white">
+        <div className="max-w-[1474px] mx-auto px-4 sm:px-6 md:px-8">
           {/* Imagen decorativa + título centrados */}
-          <AnimatedSection className="flex flex-col items-center text-center mb-12" delay={0.1}>
+          <AnimatedSection className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12" delay={0.1}>
             <Image
               src="/images/trabajando/07 2 (1).png"
               alt=""
               width={131}
               height={131}
-              className="object-contain mb-4"
+              className="object-contain mb-3 sm:mb-4 w-20 h-20 sm:w-24 sm:h-24 md:w-[131px] md:h-[131px]"
             />
-            <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase tracking-widest">
+            <h2 className="text-stone-900 text-2xl sm:text-3xl md:text-4xl font-light font-poppins uppercase tracking-widest px-2">
               ¿en qué estoy trabajando?
             </h2>
           </AnimatedSection>
 
           {/* Contenedor más angosto para cada fila */}
-          <div className="max-w-[900px] mx-auto space-y-8">
+          <div className="max-w-[900px] mx-auto space-y-6 sm:space-y-8">
             <AnimatedStagger staggerChildren={0.15} className="space-y-8">
               <AnimatedItem>
-                <div className="flex flex-col md:flex-row gap-6 items-start border-b border-[#A9B8C3] pb-8">
+                <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start border-b border-[#A9B8C3] pb-6 sm:pb-8">
                   <div className="relative flex-shrink-0">
-                    <Image src="/images/trabajando/07 1.png" alt="Experiencias de aprendizaje" width={95} height={95} className="object-contain" />
+                    <Image src="/images/trabajando/07 1.png" alt="Experiencias de aprendizaje" width={95} height={95} className="object-contain w-16 h-16 sm:w-20 sm:h-20 md:w-[95px] md:h-[95px]" />
                   </div>
                   <div className="flex-1 min-w-0 space-y-3">
-                    <h3 className="text-stone-900 text-base font-light font-poppins uppercase tracking-wide mb-2">
+                    <h3 className="text-stone-900 text-sm sm:text-base font-light font-poppins uppercase tracking-wide mb-2">
                       Experiencias de aprendizaje – Human skills active learning
                     </h3>
                     <p className="text-black text-xs font-light font-poppins leading-6">
@@ -343,12 +343,12 @@ useEffect(() => {
                 </div>
               </AnimatedItem>
               <AnimatedItem>
-                <div className="flex flex-col md:flex-row gap-6 items-start border-b border-[#A9B8C3] pb-8">
+                <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start border-b border-[#A9B8C3] pb-6 sm:pb-8">
                   <div className="relative flex-shrink-0">
-                    <Image src="/images/trabajando/11 1.png" alt="Procesos de cambio cultural" width={98} height={98} className="object-contain" />
+                    <Image src="/images/trabajando/11 1.png" alt="Procesos de cambio cultural" width={98} height={98} className="object-contain w-16 h-16 sm:w-20 sm:h-20 md:w-[98px] md:h-[98px]" />
                   </div>
                   <div className="flex-1 min-w-0 space-y-3">
-                    <h3 className="text-stone-900 text-base font-light font-poppins uppercase tracking-wide mb-2">
+                    <h3 className="text-stone-900 text-sm sm:text-base font-light font-poppins uppercase tracking-wide mb-2">
                       Procesos de cambio cultural y desarrollo de culturas de bienestar
                     </h3>
                     <p className="text-black text-xs font-light font-poppins leading-6">
@@ -392,12 +392,12 @@ useEffect(() => {
                 </div>
               </AnimatedItem>
               <AnimatedItem>
-                <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start">
                   <div className="relative flex-shrink-0">
-                    <Image src="/images/trabajando/15 1.png" alt="Coaching y Mentoreo" width={85} height={85} className="object-contain" />
+                    <Image src="/images/trabajando/15 1.png" alt="Coaching y Mentoreo" width={85} height={85} className="object-contain w-14 h-14 sm:w-16 sm:h-16 md:w-[85px] md:h-[85px]" />
                   </div>
                   <div className="flex-1 min-w-0 space-y-3">
-                    <h3 className="text-stone-900 text-base font-light font-poppins uppercase tracking-wide mb-2">
+                    <h3 className="text-stone-900 text-sm sm:text-base font-light font-poppins uppercase tracking-wide mb-2">
                       Coaching y Mentoreo
                     </h3>
                     <p className="text-black text-xs font-light font-poppins leading-6 text-justify">
@@ -452,7 +452,7 @@ useEffect(() => {
 
       {/* We Human Lab */}
       <section id="we-human-lab" className="relative overflow-hidden bg-[#E6CC76]/25">
-        <AnimatedSection className="relative max-w-[1474px] mx-auto px-6 py-10 xl:py-14 2xl:py-24 text-center" delay={0.1}>
+        <AnimatedSection className="relative max-w-[1474px] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 xl:py-14 2xl:py-24 text-center" delay={0.1}>
           <div className="w-20 h-20 sm:w-24 sm:h-24 relative mx-auto mb-6 md:mb-8">
             <Image
               src="/images/We Human 1.png"
@@ -538,8 +538,8 @@ useEffect(() => {
 
       {/* Red Communia */}
       <section id="red-communia" className="relative overflow-hidden bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-8 lg:gap-12 mb-8 lg:mb-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8 lg:mb-12">
             <AnimatedSection className="order-2 lg:order-1" direction="right" delay={0.1}>
               <h2 className="text-yellow-600 text-3xl sm:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
                 RED COMMUNIA
@@ -555,8 +555,8 @@ useEffect(() => {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection className="relative overflow-hidden -mx-6 px-6 py-8 md:py-10" delay={0.2}>
-            <div className="relative flex flex-wrap justify-center gap-6 sm:gap-4 md:gap-6 lg:flex-nowrap lg:justify-between lg:gap-4">
+          <AnimatedSection className="relative overflow-hidden -mx-4 sm:-mx-6 px-4 sm:px-6 py-6 sm:py-8 md:py-10" delay={0.2}>
+            <div className="relative flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 lg:flex-nowrap lg:justify-between lg:gap-4">
             {[
               { name: "Ercilia Braun", image: "/images/red/ercilia.png", link: "https://www.linkedin.com/in/ercilia-braun-629409a/?originalSubdomain=ar" },
               { name: "Adela Saénz Cavia", image: "/images/red/adela.png", link: "https://www.linkedin.com/in/adelacavia/" },
@@ -581,7 +581,7 @@ useEffect(() => {
                     rel="noopener noreferrer"
                     className="flex flex-col items-center cursor-pointer group"
                   >
-                    <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
+                    <div className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
                       <Image
                         src={person.image}
                         alt={person.name}
@@ -590,13 +590,13 @@ useEffect(() => {
                         className="w-full h-full min-w-full min-h-full object-cover object-center"
                       />
                     </div>
-                    <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black group-hover:text-yellow-600 transition-colors">
+                    <span className="mt-1.5 sm:mt-2 text-sm sm:text-base md:text-xl font-swanky font-normal leading-tight text-center text-black group-hover:text-yellow-600 transition-colors max-w-[100px] sm:max-w-[120px] md:max-w-none">
                       {person.name}
                     </span>
                   </a>
                 ) : (
                   <>
-                    <div className={`relative w-32 h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
+                    <div className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-stone-400 overflow-hidden flex items-center justify-center ${i === 6 ? "bg-zinc-300" : "bg-stone-100"}`}>
                       <Image
                         src={person.image}
                         alt={person.name}
@@ -605,7 +605,7 @@ useEffect(() => {
                         className="w-full h-full min-w-full min-h-full object-cover object-center"
                       />
                     </div>
-                    <span className="mt-2 text-base sm:text-xl font-swanky font-normal leading-tight text-center text-black cursor-default">
+                    <span className="mt-1.5 sm:mt-2 text-sm sm:text-base md:text-xl font-swanky font-normal leading-tight text-center text-black cursor-default max-w-[100px] sm:max-w-[120px] md:max-w-none">
                       {person.name}
                     </span>
                   </>
@@ -618,8 +618,8 @@ useEffect(() => {
       </section>
 
       {/* ¿Qué te apasiona? / Mi libro */}
-      <section id="libro" className="relative overflow-hidden bg-[#FFF9FA] py-8 sm:py-12 lg:py-0">
-        <div className="mx-auto max-w-7xl flex flex-col lg:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#FFF9FA]">
+      <section id="libro" className="relative overflow-hidden bg-[#FFF9FA] py-6 sm:py-8 md:py-12 lg:py-0">
+        <div className="mx-auto max-w-7xl flex flex-col lg:flex-row px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-[#FFF9FA]">
           {/* Imagen del libro */}
           <AnimatedSection className="w-full aspect-[490/583] lg:w-[380px] xl:w-[490px] lg:flex-shrink-0 lg:aspect-[490/583] relative bg-[#FFF9FA]" direction="right" delay={0.1}>
             <Image
@@ -632,11 +632,11 @@ useEffect(() => {
             />
           </AnimatedSection>
           {/* Zona de contenido con fondo rosa - texto centrado verticalmente */}
-          <AnimatedSection className="relative flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center min-h-0 px-4 sm:px-6 lg:px-8 xl:px-10 py-8 sm:py-10 lg:py-12 bg-[#FFF9FA]" direction="left" delay={0.15}>
+          <AnimatedSection className="relative flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center min-h-0 px-4 sm:px-6 md:px-8 lg:px-8 xl:px-10 py-6 sm:py-8 md:py-10 lg:py-12 bg-[#FFF9FA]" direction="left" delay={0.15}>
             <div className="absolute inset-0 bg-[#FFF9FA] pointer-events-none" aria-hidden />
-            <div className="relative z-10 flex flex-nowrap items-center justify-center lg:justify-center gap-6 lg:gap-8 w-full">
+            <div className="relative z-10 flex flex-col sm:flex-row flex-nowrap items-center justify-center lg:justify-center gap-4 sm:gap-6 lg:gap-8 w-full">
               <div className="flex flex-col justify-center w-full min-w-0 max-w-[580px]">
-                <h2 className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
+                <h2 className="text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light font-poppins uppercase tracking-widest leading-tight mb-2">
                   ¿Qué te apasiona?
                 </h2>
                 <p className="text-[#C58770] text-xl sm:text-2xl font-swanky font-normal tracking-wide leading-none origin-top-left -rotate-[2.31deg] mb-4 sm:mb-6">
@@ -664,8 +664,8 @@ useEffect(() => {
                   </a>
                 </div>
               </div>
-              {/* Imagen decorativa - siempre en fila junto al texto del libro */}
-              <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-44 lg:h-44">
+              {/* Imagen decorativa - en móvil debajo del texto, en tablet+ junto al texto */}
+              <div className="flex-shrink-0 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-44 lg:h-44 order-last sm:order-none self-center sm:self-auto">
                 <Image
                   src="/images/07 2 (2).png"
                   alt=""
@@ -691,16 +691,16 @@ useEffect(() => {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.35, ease: "easeOut" }}
-    className="px-6 py-8 md:py-10 lg:pl-[72px] lg:pr-0 2xl:pl-[92px]"
+    className="px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 lg:pl-10 lg:pr-0 xl:pl-[72px] 2xl:pl-[92px]"
   >
     <div className="grid grid-cols-1 lg:grid-cols-[460px_minmax(0,1fr)] lg:gap-6 xl:gap-8 2xl:grid-cols-[540px_minmax(0,1fr)] 2xl:gap-10 items-stretch">
       {/* Columna izquierda */}
       <div className="flex flex-col min-w-0 max-w-[460px] pt-0 2xl:max-w-[540px] 2xl:pt-2">
-        <h2 className="text-stone-900 text-[30px] 2xl:text-4xl font-light font-poppins uppercase leading-[40px] 2xl:leading-[52px] tracking-[0.18em] max-w-[390px] 2xl:max-w-[460px] mb-6 2xl:mb-8">
+        <h2 className="text-stone-900 text-xl sm:text-2xl md:text-[28px] lg:text-[30px] 2xl:text-4xl font-light font-poppins uppercase leading-tight sm:leading-[40px] 2xl:leading-[52px] tracking-[0.12em] sm:tracking-[0.18em] max-w-[390px] 2xl:max-w-[460px] mb-4 sm:mb-6 2xl:mb-8">
           MI TRABAJO CON LÍDERES SOCIALES
         </h2>
 
-        <div className="w-20 h-20 relative flex-shrink-0 mb-6 2xl:w-24 2xl:h-24 2xl:mb-8">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 relative flex-shrink-0 mb-4 sm:mb-6 2xl:w-24 2xl:h-24 2xl:mb-8">
           <Image
             src="/images/19 1.png"
             alt=""
@@ -731,8 +731,8 @@ useEffect(() => {
       </div>
 
       {/* Columna derecha */}
-      <div className="relative w-full mt-8 lg:mt-[-10%]">
-        <div className="relative w-full h-full min-h-[520px] lg:min-h-[560px] xl:min-h-[620px] 2xl:min-h-[760px] overflow-hidden">
+      <div className="relative w-full mt-6 sm:mt-8 lg:mt-[-10%]">
+        <div className="relative w-full h-full min-h-[280px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[560px] xl:min-h-[620px] 2xl:min-h-[760px] overflow-hidden">
           <Image
             src="/images/Adela Saenz Cavia9 1.png"
             alt=""
@@ -752,7 +752,7 @@ useEffect(() => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="px-6 py-10 md:py-12 lg:px-[92px]"
+          className="px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 lg:px-10 xl:px-16 2xl:px-[92px]"
         >
           {/* Desktop expandido */}
           <div className="hidden md:block">
@@ -874,9 +874,9 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Mobile expandido */}
+          {/* Mobile/tablet expandido */}
           <div className="md:hidden">
-            <h2 className="text-stone-900 text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest max-w-[460px] mb-8">
+            <h2 className="text-stone-900 text-2xl sm:text-3xl font-light font-poppins uppercase leading-tight tracking-widest max-w-[460px] mb-6 sm:mb-8">
               MI TRABAJO CON LÍDERES SOCIALES
             </h2>
 
@@ -978,12 +978,12 @@ useEffect(() => {
 
 
       {/* Publicaciones y charlas */}
-      <section className="relative py-12 xl:py-16 2xl:py-24 bg-white overflow-hidden">
-        <div className="max-w-[1474px] mx-auto px-6 relative">
+      <section className="relative py-8 sm:py-10 md:py-12 xl:py-16 2xl:py-24 bg-white overflow-hidden">
+        <div className="max-w-[1474px] mx-auto px-4 sm:px-6 md:px-8 relative">
           <div className="absolute inset-0 opacity-30 bg-white pointer-events-none -z-10" aria-hidden />
           {/* Header: icono, título y enlaces */}
-          <AnimatedSection className="flex flex-col items-center text-center mb-10 md:mb-12" delay={0.1}>
-            <div className="w-16 h-16 md:w-20 md:h-20 relative mb-4">
+          <AnimatedSection className="flex flex-col items-center text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12" delay={0.1}>
+            <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 relative mb-3 sm:mb-4">
               <Image
                 src="/images/galeria/15 1 (1).png"
                 alt=""
@@ -991,10 +991,10 @@ useEffect(() => {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-stone-700 text-2xl font-swanky font-normal leading-tight mb-4">
+            <h2 className="text-stone-700 text-xl sm:text-2xl font-swanky font-normal leading-tight mb-3 sm:mb-4">
               Publicaciones y charlas
             </h2>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               <Link
                 href="https://www.lanacion.com.ar/autor/adela-saenz-cavia-13016/"
                 target="_blank"
@@ -1015,10 +1015,10 @@ useEffect(() => {
           </AnimatedSection>
 
           {/* Slider de galerías: cada slide es un grid completo; el scroll cambia de galería */}
-            <div className="relative w-full max-w-[760px] lg:max-w-[738px] 2xl:max-w-[900px] mx-auto py-4 lg:py-6 2xl:py-0">
+            <div className="relative w-full max-w-[760px] lg:max-w-[738px] 2xl:max-w-[900px] mx-auto py-2 sm:py-4 lg:py-6 2xl:py-0">
             <div
               ref={gallerySliderRef}
-              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-8 pb-4 scrollbar-hide"
+              className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 sm:gap-6 md:gap-8 pb-4 scrollbar-hide"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               onScroll={(e) => {
                 const el = e.currentTarget;
@@ -1070,7 +1070,7 @@ useEffect(() => {
                       className="flex-shrink-0 w-full max-w-[760px] lg:max-w-[738px] 2xl:max-w-[900px] snap-center"
                       style={{ scrollSnapAlign: "center" }}
                     >
-                  <AnimatedStagger staggerChildren={0.1} delayChildren={0.15} className="relative w-full columns-2 md:columns-3 gap-4 space-y-4">
+                  <AnimatedStagger staggerChildren={0.1} delayChildren={0.15} className="relative w-full columns-2 sm:columns-2 md:columns-3 gap-2 sm:gap-3 md:gap-4 space-y-2 sm:space-y-3 md:space-y-4">
                     {items.map((item, i) => (
                       <AnimatedItem key={i} className="break-inside-avoid mb-4">
                         <motion.div
@@ -1087,7 +1087,7 @@ useEffect(() => {
               ))}
             </div>
             {/* Controles: flechas y puntos */}
-            <div className="flex items-center justify-center gap-4 mt-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-4 mt-3 sm:mt-4">
               <button
                 type="button"
                 onClick={() => scrollToGallery(Math.max(0, galleryIndex - 1))}
@@ -1123,17 +1123,17 @@ useEffect(() => {
       </section>
 
       {/* Aprendizaje socioemocional */}
-      <section id="ase" className="relative w-full min-h-[560px] xl:min-h-[640px] 2xl:min-h-[746px] bg-white overflow-hidden">
+      <section id="ase" className="relative w-full min-h-0 lg:min-h-[560px] xl:min-h-[640px] 2xl:min-h-[746px] bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-30 bg-orange-300/25 pointer-events-none" aria-hidden />
-        <div className="relative max-w-[1474px] mx-auto px-6 py-12 md:py-16 lg:px-[114px] lg:pt-[72px] xl:pt-[96px] 2xl:pt-[132px] lg:pb-12 xl:pb-14 2xl:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12 xl:gap-[188px] items-start">
+        <div className="relative max-w-[1474px] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 lg:px-10 lg:pt-12 lg:pb-10 xl:px-[80px] xl:pt-[72px] xl:pb-12 2xl:px-[114px] 2xl:pt-[132px] 2xl:pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] lg:gap-8 xl:gap-12 2xl:gap-[188px] items-start">
             {/* Columna izquierda */}
             <AnimatedSection className="flex flex-col min-w-0" direction="right" delay={0.1}>
-              <h2 className="text-yellow-600 text-3xl sm:text-4xl font-light font-poppins uppercase leading-[52px] tracking-widest max-w-[800px] mb-6">
+              <h2 className="text-yellow-600 text-2xl sm:text-3xl md:text-4xl font-light font-poppins uppercase leading-tight sm:leading-[52px] tracking-widest max-w-[800px] mb-4 sm:mb-6">
                 Aprendizaje socioemocional <br /> (ASE / SEL)
               </h2>
-              <div className="w-28 h-28 relative flex-shrink-0 mb-6">
-                <Image src="/images/08 1.png" alt="" width={118} height={118} className="object-contain" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 relative flex-shrink-0 mb-4 sm:mb-6">
+                <Image src="/images/08 1.png" alt="" width={118} height={118} className="object-contain w-full h-full" />
               </div>
               <div className="max-w-[600px] text-black text-sm font-light font-poppins leading-7 mb-8">
                 El aprendizaje socioemocional marca la diferencia. Lo sabemos por las{" "}
@@ -1174,7 +1174,7 @@ useEffect(() => {
             </AnimatedSection>
 
             {/* Columna derecha: portada con botón play → al click reproducir video */}
-            <AnimatedSection className="relative w-full max-w-[507px] aspect-[507/620] min-h-[420px] mx-auto lg:mx-0 lg:ml-auto overflow-hidden rounded-none" direction="left" delay={0.15}>
+            <AnimatedSection className="relative w-full max-w-[507px] aspect-[507/620] min-h-[280px] sm:min-h-[340px] md:min-h-[420px] mx-auto lg:mx-0 lg:ml-auto overflow-hidden rounded-none mt-6 sm:mt-8 lg:mt-0" direction="left" delay={0.15}>
               {/* Video (visible solo cuando está reproduciendo) */}
               <video
                 ref={aseVideoRef}
@@ -1217,10 +1217,10 @@ useEffect(() => {
       </section>
 
 {/* Logos carousel */}
-<section className="relative w-full overflow-hidden py-8 md:py-10 bg-[#E6E6E6]">
-  <div className="max-w-[1474px] mx-auto px-6">
-    <AnimatedSection className="mb-6 text-center" delay={0.08}>
-      <p className="text-stone-700 text-xl md:text-2xl font-swanky font-normal leading-tight">
+<section className="relative w-full overflow-hidden py-6 sm:py-8 md:py-10 bg-[#E6E6E6]">
+  <div className="max-w-[1474px] mx-auto px-4 sm:px-6">
+    <AnimatedSection className="mb-4 sm:mb-6 text-center" delay={0.08}>
+      <p className="text-stone-700 text-lg sm:text-xl md:text-2xl font-swanky font-normal leading-tight">
         Clientes
       </p>
     </AnimatedSection>
@@ -1230,14 +1230,14 @@ useEffect(() => {
         {[...partnerLogos, ...partnerLogos].map((logo, index) => (
           <div
             key={`${logo.alt}-${index}`}
-            className="flex-shrink-0 w-[170px] h-[80px] flex items-center justify-center bg-transparent"
+            className="flex-shrink-0 w-[120px] h-[56px] sm:w-[150px] sm:h-[70px] md:w-[170px] md:h-[80px] flex items-center justify-center bg-transparent"
           >
             <Image
               src={logo.src}
               alt={logo.alt}
               width={170}
               height={80}
-              className="w-[170px] h-[80px] object-contain"
+              className="w-full h-full max-w-[120px] max-h-[56px] sm:max-w-[150px] sm:max-h-[70px] md:max-w-[170px] md:max-h-[80px] object-contain"
               unoptimized
             />
           </div>
@@ -1305,8 +1305,8 @@ useEffect(() => {
             className="object-contain object-center"
             sizes="(max-width: 1024px) 100vw, 1474px"
           />
-          <div className="absolute left-1/2 top-[50px] -translate-x-1/2 w-full max-w-[320px] px-4 text-center">
-            <h2 className="text-stone-700 text-2xl font-swanky font-normal leading-tight">
+          <div className="absolute left-1/2 top-6 sm:top-8 md:top-[50px] -translate-x-1/2 w-full max-w-[280px] sm:max-w-[320px] px-4 text-center">
+            <h2 className="text-stone-700 text-lg sm:text-xl md:text-2xl font-swanky font-normal leading-tight">
               Proyectos con toda Iberoamérica
             </h2>
           </div>
@@ -1381,7 +1381,7 @@ useEffect(() => {
     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
       {/* Imagen izquierda */}
       <AnimatedSection
-        className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]"
+        className="relative w-full h-full min-h-[240px] sm:min-h-[300px] md:min-h-[380px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]"
         direction="right"
         delay={0.05}
       >
@@ -1396,16 +1396,16 @@ useEffect(() => {
 
       {/* Columna derecha: título + form */}
       <AnimatedSection
-        className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-8 lg:py-8 xl:py-9 2xl:py-16"
+        className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-6 sm:py-8 lg:py-8 xl:py-9 2xl:py-16"
         direction="left"
         delay={0.15}
       >
-        <div className="flex items-start gap-3 xl:gap-3.5 mb-5 xl:mb-6 2xl:mb-8">
-          <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">
+        <div className="flex items-start gap-2 sm:gap-3 xl:gap-3.5 mb-4 sm:mb-5 xl:mb-6 2xl:mb-8">
+          <h2 className="text-[#C58770] text-2xl sm:text-[26px] md:text-[28px] lg:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none tracking-wider">
             ¡Enviame un mensaje!
           </h2>
 
-          <div className="relative w-20 h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
             <Image
               src="/images/19 2.png"
               alt=""
@@ -1416,7 +1416,7 @@ useEffect(() => {
         </div>
 
         <form
-          className="space-y-3 xl:space-y-3.5 w-full max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
+          className="space-y-3 w-full max-w-full sm:max-w-[360px] md:max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
           onSubmit={handleContactSubmit}
         >
           <div>
@@ -1516,13 +1516,13 @@ useEffect(() => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="w-full h-28 bg-[#C58770] flex flex-wrap items-center justify-center gap-8 md:gap-16 py-6 px-6"
+        className="w-full min-h-24 sm:h-28 bg-[#C58770] flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 py-5 sm:py-6 px-4 sm:px-6"
       >
-        <a href="https://www.linkedin.com/in/adelacavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">LinkedIn</a>
-        <a href="https://instagram.com/adela.cavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@adela.cavia</a>
-        <a href="https://x.com/Adel1ta" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@Adel1ta</a>
-        <a href="https://www.facebook.com/adela.cavia/" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">Facebook</a>
-        <a href="mailto:adelacavia@gmail.com" className="text-orange-100 text-lg font-poppins hover:text-white transition">adelacavia@gmail.com</a>
+        <a href="https://www.linkedin.com/in/adelacavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">LinkedIn</a>
+        <a href="https://instagram.com/adela.cavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">@adela.cavia</a>
+        <a href="https://x.com/Adel1ta" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">@Adel1ta</a>
+        <a href="https://www.facebook.com/adela.cavia/" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">Facebook</a>
+        <a href="mailto:adelacavia@gmail.com" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition break-all">adelacavia@gmail.com</a>
       </motion.footer>
     </div>
   );

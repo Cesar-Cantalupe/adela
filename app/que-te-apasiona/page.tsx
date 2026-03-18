@@ -93,17 +93,17 @@ export default function QueTeApasionaPage() {
 
         {/* HERO */}
         <section id="hero-libro" className="relative min-h-screen overflow-hidden bg-[#F3E5E2]">
-          <div className="mx-auto grid min-h-screen max-w-[1474px] grid-cols-1 items-center gap-10 px-6 py-10 md:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:px-[72px] lg:py-12">
-            <AnimatedSection className="relative z-10 max-w-[520px] lg:ml-[40px] xl:ml-[80px]" direction="right" delay={0.1}>
-              <h1 className="text-[#231F20] font-poppins font-light uppercase tracking-[0.16em] leading-[0.95] text-[54px] sm:text-[64px] lg:text-[76px] xl:text-[88px]">
+          <div className="mx-auto grid min-h-screen max-w-[1474px] grid-cols-1 items-center gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-10 md:gap-10 md:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:px-[72px] lg:py-12">
+            <AnimatedSection className="relative z-10 w-full max-w-[520px] lg:ml-[40px] xl:ml-[80px]" direction="right" delay={0.1}>
+              <h1 className="text-[#231F20] font-poppins font-light uppercase tracking-[0.12em] sm:tracking-[0.16em] leading-[0.95] text-[36px] sm:text-[54px] md:text-[64px] lg:text-[76px] xl:text-[88px]">
                 ¿QUÉ TE<br />APASIONA?
               </h1>
-              <div className="relative mt-10 max-w-[520px]">
-                <p className="text-[#D49A89] font-swanky text-[22px] leading-[1.45] sm:text-[24px] lg:text-[26px]">
+              <div className="relative mt-6 sm:mt-8 lg:mt-10 max-w-[520px]">
+                <p className="text-[#D49A89] font-swanky text-base leading-[1.5] sm:text-[20px] sm:leading-[1.45] md:text-[22px] lg:text-[26px]">
                   Siempre me ha interesado entender el motor<br />
                   que mueve a las personas a hacer las cosas<br />
-                  que hacen: algunos llaman a esto "sentido de<br />
-                  <span className="inline-block w-full text-center">vida", otros "propósito" y otros "pasión".</span>
+                  que hacen: algunos llaman a esto &quot;sentido de<br />
+                  <span className="block w-full text-left sm:inline-block sm:text-center">vida&quot;, otros &quot;propósito&quot; y otros &quot;pasión&quot;.</span>
                 </p>
                 <div className="absolute -right-[68px] top-[53%] hidden lg:block">
                   <Image src="/images/libro/flecha1.png" alt="" width={58} height={58} className="object-contain" unoptimized />
@@ -111,14 +111,14 @@ export default function QueTeApasionaPage() {
               </div>
             </AnimatedSection>
             <AnimatedSection className="relative flex items-center justify-center lg:justify-start" direction="left" delay={0.15}>
-              <div className="relative w-full max-w-[560px] xl:max-w-[620px]">
+              <div className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[560px] xl:max-w-[620px]">
                 <div className="relative aspect-[700/620] w-full">
-                  <Image src="/images/libro/libro-hero.png" alt="Libro ¿Qué te apasiona?" fill className="object-contain" sizes="(max-width: 1024px) 100vw, 620px" unoptimized />
+                  <Image src="/images/libro/libro-hero.png" alt="Libro ¿Qué te apasiona?" fill className="object-contain" sizes="(max-width: 640px) 320px, (max-width: 768px) 420px, (max-width: 1024px) 100vw, 620px" unoptimized />
                 </div>
               </div>
             </AnimatedSection>
           </div>
-          <a href="https://www.galernaweb.com/productos/que-te-apasiona/" target="_blank" rel="noopener noreferrer" className="absolute bottom-8 right-8 z-20 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#C88C73] text-white text-[15px] uppercase tracking-[0.08em] font-poppins shadow-[0_10px_25px_rgba(0,0,0,0.14)] transition hover:opacity-90 md:bottom-10 md:right-10">
+          <a href="https://www.galernaweb.com/productos/que-te-apasiona/" target="_blank" rel="noopener noreferrer" className="absolute bottom-5 right-5 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#C88C73] text-white text-xs uppercase tracking-[0.08em] font-poppins shadow-[0_10px_25px_rgba(0,0,0,0.14)] transition hover:opacity-90 sm:bottom-6 sm:right-6 sm:h-20 sm:w-20 sm:text-sm md:bottom-8 md:right-8 md:h-[90px] md:w-[90px] md:text-[13px] lg:bottom-10 lg:right-10 lg:h-[110px] lg:w-[110px] lg:text-[15px]">
             Comprar
           </a>
         </section>
@@ -413,21 +413,42 @@ export default function QueTeApasionaPage() {
           </div>
         </section>
 
-        {/* Contacto */}
+        {/* Contacto - mismo contenido que home */}
         <section id="contacto" className="relative w-full bg-white overflow-hidden">
           <div className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-0">
-              <AnimatedSection className="relative w-full h-full min-h-[420px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]" direction="right" delay={0.05}>
-                <Image src="/images/Gastro-Session-4-28 1.png" alt="Contacto" fill className="object-cover" sizes="100vw" />
+              <AnimatedSection
+                className="relative w-full h-full min-h-[240px] sm:min-h-[300px] md:min-h-[380px] lg:min-h-[500px] xl:min-h-[530px] 2xl:min-h-[850px]"
+                direction="right"
+                delay={0.05}
+              >
+                <Image
+                  src="/images/imagen-contacto2.jpg"
+                  alt="Contacto"
+                  fill
+                  className="object-cover object-top"
+                  sizes="100vw"
+                />
               </AnimatedSection>
-              <AnimatedSection className="flex flex-col items-center justify-center px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-8 lg:py-8 xl:py-9 2xl:py-16" direction="left" delay={0.15}>
-                <div className="flex items-start gap-3 xl:gap-3.5 mb-5 xl:mb-6 2xl:mb-8">
-                  <h2 className="text-[#C58770] text-[28px] lg:text-[30px] xl:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none 2xl:leading-[96px] tracking-wider">¡Enviame un mensaje!</h2>
-                  <div className="relative w-20 h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
+
+              <AnimatedSection
+                className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-9 2xl:px-16 py-6 sm:py-8 lg:py-8 xl:py-9 2xl:py-16"
+                direction="left"
+                delay={0.15}
+              >
+                <div className="flex items-start gap-2 sm:gap-3 xl:gap-3.5 mb-4 sm:mb-5 xl:mb-6 2xl:mb-8">
+                  <h2 className="text-[#C58770] text-2xl sm:text-[26px] md:text-[28px] lg:text-[30px] 2xl:text-3xl font-normal font-swanky leading-none tracking-wider">
+                    ¡Enviame un mensaje!
+                  </h2>
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 xl:w-[88px] xl:h-[88px] 2xl:w-28 2xl:h-28 flex-shrink-0">
                     <Image src="/images/19 2.png" alt="" fill className="object-contain" />
                   </div>
                 </div>
-                <form className="space-y-3 xl:space-y-3.5 w-full max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]" onSubmit={handleContactSubmit}>
+
+                <form
+                  className="space-y-3 w-full max-w-full sm:max-w-[360px] md:max-w-[400px] xl:max-w-[408px] 2xl:max-w-[462px]"
+                  onSubmit={handleContactSubmit}
+                >
                   <div>
                     <label htmlFor="nombre" className="block text-black/70 text-sm xl:text-[15px] 2xl:text-base font-light font-poppins leading-6 xl:leading-7">Nombre y Apellido</label>
                     <input id="nombre" type="text" name="nombre" placeholder=" " value={contactNombre} onChange={(e) => setContactNombre(e.target.value)} required disabled={contactLoading} className="w-full mt-1 py-2 bg-transparent border-0 border-b border-[#C58770]/50 focus:border-[#C58770] focus:outline-none text-sm xl:text-[15px] 2xl:text-base text-black font-light font-poppins leading-6 xl:leading-7 placeholder:text-black/40 disabled:opacity-60" />
@@ -452,13 +473,13 @@ export default function QueTeApasionaPage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <motion.footer initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} className="w-full h-28 bg-[#C58770] flex flex-wrap items-center justify-center gap-8 md:gap-16 py-6 px-6">
-          <a href="https://www.linkedin.com/in/adelacavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">LinkedIn</a>
-          <a href="https://instagram.com/adela.cavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@adela.cavia</a>
-          <a href="https://x.com/Adel1ta" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">@Adel1ta</a>
-          <a href="https://www.facebook.com/adela.cavia/" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-lg font-poppins hover:text-white transition">Facebook</a>
-          <a href="mailto:adelacavia@gmail.com" className="text-orange-100 text-lg font-poppins hover:text-white transition">adelacavia@gmail.com</a>
+        {/* Footer - mismo contenido que home */}
+        <motion.footer initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} className="w-full min-h-24 sm:h-28 bg-[#C58770] flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 py-5 sm:py-6 px-4 sm:px-6">
+          <a href="https://www.linkedin.com/in/adelacavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">LinkedIn</a>
+          <a href="https://instagram.com/adela.cavia" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">@adela.cavia</a>
+          <a href="https://x.com/Adel1ta" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">@Adel1ta</a>
+          <a href="https://www.facebook.com/adela.cavia/" target="_blank" rel="noopener noreferrer" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition">Facebook</a>
+          <a href="mailto:adelacavia@gmail.com" className="text-orange-100 text-sm sm:text-base md:text-lg font-poppins hover:text-white transition break-all">adelacavia@gmail.com</a>
         </motion.footer>
 
       </div>
