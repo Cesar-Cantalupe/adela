@@ -257,7 +257,7 @@ export default function QueTeApasionaPage() {
                         <p>Para ello, puedes hacer una especie de visualización.</p>
                         <p>Necesitas un momento de calma. Silencio y paz.</p>
                       </div>
-                      <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+                      <AudioPlayer src="/audio.mp3" />
                       <div className="mt-8 space-y-3 text-[13px] leading-7 font-light font-poppins text-[#3B3434]">
                         <ul className="list-disc pl-5 space-y-2">
                           <li>Una vez hayas hecho esta pequeña visualización, te invito a que tomes tu cuaderno y escribas todo lo que aparece.</li>
