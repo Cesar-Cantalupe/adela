@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -17,12 +18,46 @@ function IconInstagram() {
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const isLibroPage = pathname === "/que-te-apasiona";
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, label: string) => {
+    e.preventDefault();
+    
+    // Si es "¿Qué te apasiona?" en la home, ir a #libro
+    if (label === "¿Qué te apasiona?" && isHomePage) {
+      const element = document.getElementById("libro");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      closeMenu();
+      return;
+    }
+    
+    // Para otros links con hash
+    const id = href.replace('#', '');
+    
+    if (isHomePage) {
+      // En la home: scroll normal
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Fuera de la home: navegar a la home con hash
+      window.location.href = `/#${id}`;
+    }
+    
+    closeMenu();
+  };
+
   const navItems = [
     { href: "#sobre-mi", label: "Sobre mí" },
     { href: "#trabajando", label: "¿En qué estoy trabajando?" },
     { href: "#we-human-lab", label: "We Human Lab" },
     { href: "#red-communia", label: "Red Communia" },
-    { href: "#libro", label: "¿Qué te apasiona?", accent: true },
+    { href: "/que-te-apasiona", label: "¿Qué te apasiona?", accent: true },
     { href: "#contacto", label: "Contacto" },
   ];
 
@@ -39,6 +74,19 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
+  // Efecto para manejar hash cuando se navega desde otra página
+  useEffect(() => {
+    if (isHomePage && window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [isHomePage, pathname]);
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -49,23 +97,51 @@ export function Header() {
       <nav className="max-w-[1440px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
         {/* Desktop: enlaces de navegación */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navItems.map((item, i) => (
-            <motion.div
-              key={item.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i + 0.2, duration: 0.4 }}
-            >
-              <Link
-                href={item.href}
-                className={`text-sm font-medium font-poppins leading-9 transition ${
-                  item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
-                }`}
+          {navItems.map((item, i) => {
+            const isLibroLink = item.label === "¿Qué te apasiona?";
+            
+            return (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i + 0.2, duration: 0.4 }}
               >
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
+                {isLibroLink && isHomePage ? (
+                  // En la home: link a #libro (scroll)
+                  <a
+                    href="#libro"
+                    onClick={(e) => handleNavClick(e, "#libro", item.label)}
+                    className={`text-sm font-medium font-poppins leading-9 transition ${
+                      item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : isLibroLink && isLibroPage ? (
+                  // En la página del libro: link inactivo
+                  <span
+                    className={`text-sm font-medium font-poppins leading-9 cursor-default ${
+                      item.accent ? "text-[#D49A89] font-bold" : "text-stone-900"
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                ) : (
+                  // Links normales (con hash)
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.label)}
+                    className={`text-sm font-medium font-poppins leading-9 transition ${
+                      item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Desktop: redes sociales */}
@@ -130,7 +206,7 @@ export function Header() {
         </button>
       </nav>
 
-      {/* Panel móvil/tablet: todos los enlaces y redes */}
+      {/* Panel móvil/tablet */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
@@ -152,19 +228,49 @@ export function Header() {
             >
               <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
                 <ul className="flex flex-col gap-1 sm:gap-2">
-                  {navItems.map((item, i) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={closeMenu}
-                        className={`block py-3 sm:py-4 text-base sm:text-lg font-medium font-poppins transition ${
-                          item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {navItems.map((item) => {
+                    const isLibroLink = item.label === "¿Qué te apasiona?";
+                    
+                    return (
+                      <li key={item.href}>
+                        {isLibroLink && isHomePage ? (
+                          <a
+                            href="#libro"
+                            onClick={(e) => {
+                              handleNavClick(e, "#libro", item.label);
+                              closeMenu();
+                            }}
+                            className={`block py-3 sm:py-4 text-base sm:text-lg font-medium font-poppins transition ${
+                              item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
+                            }`}
+                          >
+                            {item.label}
+                          </a>
+                        ) : isLibroLink && isLibroPage ? (
+                          <span
+                            className={`block py-3 sm:py-4 text-base sm:text-lg font-medium font-poppins cursor-default ${
+                              item.accent ? "text-[#D49A89] font-bold" : "text-stone-900"
+                            }`}
+                          >
+                            {item.label}
+                          </span>
+                        ) : (
+                          <a
+                            href={item.href}
+                            onClick={(e) => {
+                              handleNavClick(e, item.href, item.label);
+                              closeMenu();
+                            }}
+                            className={`block py-3 sm:py-4 text-base sm:text-lg font-medium font-poppins transition ${
+                              item.accent ? "text-[#D49A89]" : "text-stone-900 hover:text-[#D49A89]"
+                            }`}
+                          >
+                            {item.label}
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
                 <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-stone-200/80 flex flex-wrap items-center gap-4 sm:gap-6">
                   <span className="text-xs sm:text-sm font-medium text-stone-500 uppercase tracking-wider w-full sm:w-auto">Redes</span>
@@ -272,89 +378,89 @@ export function Hero() {
         </motion.div>
       </div>
 
- {/* Desktop: layout original con posiciones fijas */}
-<div className="relative hidden lg:block w-full max-w-[1474px] mx-auto bg-[#F9F1EF] h-[620px] xl:h-[680px] 2xl:h-[746px] overflow-hidden">
-  <div className="relative w-full h-full -translate-y-[8%] xl:-translate-y-[4%] 2xl:translate-y-0">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.2, ease }}
-      className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
-    >
-      Adela
-    </motion.div>
+      {/* Desktop: layout original con posiciones fijas */}
+      <div className="relative hidden lg:block w-full max-w-[1474px] mx-auto bg-[#F9F1EF] h-[620px] xl:h-[680px] 2xl:h-[746px] overflow-hidden">
+        <div className="relative w-full h-full -translate-y-[8%] xl:-translate-y-[4%] 2xl:translate-y-0">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease }}
+            className="absolute left-[285px] top-[293px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px] whitespace-nowrap"
+          >
+            Adela
+          </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.35, ease }}
-      className="absolute left-[260px] top-[398px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
-    >
-      Cavia
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35, ease }}
+            className="absolute left-[260px] top-[398px] font-poppins font-light text-black text-8xl uppercase leading-[104.35px] tracking-[5.52px]"
+          >
+            Cavia
+          </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.2, ease }}
-      className="absolute right-[170px] 2xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
-    >
-      Sáenz
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease }}
+            className="absolute right-[170px] 2xl:right-[350px] top-[293px] text-right font-poppins font-light text-[72px] xl:text-8xl uppercase leading-[92px] xl:leading-[104.35px] tracking-[4px] xl:tracking-[5.52px] whitespace-nowrap"
+          >
+            Sáenz
+          </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.9, delay: 0.1, ease }}
-      className="absolute left-[512.66px] top-[157px] w-96 h-[589px]"
-    >
-      <Image
-        src="/images/hero/Adela Saenz Cavia25 2.png"
-        alt="Adela Sáenz"
-        fill
-        className="object-cover object-top"
-        unoptimized
-      />
-    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.1, ease }}
+            className="absolute left-[512.66px] top-[157px] w-96 h-[589px]"
+          >
+            <Image
+              src="/images/hero/Adela Saenz Cavia25 2.png"
+              alt="Adela Sáenz"
+              fill
+              className="object-cover object-top"
+              unoptimized
+            />
+          </motion.div>
 
-    {[
-      { left: 976, top: 179 },
-      { left: 1004, top: 483 },
-      { left: 175, top: 569 },
-      { left: 123, top: 203 },
-    ].map((pos, i) => (
-      <motion.p
-        key={i}
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: frases[i].delay, ease }}
-        className="absolute w-56 text-center font-swanky text-xl font-normal leading-5 text-[#D49A89]"
-        style={{ left: pos.left, top: pos.top, maxWidth: "14rem" }}
-      >
-        {frases[i].text}
-      </motion.p>
-    ))}
+          {[
+            { left: 976, top: 179 },
+            { left: 1004, top: 483 },
+            { left: 175, top: 569 },
+            { left: 123, top: 203 },
+          ].map((pos, i) => (
+            <motion.p
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: frases[i].delay, ease }}
+              className="absolute w-56 text-center font-swanky text-xl font-normal leading-5 text-[#D49A89]"
+              style={{ left: pos.left, top: pos.top, maxWidth: "14rem" }}
+            >
+              {frases[i].text}
+            </motion.p>
+          ))}
 
-    {[
-      { left: 427, top: 540, delay: 0.7 },
-      { left: 910, top: 183, delay: 0.65 },
-      { left: 344, top: 226, delay: 0.72 },
-      { left: 948, top: 425, delay: 0.68 },
-    ].map((pos, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, pathLength: 0 }}
-        animate={{ opacity: 1, pathLength: 1 }}
-        transition={{ duration: 0.8, delay: pos.delay, ease }}
-        className="absolute"
-        style={{ left: pos.left, top: pos.top }}
-        aria-hidden
-      >
-        {arrowSvgs[i]}
-      </motion.div>
-    ))}
-  </div>
-</div>
+          {[
+            { left: 427, top: 540, delay: 0.7 },
+            { left: 910, top: 183, delay: 0.65 },
+            { left: 344, top: 226, delay: 0.72 },
+            { left: 948, top: 425, delay: 0.68 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, pathLength: 0 }}
+              animate={{ opacity: 1, pathLength: 1 }}
+              transition={{ duration: 0.8, delay: pos.delay, ease }}
+              className="absolute"
+              style={{ left: pos.left, top: pos.top }}
+              aria-hidden
+            >
+              {arrowSvgs[i]}
+            </motion.div>
+          ))}
+        </div>
       </div>
+    </div>
   );
 }
